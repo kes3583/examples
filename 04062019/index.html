@@ -90,11 +90,28 @@
                       };
                   }
               });
-
+              function _debounce(func, wait, immediate = true) {
+                var timeout;
+                return function() {
+                  var context = this, args = arguments;
+                  var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                  };
+                  var callNow = immediate && !timeout;
+                  clearTimeout(timeout);
+                  timeout = setTimeout(later, wait);
+                  if (callNow) func.apply(context, args);
+                };
+              }
+              const slideImages = document.querySelector('.title-mastercard');
                 //개인정보 팝업
                 $('.btn_apply').click(function(e){
+                  $('html, body').stop().animate({ scrollTop: slideImages.offset().top }, 500);
+                  e.preventDefault();
+
                   //('body').addClass('modal-open');
-                  
+
                 	/*if($("#complete").val() == "Y"){
                 		showComplete();
                 		return false;
