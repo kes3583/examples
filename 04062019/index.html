@@ -17,6 +17,15 @@
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="css/promoReset.css">
         <link rel="stylesheet" href="css/swiper.min.css">
+        <style media="screen">
+          .modal-open{
+            overflow: hidden;
+            position: fixed;
+            width: 100vw;
+            min-height: 100vh;
+            height: auto;
+          }
+        </style>
         <script type="text/javascript" src="js/jquery.js"></script>
         <!-- <script src="js/swiper.min.4.1.0.js"></script> -->
         <script src="js/swiper.min.4.5.0.js"></script>
@@ -74,7 +83,7 @@
                   if (scrollLock) {
                       window.scrollTo(scrollMem.left, scrollMem.top);
                   } else {
-                      console.log("here we go");
+                      //console.log("here we go");
                       scrollMem = {
                           lelf: self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
                           top: self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
@@ -84,7 +93,7 @@
 
                 //개인정보 팝업
                 $('.btn_apply').click(function(e){
-
+                  $('body').addClass('modal-open')
                 	/*if($("#complete").val() == "Y"){
                 		showComplete();
                 		return false;
@@ -113,7 +122,7 @@
                     	//$("#layerpop_complete, #img_complete_luck_master").show();
                         $("#btn_complete").trigger("click");
                     }
-                    $('html,body').css({'overflow': 'auto'});
+                    $('html,body').css({'overflow': 'auto', 'height': 'auto'});
 
 
 
