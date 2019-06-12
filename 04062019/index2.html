@@ -4,16 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-        <link rel="shortcut icon" href="">
-        <link rel="apple-touch-icon-precomposed" sizes="114×114" href="">
+
         <title>T map 생일이벤트</title>
-        <meta property="og:title" content="T map 생일이벤트 ">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="https://event.tmap.co.kr/comm/birthday_17th/images/thumb_facebook.png">
-        <meta property="og:site_name" content="T map 생일이벤트 ">
-        <meta property="fb:app_id" content="">
-        <meta property="og:url" content="https://event.tmap.co.kr/birthday17th/index.do">
-        <meta property="og:description" content="17년간 티맵을 꾸준히 사랑해주신 티맵 마스터를 찾아 선물을 쏩니다.">
+
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="css/promoReset.css">
         <link rel="stylesheet" href="css/swiper.min.css">
@@ -32,53 +25,11 @@
         <script type="text/javascript">
             $(function() {
                 //swiper
-                var swiper = new Swiper('.swiper-container', {
-                                slidesPerView:1.33,
-                                spaceBetween: "3%",
-                                centeredSlides: true,
-                                speed:800,
-                                loopedSlides: 2,//20190522 옵션 추가
-                                loop: true,
-                                pagination: {
-                                    el: '.swiper-pagination',
-                                    clickable: true,
-                                }
-                });
-                //20190522 부분수정
-                swiper.on('slideChangeTransitionStart', function () {
-                    setTimeout(function(){
-                    	var activeIndex = swiper.activeIndex;
-                        var card = $('.swiper-slide').eq(activeIndex).attr("data-card");
-                        if("main" == card){
-                        	$("#chk1").prop("checked", false);
-                        }else{
-                        	$("#chk1").prop("checked", true);
-                        }
-                        var index = swiper.activeIndex;
-                        var srcB='images/card-page-0'+ (index-2)+'-dim@3x.png';
-                        var src='images/card-page-0'+ (index-1)+'@3x.png';
-                        var srcA='images/card-page-0'+ (index)+'-dim@3x.png';
-                        //20190530 수정  find-->children
-                        $('.swiper-slide').eq(index).children('img').attr("src",src);
-                        $('.swiper-slide').eq(index-1).children('img').attr("src",srcB)
-                        $('.swiper-slide').eq(index+1).children('img').attr("src",srcA)
-                    },200);
-                });
-                swiper.on('sliderMove', function(){
-                	$("#chk1").prop("checked", false);
-                });
-                swiper.on('transitionEnd', function(){
-                	var activeIndex = swiper.activeIndex;
-                    var card = $('.swiper-slide').eq(activeIndex).attr("data-card");
-                    if("main" == card){
-                    	$("#chk1").prop("checked", false);
-                    }else{
-                    	$("#chk1").prop("checked", true);
-                    }
-                });
-                //20190522 부분수정  끝
-                var scrollLock = false;
-                var scrollMem = {left: 0, top: 0};
+
+
+              //eunsim
+              var scrollLock = false;
+              var scrollMem = {left: 0, top: 0};
                   $(window).scroll(function(){
                     if (scrollLock) {
                         window.scrollTo(scrollMem.left, scrollMem.top);
@@ -107,186 +58,49 @@
               const moveTomastercard = $('.title-mastercard');
                 //개인정보 팝업
                 function scrollPositon(e){
-                    console.log(window.scrollY + window.innerHeight);
-                    const masterCardPos = ($('#title-mastercard').offset().top);
-                    const scrollPos = window.scrollY;
-                    console.log('mastercard position1',masterCardPos);
-                    //console.log($('html, body').scrollTop())
-                    console.log('scroll position1', scrollPos)
-                    if(scrollPos < masterCardPos ){
-                      console.log('yaho 1')
-                      //$('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
-                    }else if(scrollPos > masterCardPos){
-                      console.log('yaho 2')
-                      //$('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
-                      //$('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
-                    }else{
-                      console.log('yaho 3')
-                    }
+                  console.log(window.scrollY + window.innerHeight);
+                  const masterCardPos = ($('#title-mastercard').offset().top);
+                  const scrollPos = window.scrollY;
+                  console.log('mastercard position1',masterCardPos);
+                  //console.log($('html, body').scrollTop())
+                  console.log('scroll position1', scrollPos)
+                  if(scrollPos < masterCardPos ){
+                    console.log('yaho 1')
+                    //$('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
+                  }else if(scrollPos > masterCardPos){
+                    console.log('yaho 2')
+                    //$('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
+                    //$('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
+                  }else{
+                    console.log('yaho 3')
+                  }
                 }
                 document.addEventListener('scroll', _debounce(scrollPositon));
 
-
-
-
-
                 $('.btn_apply').click(function(e){
-
-
-
 
                   //('body').addClass('modal-open');
 
-                	/*if($("#complete").val() == "Y"){
-                		showComplete();
-                		return false;
-                	}*/
-                    //20190528 master card부분으로 이동
-                    var ot=$('.title-mastercard').position().top;
-                    //20190528 레이어팝업 뜰때 터치 막기
-                    $('body').on('scroll touchmove mousewheel', function(event) {
-                      event.preventDefault();
-                      event.stopPropagation();
-                      return false;
-                    });
-                    $('.nodisplay').hide();
-                    var activeIndex = swiper.activeIndex;
-                    var card = $('.swiper-slide').eq(activeIndex).attr("data-card");
-                    if("main" == card){
-                        $('html,body').animate({scrollTop:ot}, '500');
-                        $("body").css("overflow","auto");
-                        $('.body').off('scroll touchmove mousewheel');
-                         return false;
-                    }else if("long_master" == card || "habit_master" == card || "picnic_master" == card || "shopping_master" == card || "oil_master" == card){
-                        $("#layerpop_privacy_message, #msg_habit").show();
-                    }else if("taxi_master" == card){
-                        $("#layerpop_privacy_message, #msg_taxi").show();
-                    }else if("luck_master"== card){
-                    	//$("#layerpop_complete, #img_complete_luck_master").show();
-                        $("#btn_complete").trigger("click");
-                    }
-                    $('html,body').css({'overflow': 'auto', 'height': 'auto'});
+                  //20190528 master card부분으로 이동
+                  var ot=$('.title-mastercard').position().top;
+                  // //20190528 레이어팝업 뜰때 터치 막기
+                  // $('body').on('scroll touchmove mousewheel', function(event) {
+                  //   event.preventDefault();
+                  //   event.stopPropagation();
+                  //   return false;
+                  // });
+                  
+                  $('html,body').css({'overflow': 'auto', 'height': 'auto'});
 
 
 
-                    $('.dimed').show();
-                    //$('.nodisplay').show();
-                    e.preventDefault();
-                    //scrollLock = true;
+                  $('.dimed').show();
+                  //$('.nodisplay').show();
+                  e.preventDefault();
+                  //scrollLock = true;
 
                 });
-              // cancel
-                $('.bg_gray').click(function(e){
-                    $('.dimed').hide();
-                    scrollLock = false;
-                    $(this).parents('.layerpop').hide();
-                    //20190528 레이어팝업 뜰때 터치 풀기
-                    if(/iPhone|iPad|iPod/i.test(navigator.userAgent)){
-                    	$('body').css({'overflow': 'auto', 'height': ''});
-                    }else{
-                    	$("body").css("overflow","auto");
-                    }
-                    $('body').off('scroll touchmove mousewheel');
-                    $("#chk2").prop("checked", false);
-                    $("#mdn").val("");
-                    e.preventDefault();
-                });
 
-             	// 참여
-                $("#btn_complete").click(function(e){
-                	var activeIndex = swiper.activeIndex;
-                    var card = $('.swiper-slide').eq(activeIndex).attr("data-card");
-                    if("main" == card){
-                        return false;
-                    }
-                    if("luck_master" != card){
-                    	if(!$("#chk2").is(":checked")){
-                    		alert("개인정보 이용에 동의해 주세요.");
-                    		return false;
-                    	}
-                    }
-                    if("taxi_master" == card){
-                    	var mdn = $("#mdn").val();
-                    	var rgEx = /(01[016789])(\d{4}|\d{3})\d{4}$/g;
-                    	if (mdn.length <= 0){
-                    		alert("휴대폰 번호를 입력하세요.");
-                    		return false;
-                    	}else if(mdn.length < 10){
-                    		alert("휴대폰번호 입력이 옳지 않습니다.");
-                    		return false;
-                    	}else{
-                    		if(!rgEx.test(mdn)){
-                    			alert("휴대폰번호 패턴이 올바르지 않습니다.\n정확히 입력해 주세요.");
-                    			return false;
-                    		}
-                    	}
-                    }
-                    $("#layerpop_privacy_message").hide();
-                    $("#layerpop_complete").find(".title > img").hide();
-       				$("#layerpop_complete, .subtitle").show();
-                    $("#img_complete_"+card).show();
-                    $("#complete").val("Y");
-                    $("#cardType").val(card);
-                    /*
-                   	$.ajax({
-                   		url : "/birthday17th/event/applicant.do",
-                   		type : "POST",
-                   		data : {
-                   			uk : "<c:out value="${uk}"/>",
-                   			extra_col1 : card,
-                   			mdn : mdn,
-                   			agree_yn : "Y"
-                   		},
-                   		success : function(data){
-                   			if(data == "OK"){
-                   				$("#layerpop_privacy_message").hide();
-                   				$("#layerpop_complete").show();
-                                $("#img_complete_"+card).show();
-                                $("#complete").val("Y");
-                                $("#cardType").val(card);
-                   			}else if(data == "DUPLICATED"){
-                   				showComplete();
-                   				//alert("이미 응모하셨습니다.");
-                   				//$('.dimed, .layerpop').hide();
-                   			}else{
-                   				alert("오류가 발생하였습니다.\n다시 시도해 주세요.");
-                   				$('.dimed, .layerpop').hide();
-                   			}
-                   		},
-                   		error : function(data){
-                   			alert("오류가 발생하였습니다.\n다시 시도해 주세요.");
-                   			$('.dimed, .layerpop').hide();
-                   		}
-                   	});*/
-                    e.preventDefault();
-                });
-
-                $("#btn_refresh").click(function(e){
-                    //$('.dimed, .layerpop').hide();
-                    //location.reload();
-                    //location.href="/birthday17th/index.do";
-                    location.href="https://www.tmap.co.kr/tmap2/mobile/tmap.jsp?scheme=tmap&host=promotion";
-                    e.preventDefault();
-                });
-
-                $("#chk1").click(function(){
-                	var activeIndex = swiper.activeIndex;
-                    var card = $('.swiper-slide').eq(activeIndex).attr("data-card");
-                    if("main" == card){
-                        return false;
-                    }
-                	if(!$(this).is(":checked")){
-                		$(this).prop("checked", true);
-                	}
-                });
-
-                function showComplete(){
-                	var card = $("#cardType").val();
-                	$("#layerpop_complete").find(".title > img").hide();
-                	$(".dimed, #layerpop_complete, .subtitle").show();
-	                $("#img_complete_"+card).show();
-	                swiper.slideToLoop(Number($(".swiper-slide[data-card='"+card+"']").attr("data-idx")));
-                }
             });
         </script>
     </head>

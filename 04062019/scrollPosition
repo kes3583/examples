@@ -1,0 +1,19 @@
+function scrollPositon(e){
+    console.log(window.scrollY + window.innerHeight);
+    const masterCardPos = ($('#title-mastercard').offset().top);
+    const scrollPos = window.scrollY;
+    console.log('mastercard position1',masterCardPos);
+    //console.log($('html, body').scrollTop())
+    console.log('scroll position1', scrollPos)
+    if(scrollPos < masterCardPos ){
+      console.log('yaho 1')
+      $('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
+    }else if(scrollPos > masterCardPos){
+      console.log('yaho 2')
+      $('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
+      //$('html, body').animate({scrollTop: $('#title-mastercard').offset().top}, 300)
+    }else{
+      console.log('yaho 3')
+    }
+}
+document.addEventListener('scroll', _debounce(scrollPositon));
