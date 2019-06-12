@@ -144,7 +144,7 @@ section.wrap {
   text-align: center;
   padding-top: 50px
 }
-section.wrap p{font-size: 2.6rem}
+section.wrap div.title p{font-size: 2.6rem}
 
 svg line {
   display: none
