@@ -1,2 +1,4 @@
+.fs14{font-size: 1.4rem}
+
 section.wrap .underLine {}
 section.wrap .underLine::after {content: ''; border-bottom: 4px; border-color: #97e9ff;}
