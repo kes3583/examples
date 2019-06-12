@@ -1,7 +1,9 @@
 .fs14{font-size: 1.4rem}
 .fc_bl{color: #2f7bf5}
 
-section.wrap .title {font-size: 2.6rem}
-
-section.wrap .underLine {}
-section.wrap .underLine::after {content: ''; border-bottom: 4px; border-color: #97e9ff;}
+section.wrap .title{padding-top: 37px}
+section.wrap p.t1 , p.t1 span {font-size: 2.6rem}
+section.wrap p.t2{padding-top: 15px; line-height: 2rem}
+section.wrap p.t2, p.t2 span{font-size: 1.4rem}
+section.wrap .underLine {position: relative;;}
+section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index: -1; content: ''; width: 160px; background: red; border-bottom: .2em solid #97e9ff; }
