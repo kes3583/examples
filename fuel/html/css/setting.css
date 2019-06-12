@@ -143,6 +143,7 @@ body>header a.rightBtn.settingBtn.touch {
 section.wrap {
   padding-top: 50px
 }
+section.wrap .title{font-size: 2.6rem}
 
 svg line {
   display: none
