@@ -141,6 +141,7 @@ body>header a.rightBtn.settingBtn.touch {
 }
 
 section.wrap {
+  text-align: center;
   padding-top: 50px
 }
 section.wrap p{font-size: 2.6rem}
