@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>jQuery UI Touch Punch - Mobile Device Touch Event Support for jQuery UI</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+
+    <style>
+    .ui-widget-header {
+                background:#b9cd6d;
+                border: 1px solid #b9cd6d;
+                color: #FFFFFF;
+                font-weight: bold;
+             }
+             .ui-widget-content {
+                background: #cedc98;
+                border: 1px solid #DDDDDD;
+                color: #333333;
+             }
+             #resizable,#resizable-3 {
+                width: 150px; height: 150px; padding: 0.5em;
+                text-align: center; margin: 0; }
+
+
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+
+
+        <style>
+        #resizable { width: 200px; height: 150px; padding: 5px; }
+        #resizable h3 { text-align: center; margin: 0; }
+        </style>
+        <script>
+        $(function() {
+          $( "#resizable" ).resizable({
+            maxHeight: 250,
+            maxWidth: 350,
+            minHeight: 150,
+            minWidth: 200,
+            handles: 'e, w'
+          });
+        });
+        </script>
+
+
+
+      <div class="demo">
+
+      <div id="resizable" class="ui-widget-content">
+        <h3 class="ui-widget-header">Resize larger / smaller</h3>
+      </div>
+
+      </div><!-- End demo -->
+
+
+
+      <div class="demo-description">
+      <p>Limit the resizable element to a maximum or minimum height or width using the <code>maxHeight</code>, <code>maxWidth</code>, <code>minHeight</code>, and <code>minWidth</code> options.</p>
+      </div><!-- End demo-description -->
+
+
+
+    </div>
+
+
+    </body>
+</html>

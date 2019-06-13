@@ -41,3 +41,21 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .mybenefit h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem}
 .mybenefit h3 a.btnUp{width:24px; height: 24px; background:no-repeat 0 0 url("../images/main/arrowincircle@2x.png"); background-size: 24px 24px;}
 .mybenefit {}
+
+.mapArea{width:100%; height: 300px; border:2px solid #000}
+.searchList{width:100%; padding-top:30px; border-top:2px solid red; }
+.searchList li{padding: 10px 0}
+.ui-widget-header {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+         .ui-widget-content {
+            background: #cedc98;
+            border: 1px solid #DDDDDD;
+            color: #333333;
+         }
+         #resizable,#resizable-3 {
+            width: 150px; height: 150px; padding: 0.5em;
+            text-align: center; margin: 0; }
