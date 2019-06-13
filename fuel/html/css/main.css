@@ -10,7 +10,7 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 
 
 .register_card_procedure{position: relative; padding-top: 60px; font-size: 1.6rem}
-.register_card_procedure ol{position:absolute;left:50%; width:210px; margin-left: -105px}
+.register_card_procedure ol{position:absolute;left:50%; width:210px; margin-left: -105px; padding-bottom: 80px}
 .register_card_procedure li{font-size: 1.6rem; margin:10px 0; padding:3px 0 3px 35px; text-align: left;  background-repeat: no-repeat, no-repeat;}
 
 .register_card_procedure li:nth-child(1){ background-position: 0 0; background-image:url("../images/main/number_1.png"); }
@@ -23,7 +23,7 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .register_card_procedure li:nth-child(2) span{display: inline-block; font-size: 1.2rem; color:#56c6e4;}
 
 
-.btnList{position:fixed;left:0;bottom:0; width:100%; border-top: 1px solid #ededed}
+.btnList{position:fixed;left:0;bottom:0; width:100%; border-top: 1px solid #ededed; background-color: #FFF}
 .btnList li {float:left; width:50%; border-left: 1px solid #ededed}
 .btnList li:nth-child(2n){}
 .btnList li a {display:inline-block;padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem; font-family: 'AppleSDGothicNeo-Regular', 'SKPGoBM_subset';}
