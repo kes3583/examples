@@ -11,10 +11,10 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 
 .register_card_procedure{position: relative; padding-top: 60px; font-size: 1.6rem}
 .register_card_procedure ol{position:absolute;left:50%; width:210px; margin-left: -105px; padding-bottom: 80px}
-.register_card_procedure li{font-size: 1.6rem; margin:10px 0; padding:3px 0 3px 35px; text-align: left;  background-repeat: no-repeat, no-repeat;}
+.register_card_procedure li{font-size: 1.6rem; margin:10px 0; padding:3px 0 3px 35px; text-align: left;  background-repeat: no-repeat, no-repeat; background-size:24px 24px, 12px 12px;}
 
 .register_card_procedure li:nth-child(1){ background-position: 0 0; background-image:url("../images/main/number_1.png"); }
-.register_card_procedure li:nth-child(2){ line-height: 150%; background-position:0 0, left 5px bottom 5px; background-image:url("../images/main/number_2.png"), url("../images/main/next.png"); }
+.register_card_procedure li:nth-child(2){ line-height: 150%; background-position:0 0, left 5px bottom 5px; background-image:url("../images/main/number_2@2x.png"), url("../images/main/next.png"); }
 .register_card_procedure li:nth-child(3){ padding-bottom: 25px; background-position:0 0, left 5px bottom 0; background-image:url("../images/main/number_3.png"), url("../images/main/next.png"); }
 .register_card_procedure li:nth-child(4){ background-position: 0 0; background-image:url("../images/main/number_4.png"); }
 
