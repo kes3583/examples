@@ -1,6 +1,6 @@
 .fs14{font-size: 1.4rem}
 .fc_bl{color: #2f7bf5}
-
+section.wrap{min-height: 100%; magin:0 auto -50px;}
 section.wrap .title{padding-top: 37px}
 section.wrap p.t1 , p.t1 span {font-size: 2.6rem}
 section.wrap p.t2{padding-top: 15px; line-height: 2rem}
@@ -26,4 +26,5 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .btnList{position:fixed;left:0;bottom:0; width:100%; border-top: 1px solid #ededed}
 .btnList li {float:left; width:50%; border-left: 1px solid #ededed}
 .btnList li:nth-child(2n){}
-.btnList li a {padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem; font-family: 'AppleSDGothicNeo-Regular', 'SKPGoBM_subset';}
+.btnList li a {display:inline-block;padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem; font-family: 'AppleSDGothicNeo-Regular', 'SKPGoBM_subset';}
+.push {height: 50px;}
