@@ -26,7 +26,7 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 
 .registerProcedure li:nth-child(1) .regisiter{position: relative; left:50%; width: 320px; margin:15px 0 0 -175px; padding-top: 210px; display: inline-block;background:no-repeat 0 0 url("../images/main/card@2x.png"); background-size: 320px 216px;}
 .registerProcedure li:nth-child(1) .regisiter span{position: absolute; bottom: 40px; width:100%; text-align: center;display: inline-block;color:#accafb}
-.registerProcedure li:nth-child(2) span{display: inline-block; font-size: 1.2rem; color:#56c6e4;}
+.registerProcedure li:nth-child(2) span.num{display: inline-block; font-size: 1.2rem; color:#56c6e4;}
 
 
 .btnList{position:fixed;left:0;bottom:0; width:100%; border-top: 1px solid #ededed; background-color: #FFF}
