@@ -16,7 +16,7 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 
 
 .registerProcedure{position: relative; padding-top: 60px; font-size: 1.6rem}
-.registerProcedure ol{position:absolute;left:50%; width:210px; margin-left: -105px; padding-bottom: 80px}
+.registerProcedure ol{position:absolute;left:50%; width:210px; margin-left: -105px; padding-bottom: 280px}
 .registerProcedure li{font-size: 1.6rem; margin:10px 0; padding:3px 0 3px 35px; text-align: left;  background-repeat: no-repeat, no-repeat; background-size:24px 24px, 12px 12px;}
 
 .registerProcedure li:nth-child(1){ background-position: 0 0; background-image:url("../images/main/number_1@2x.png"); }
