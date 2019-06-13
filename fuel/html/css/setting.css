@@ -125,14 +125,15 @@ body>header a.backBtn.touch {
 }
 
 body>header a.rightBtn {
-  width: 25px;
-  height: 25px;
+  width: 34px;
+  height: 34px;
   right: 15px;
   top: 12px
 }
 
-body>header a.settingBtn {
-  background: url("../images/common/settingBtn.png") 0 0 no-repeat;
+
+body>header a.faq {
+  background: url("../images/common/faq@2x.png") 0 0 no-repeat;
   background-size: 100% auto
 }
 
