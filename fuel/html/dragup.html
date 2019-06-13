@@ -19,10 +19,11 @@
       <meta property="fb:app_id" content="">
       <meta property="og:url" content="">
       <meta property="og:description" content="주유할인">
-
+      <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="css/setting.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
-      <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+
+
   </head>
   <body>
     <header>
@@ -55,26 +56,19 @@
       </section> -->
     </section>
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <script>
+    $(function() {
+      $( "#resizable" ).resizable({
+        maxHeight: 350,
 
-  </body>
-  <!-- <script src="js/plugins/jquery-1.11.1.min.js"></script> -->
+        minHeight: 150,
 
-  <!-- 1. jQuery UI -->
-  <!-- <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script> -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
-  <script>
-  $(function() {
-        $( "#resizable" ).resizable({
-          maxHeight: 250,
-          maxWidth: 350,
-          minHeight: 150,
-          minWidth: 200,
-          handles: 'n'
-        });
+        handles: 'n'
       });
-  </script>
-  <script src="js/common.js"></script>
+    });
+    </script>
+  </body>
 </html>

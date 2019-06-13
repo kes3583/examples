@@ -21,57 +21,42 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
 
     <style>
-    .ui-widget-header {
-                background:#b9cd6d;
-                border: 1px solid #b9cd6d;
-                color: #FFFFFF;
-                font-weight: bold;
-             }
-             .ui-widget-content {
-                background: #cedc98;
-                border: 1px solid #DDDDDD;
-                color: #333333;
-             }
-             #resizable,#resizable-3 {
-                width: 150px; height: 150px; padding: 0.5em;
-                text-align: center; margin: 0; }
-
+      .container{padding:300px 0 0 0 }
+      .ui-resizable-n{height:20px;background-color: blue}
+      .ui-widget-header {
+      background:#b9cd6d;
+      border: 1px solid #b9cd6d;
+      color: #FFFFFF;
+      font-weight: bold;
+      }
+      .ui-widget-content {
+      background: #cedc98;
+      border: 1px solid #DDDDDD;
+      color: #333333;
+      }
+      .ui-resizable-n{height:20px;background-color: blue}
+      #resizable {
+      width: 150px; height: 150px; padding: 0.5em;
+      text-align: center; margin: 0; bottom: 35px;
+  left: 35px;
+  position: absolute;
+}
+      #resizable { width: 200px; height: 150px; padding: 5px; }
+      #resizable h3 { text-align: center; margin: 0; }
 
     </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+
   </head>
   <body>
 
     <div class="container">
 
 
-        <style>
-        #resizable { width: 200px; height: 150px; padding: 5px; }
-        #resizable h3 { text-align: center; margin: 0; }
-        </style>
-        <script>
-        $(function() {
-          $( "#resizable" ).resizable({
-            maxHeight: 250,
-            maxWidth: 350,
-            minHeight: 150,
-            minWidth: 200,
-            handles: 'e, w'
-          });
-        });
-        </script>
-
-
-
-      <div class="demo">
-
       <div id="resizable" class="ui-widget-content">
         <h3 class="ui-widget-header">Resize larger / smaller</h3>
       </div>
 
-      </div><!-- End demo -->
+
 
 
 
@@ -82,7 +67,20 @@
 
 
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <script>
+    $(function() {
+      $( "#resizable" ).resizable({
+        maxHeight: 350,
 
+        minHeight: 150,
+
+        handles: 'n'
+      });
+    });
+    </script>
 
     </body>
 </html>
