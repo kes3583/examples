@@ -2,7 +2,7 @@
 .fs14{font-size: 1.4rem}
 .fc_bl{color: #2f7bf5}
 
-header .txt{opacity: 0;}
+header .txt{opacity: 1; display:none}
 
 
 

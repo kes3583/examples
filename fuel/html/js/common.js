@@ -4,10 +4,10 @@ $(document).ready(function() {
     if ($(document).scrollTop() > h1Pos.top) {
       //console.log(h1Pos.top)
       //$("header > .txt").fadeToggle("fast");
-      $("header > .txt").show();
+      $("header > a.txt").show();
       //$("header > .txt").animate({opacity: '1'},'fast');
     } else {
-      $("header > .txt").hide();
+      $("header > a.txt").hide();
       //$("header > .txt").animate({opacity: '0'});
     }
   });
