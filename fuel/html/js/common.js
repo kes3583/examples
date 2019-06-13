@@ -4,9 +4,11 @@ $(document).ready(function() {
     if ($(document).scrollTop() > h1Pos.top) {
       //console.log(h1Pos.top)
       //$("header > .txt").fadeToggle("fast");
-      $("header > .txt").animate({opacity: '1'},'fast');
+      $("header > .txt").show();
+      //$("header > .txt").animate({opacity: '1'},'fast');
     } else {
-      $("header > .txt").animate({opacity: '0'});
+      $("header > .txt").hide();
+      //$("header > .txt").animate({opacity: '0'});
     }
   });
 });
