@@ -1,15 +1,12 @@
 $(document).ready(function() {
-  const h1Pos = $('.title > h1').offset();
+  const h1Pos = $('h1.t1').offset();
   $(window).scroll(function() {
     if ($(document).scrollTop() > h1Pos.top) {
       //console.log(h1Pos.top)
-      $("header > .txt").animate({
-        opacity: '1'
-      });
+      //$("header > .txt").fadeToggle("fast");
+      $("header > .txt").animate({opacity: '1'},'fast');
     } else {
-      $("header > .txt").animate({
-        opacity: '0'
-      });
+      $("header > .txt").animate({opacity: '0'});
     }
   });
 });
