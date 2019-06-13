@@ -67,6 +67,8 @@ strong, b, .bold {
   font-weight: normal
 }
 
+.taL{text-align: left;}
+
 body>header {
   height: 50px;
   background: #f7f7f7;
@@ -143,7 +145,8 @@ body>header a.rightBtn.settingBtn.touch {
 
 section.wrap {
   text-align: center;
-  padding-top: 50px
+  padding: 50px 18px 0 18px;
+
 }
 
 svg line {
