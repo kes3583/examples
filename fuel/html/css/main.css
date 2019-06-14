@@ -1,11 +1,12 @@
 /* eunsim kang 12062017 from Alma */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.fs14{font-size: 1.4rem}
-.fs16{font-size: 1.6rem; font-weight: 400;}
-.fc_bl{color: #2f7bf5}
-.hide-text{text-indent: 100%; white-space: nowrap; overflow: hidden;}
-
+.fs14{font-size: 1.4rem !important}
+.fs16{font-size: 1.6rem !important; font-weight: normal !important;}
+.fc-bl{color: #3673ee !important}
+.ht{text-indent: 100%; white-space: nowrap; overflow: hidden;}
+.fixed{position:fixed;left:0;bottom:0; width:100%; }
+.pd100{padding-bottom: 100px !important}
 header .txt{opacity: 0; }
 
 
@@ -15,40 +16,41 @@ section.wrap .title{padding-top: 37px}
 section.wrap h1.t1 , h1.t1 span {font-size: 2.6rem}
 section.wrap p.t2{padding-top: 15px; line-height: 2rem}
 section.wrap p.t2, p.t2 span{font-size: 1.4rem}
-section.wrap .underLine {position: relative;;}
-section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index: -1; content: ''; width: 160px; border-bottom: .2em solid #97e9ff; }
+section.wrap .underline {position: relative;;}
+section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index: -1; content: ''; width: 160px; border-bottom: .2em solid #97e9ff; }
 
 
-.registerProcedure{position: relative; padding-top: 60px; font-size: 1.6rem}
-.registerProcedure ol{position:absolute;left:50%; width:210px; margin-left: -105px; padding-bottom: 280px}
-.registerProcedure li{font-size: 1.6rem; margin:10px 0; padding:3px 0 3px 35px; text-align: left;  background-repeat: no-repeat, no-repeat; background-size:24px 24px, 12px 12px;}
+.list-register-procedure{position: relative; padding-top: 60px; font-size: 1.6rem}
+.list-register-procedure ol{position:absolute;left:50%; width:210px; margin-left: -105px;}
+.list-register-procedure li{font-size: 1.6rem; margin:10px 0; padding:3px 0 3px 35px; text-align: left;  background-repeat: no-repeat, no-repeat; background-size:24px 24px, 12px 12px;}
 
-.registerProcedure li:nth-child(1){ background-position: 0 0; background-image:url("../images/main/number_1@2x.png"); }
-.registerProcedure li:nth-child(2){ line-height: 150%; background-position:0 0, left 5px bottom 5px; background-image:url("../images/main/number_2@2x.png"), url("../images/main/next@2x.png"); }
-.registerProcedure li:nth-child(3){ padding-bottom: 25px; background-position:0 0, left 5px bottom 0; background-image:url("../images/main/number_3@2x.png"), url("../images/main/next@2x.png"); }
-.registerProcedure li:nth-child(4){ background-position: 0 0; background-image:url("../images/main/number_4@2x.png"); }
+.list-register-procedure li:nth-child(1){ background-position: 0 0; background-image:url("../images/main/number_1@2x.png"); }
+.list-register-procedure li:nth-child(2){ line-height: 150%; background-position:0 0, left 5px bottom 5px; background-image:url("../images/main/number_2@2x.png"), url("../images/main/next@2x.png"); }
+.list-register-procedure li:nth-child(3){ padding-bottom: 25px; background-position:0 0, left 5px bottom 0; background-image:url("../images/main/number_3@2x.png"), url("../images/main/next@2x.png"); }
+.list-register-procedure li:nth-child(4){ background-position: 0 0; background-image:url("../images/main/number_4@2x.png"); }
 
-.registerProcedure li:nth-child(1) .regisiter{position: relative; left:50%; width: 320px; margin:15px 0 0 -175px; padding-top: 210px; display: inline-block;background:no-repeat 0 0 url("../images/main/card@2x.png"); background-size: 320px 216px;}
-.registerProcedure li:nth-child(1) .regisiter span{position: absolute; bottom: 40px; width:100%; text-align: center;display: inline-block;color:#accafb}
-.registerProcedure li:nth-child(2) span.num{display: inline-block; font-size: 1.2rem; color:#56c6e4 !important;}
+.list-register-procedure li:nth-child(1) .bg-card{position: relative; left:50%; width: 320px; margin:15px 0 0 -175px; padding-top: 210px; display: inline-block;background:no-repeat 0 0 url("../images/main/card@2x.png"); background-size: 320px 216px;}
+.list-register-procedure li:nth-child(1) .bg-card span{position: absolute; bottom: 40px; width:100%; text-align: center;display: inline-block;color:#accafb}
+.list-register-procedure li:nth-child(2) span.num{display: inline-block; font-size: 1.2rem; color:#56c6e4 !important;}
 
 
-.btnList{position:fixed;left:0;bottom:0; width:100%; border-top: 1px solid #ededed; background-color: #FFF}
-.btnList li {float:left; width:50%; border-left: 1px solid #ededed}
-.btnList li:nth-child(2n){}
-.btnList li a {display:inline-block;padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem;}
+
+.list-btn{border-top: 1px solid #ededed; background-color: #FFF}
+.list-btn li {float:left; width:50%; border-left: 1px solid #ededed}
+.list-btn li:nth-child(2n){}
+.list-btn li a {display:inline-block;padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem;}
 
 /* 받은 혜택 */
 .col{padding-top: 32px;text-align: left;color: #262626}
-.col h2{font-size: 1.6rem; }
-.col h2 span{float:right;font-size: 1.2rem; margin-right:15px;text-align: right; color: #a1a3a6}
+.col h2{font-size: 1.6rem; padding-bottom:20px }
+.col h2 a{float:right;font-size: 1.2rem; margin-right:15px;text-align: right; color: #a1a3a6}
 
 /* shadow box  */
-.shadow-box{/* min-width: 320px; */background: #fff; border-radius: 10px;margin-top: 20px;border:1px solid #f1f2f4;padding: 18px 8px; box-shadow: 0px 23px 14px -23px rgba(230,230,230,0.61); position: relative; animation: cardTouchOut ease-out .2s forwards}
+.shadow-box{/* min-width: 320px; */background: #fff; border-radius: 10px;border:1px solid #f1f2f4;padding: 18px 8px; box-shadow:  0px 17px 27px -30px rgba(0,0,0,0.71); position: relative; animation: cardTouchOut ease-out .2s forwards}
 .shadow-box h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; margin:0 15px; position: relative;}
 
 /* .shadow-box{display:none} */
-.list-my-benefit, .no-benefit, .list-station{ padding:10px 15px 0;}
+.list-my-benefit, .no-benefit{ padding:10px 15px 0;}
 .no-benefit{ color:#a1a3a6; text-align:center; padding-top:20px}
 .shadow-box dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
 .shadow-box dl:last-child{padding-bottom:0}
@@ -63,9 +65,14 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .shadow-box dd li:first-child span{font-size: 1.6rem;color:#3673ee}
 .shadow-box dd li:last-child, .shadow-box dd li:last-child span{color:#a1a3a6; font-size: 1.2rem}
 
+.mystation {position: relative; padding-bottom: 30px}
+.mystation .shadow-box{margin-top:10px; padding:15px}
+.mystation .list-station{ padding:0;}
+.mystation .shadow-box dd{flex-basis: 85%; height: 44px}
+
 .list-my-card{clear:both;padding:30px 0 0;}
 .list-my-card li{position:relative;margin:0 0 25px; padding:10px 0 13px 60px; font-size: 1.8rem; display: flex!important;}
-.list-my-card li h4{ flex-basis: 48%;padding-left: 15px; font-size: 1.8rem;font-weight: normal;}
+.list-my-card li h4{ flex-basis: 48%;padding-left: 13px; font-size: 1.8rem;font-weight: normal;}
 .list-my-card li div{flex-basis: 45%;  padding-right:5px; font-size: 1.8rem;color:#3673ee; text-align: right;}
 .list-my-card li.samsung{background:no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
 .list-my-card li.shinhan{background:no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
@@ -74,12 +81,16 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .list-my-card a.arrow{background:no-repeat 0 0 url("../images/main/arrow_medium@2x.png"); background-size: 24px 24px;}
 .list-my-card a.refresh{background:no-repeat 0 0 url("../images/main/refresh@2x.png"); background-size: 24px 24px;}
 
+.area-map{height:208px;border:1px solid red}
+
 /* button */
 button{overflow: visible;}
 .btn { padding: 0 .5rem; font-size: 1.4rem; line-height: 2.5;; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center; justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
 .btn-block{ display: block; width: 100%;}
 .btn-radius{border-radius: .3rem; border:1px solid #accafb}
+.btn-bl{ background:#3673ee; color:#fff; line-height: 3}
 
 .shadow-box .toggle{width:20px; height: 20px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto; text-indent: -999px}
 .shadow-box .dropdown{background-position: left -20px}
 .shadow-box .dropup{background-position: left 0 !important}
+.list-station .nav{position:absolute;right: 10px; top:-18px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 60px 60px; text-indent: -9999px}
