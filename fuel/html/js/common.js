@@ -24,8 +24,8 @@ $(function() {
     }
   });
 
-  //resizable
-  $( "#resizable-2" ).resizable({
-               animate: true
-            });
+  $( "#toggle" ).click(function() {
+    console.log('3')
+    //$(this).toggleClass("dropup").parent().next().slideToggle("fast");  
+  });
 });

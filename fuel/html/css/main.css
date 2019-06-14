@@ -1,6 +1,10 @@
 /* eunsim kang 12062017 from Alma */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .fs14{font-size: 1.4rem}
+.fs16{font-size: 1.6rem; font-weight: 400;}
 .fc_bl{color: #2f7bf5}
+.hide-text{text-indent: 100%; white-space: nowrap; overflow: hidden;}
 
 header .txt{opacity: 0; }
 
@@ -43,14 +47,20 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .shadow-box{/* min-width: 320px; */background: #fff; border-radius: 10px;margin-top: 20px;border:1px solid #f1f2f4;padding: 18px 8px; box-shadow: 0px 23px 14px -23px rgba(230,230,230,0.61); position: relative; animation: cardTouchOut ease-out .2s forwards}
 .shadow-box h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; margin:0 15px; position: relative;}
 
-.shadow-box dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%;  padding:10px 15px;}
+/* .shadow-box{display:none} */
+.list-my-benefit, .no-benefit, .list-station{ padding:10px 15px 0;}
+.no-benefit{ color:#a1a3a6; text-align:center; padding-top:20px}
+.shadow-box dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
 .shadow-box dl:last-child{padding-bottom:0}
+.list-station dt{flex-basis: 32px !important}
+.shadow-box dt{flex-basis: 20%}
+.shadow-box dd{flex-basis: 80%; height: 44px}
 .shadow-box dt.img img{margin-right: 10px;width:48px; height:48px}
+.shadow-box dt.num{margin-right: 10px; width:32px; height:44px; background:no-repeat 0 0 url("../images/common/default@2x.png"); background-size: 32px 44px; font-size: 1.6rem; color:#fff; font-family: 'Roboto', sans-serif; text-align: center;line-height:2.3}
 .shadow-box dd li{display: flex!important;align-items: center!important;justify-content: space-between!important;}
-.shadow-box dd{width:80%;}
 .shadow-box dd li{padding:2px 0; letter-spacing: 0}
 .shadow-box dd li h4 {font-size: 1.6rem;font-weight: normal;}
-.shadow-box dd li:first-child span{font-size: inherit;color:#3673ee}
+.shadow-box dd li:first-child span{font-size: 1.6rem;color:#3673ee}
 .shadow-box dd li:last-child, .shadow-box dd li:last-child span{color:#a1a3a6; font-size: 1.2rem}
 
 .list-my-card{clear:both;padding:30px 0 0;}
@@ -66,10 +76,10 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 
 /* button */
 button{overflow: visible;}
-.btn { padding: 0 .5rem; font-size: 1.4rem; line-height: 2.5;; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center;    justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
+.btn { padding: 0 .5rem; font-size: 1.4rem; line-height: 2.5;; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center; justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
 .btn-block{ display: block; width: 100%;}
 .btn-radius{border-radius: .3rem; border:1px solid #accafb}
 
-.shadow-box .dropdown-toggle{width:12px; height: 12px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto;text-indent: -999px}
-.shadow-box .dropup-toggle{width:12px; height: 12px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto;}
-.hide-text{text-indent: 100%; white-space: nowrap; overflow: hidden;}
+.shadow-box .toggle{width:20px; height: 20px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto; text-indent: -999px}
+.shadow-box .dropdown{background-position: left -20px}
+.shadow-box .dropup{background-position: left 0 !important}

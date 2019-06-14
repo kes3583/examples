@@ -33,28 +33,40 @@
       <div class="title">
         <h1 class="t1 taL"><span class="fc_bl">주유할인 서비스</span>를 <br>이용하세요.</h1>
       </div>
-      <div class="col my-benefit">
+      <div class="col mybenefit">
         <h2 class="bold">받은 혜택<span>관리</span></h2>
-        <div class="shadow-box list-my-benefit">
-          <h3 class="bold">최근 받은 혜택 <button type="button" class="btn toggle">toggle up</button></h3>
-          <dl>
-            <dt class="img"><img src="images/main/ic_sk@2x.png" alt="sk카드"> </dt>
-            <dd>
-              <ul>
-                <li><h4>SK을지로점</h4> <span>30000원</span></li>
-                <li>05.01 19:34 ・ 삼성카드 <span>30,000원 결제</span></li>
-              </ul>
-            </dd>
-          </dl>
-          <dl>
-            <dt class="img"><img src="images/main/ic_sk@2x.png" alt="sk카드"> </dt>
-            <dd>
-              <ul>
-                <li><h4>SK을지로점 점점점</h4> <span>30000원</span></li>
-                <li>05.01 19:34 ・ 삼성카드 <span>30,000원 결제</span></li>
-              </ul>
-            </dd>
-          </dl>
+        <div class="shadow-box">
+          <h3 class="bold">최근 받은 혜택 <button type="button" id="toggle" class="btn toggle hide-text dropdown">toggle up</button></h3>
+          <div class="list-my-benefit">
+            <dl>
+              <dt class="img"><img src="images/main/ic_sk@2x.png" alt="sk카드"> </dt>
+              <dd>
+                <ul>
+                  <li><h4>SK을지로점</h4> <span>30000원</span></li>
+                  <li>05.01 19:34 ・ 삼성카드 <span>30,000원 결제</span></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt class="img"><img src="images/main/ic_sk@2x.png" alt="sk카드"> </dt>
+              <dd>
+                <ul>
+                  <li><h4>SK을지로점 점점점</h4> <span>30000원</span></li>
+                  <li>05.01 19:34 ・ 삼성카드 <span>30,000원 결제</span></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt class="img"><img src="images/main/ic_sk@2x.png" alt="sk카드"> </dt>
+              <dd>
+                <ul>
+                  <li><h4>SK을지로점 점점점</h4> <span>30000원</span></li>
+                  <li>05.01 19:34 ・ 삼성카드 <span>30,000원 결제</span></li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+          <!-- <div class="no-benefit fs16">혜택 받은 내역이 없습니다.</div> -->
         </div>
         <ul class="list-my-card">
           <li class="samsung"><h4>삼성카드</h4><div>9,999,999 원 <a href="javascript:;" class="arrow hide-text"> 바로가기 </a></div></li>
@@ -67,11 +79,29 @@
       </div>
       <div class="col">
         <h2 class="bold">주변 제휴 주유소<span>전체보기</span></h2>
+        <div class="mapArea">
+          this is for map api
+        </div>
+        <div class="shadow-box">
+          <div class="list-station">
+            <dl>
+              <dt class="num">1</dt>
+              <dd>
+                <ul>
+                  <li><h4>SK을지로점</h4> <span>30000원</span></li>
+                  <li>05.01 19:34 ・ 삼성카드 <span>30,000원 결제</span></li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+
+        </div>
       </div>
 
     </section>
 
-
+    <script src="js/plugins/jquery-1.11.1.min.js"></script>
+    <script src="js/common.js"></script>
   </body>
-  <script src="js/plugins/jquery-1.11.1.min.js"></script>
+
 </html>
