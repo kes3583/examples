@@ -35,32 +35,27 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .btnList li a {display:inline-block;padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem;}
 
 
-.mybenefit{padding-top: 32px;text-align: left;}
-.mybenefit h2{font-size: 1.6rem; color: #262626}
-.mybenefit h2 span{float:right;font-size: 1.2rem; text-align: right; color: #a1a3a6}
-.mybenefit h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem}
-.mybenefit h3 a.btnUp{width:24px; height: 24px; background:no-repeat 0 0 url("../images/main/arrowincircle@2x.png"); background-size: 24px 24px;}
-.mybenefit {}
+.mybenefit{padding-top: 32px;text-align: left;color: #262626}
+.mybenefit h2{font-size: 1.6rem; }
+.mybenefit h2 span{float:right;font-size: 1.2rem; margin-right:15px;text-align: right; color: #a1a3a6}
+
+
+.shadowBox{min-width: 326px;background: #fff; border-radius: 10px;margin-top: 20px;border:1px solid #f1f2f4;padding: 18px 0 8px; box-shadow: 0px 23px 14px -23px rgba(230,230,230,0.61); position: relative; animation: cardTouchOut ease-out .2s forwards}
+.shadowBox h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; margin:0 15px; position: relative;}
+.shadowBox h3 a.btnUp{width:12px; height: 12px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto;text-indent: -999px}
+.shadowBox dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%;  padding:15px; min-width: 296px}
+.shadowBox dt.img img{margin-right: 10px;width:48px; height:48px}
+.shadowBox dd li{display: flex!important;align-items: center!important;justify-content: space-between!important;}
+.shadowBox dd{width:80%;}
+.shadowBox dd li:first-child {font-size: 1.6rem;}
+.shadowBox dd li:first-child span{font-size: inherit;color:#3673ee}
+.shadowBox dd li:last-child{ font-size: 1.6rem; color:#a1a3a6; font-size: 1.2rem}
+.shadowBox dd span{color:#a1a3a6; font-size: 1.2rem}
+.shadowBox dd.img{}
+
+
 
 .mapArea{width:100%; height: 300px; margin-bottom:50px; border:2px solid #000}
 .searchList{width:100%; padding-top:30px; border-top:2px solid red; }
 .searchList li{padding: 10px 0}
 .container{padding:300px 0 0 0 }
-.ui-resizable-n{height:20px;background-color: blue}
-.ui-widget-header {
-background:#b9cd6d;
-border: 1px solid #b9cd6d;
-color: #FFFFFF;
-font-weight: bold;
-}
-.ui-widget-content {
-background: #cedc98;
-border: 1px solid #DDDDDD;
-color: #333333;
-}
-.ui-resizable-n{height:20px;background-color: blue}
-#resizable,#resizable-3 {
-width: 150px; height: 150px; padding: 0.5em;
-text-align: center; margin: 0; }
-#resizable { width: 200px; height: 150px; padding: 5px; }
-#resizable h3 { text-align: center; margin: 0; }
