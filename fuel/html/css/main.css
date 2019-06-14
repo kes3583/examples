@@ -34,28 +34,42 @@ section.wrap .underLine::after {  position:absolute; left: 0; bottom:0; z-index:
 .btnList li:nth-child(2n){}
 .btnList li a {display:inline-block;padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem;}
 
+/* 받은 혜택 */
+.col{padding-top: 32px;text-align: left;color: #262626}
+.col h2{font-size: 1.6rem; }
+.col h2 span{float:right;font-size: 1.2rem; margin-right:15px;text-align: right; color: #a1a3a6}
 
-.mybenefit{padding-top: 32px;text-align: left;color: #262626}
-.mybenefit h2{font-size: 1.6rem; }
-.mybenefit h2 span{float:right;font-size: 1.2rem; margin-right:15px;text-align: right; color: #a1a3a6}
+/* shadow box  */
+.shadow-box{/* min-width: 320px; */background: #fff; border-radius: 10px;margin-top: 20px;border:1px solid #f1f2f4;padding: 18px 8px; box-shadow: 0px 23px 14px -23px rgba(230,230,230,0.61); position: relative; animation: cardTouchOut ease-out .2s forwards}
+.shadow-box h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; margin:0 15px; position: relative;}
 
+.shadow-box dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%;  padding:10px 15px;}
+.shadow-box dl:last-child{padding-bottom:0}
+.shadow-box dt.img img{margin-right: 10px;width:48px; height:48px}
+.shadow-box dd li{display: flex!important;align-items: center!important;justify-content: space-between!important;}
+.shadow-box dd{width:80%;}
+.shadow-box dd li{padding:2px 0; letter-spacing: 0}
+.shadow-box dd li h4 {font-size: 1.6rem;font-weight: normal;}
+.shadow-box dd li:first-child span{font-size: inherit;color:#3673ee}
+.shadow-box dd li:last-child, .shadow-box dd li:last-child span{color:#a1a3a6; font-size: 1.2rem}
 
-.shadowBox{min-width: 326px;background: #fff; border-radius: 10px;margin-top: 20px;border:1px solid #f1f2f4;padding: 18px 0 8px; box-shadow: 0px 23px 14px -23px rgba(230,230,230,0.61); position: relative; animation: cardTouchOut ease-out .2s forwards}
-.shadowBox h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; margin:0 15px; position: relative;}
-.shadowBox h3 a.btnUp{width:12px; height: 12px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto;text-indent: -999px}
-.shadowBox dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%;  padding:15px; min-width: 296px}
-.shadowBox dt.img img{margin-right: 10px;width:48px; height:48px}
-.shadowBox dd li{display: flex!important;align-items: center!important;justify-content: space-between!important;}
-.shadowBox dd{width:80%;}
-.shadowBox dd li:first-child {font-size: 1.6rem;}
-.shadowBox dd li:first-child span{font-size: inherit;color:#3673ee}
-.shadowBox dd li:last-child{ font-size: 1.6rem; color:#a1a3a6; font-size: 1.2rem}
-.shadowBox dd span{color:#a1a3a6; font-size: 1.2rem}
-.shadowBox dd.img{}
+.list-my-card{clear:both;padding:30px 0 0;}
+.list-my-card li{position:relative;margin:0 0 25px; padding:10px 0 13px 60px; font-size: 1.8rem; display: flex!important;}
+.list-my-card li h4{ flex-basis: 48%;padding-left: 15px; font-size: 1.8rem;font-weight: normal;}
+.list-my-card li div{flex-basis: 45%;  padding-right:5px; font-size: 1.8rem;color:#3673ee; text-align: right;}
+.list-my-card li.samsung{background:no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
+.list-my-card li.shinhan{background:no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
+.list-my-card li.hyundai{background:no-repeat 0 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
+.list-my-card a{position:absolute; right:0px; top:7px; width:24px; height:24px; display: inline-block; }
+.list-my-card a.arrow{background:no-repeat 0 0 url("../images/main/arrow_medium@2x.png"); background-size: 24px 24px;}
+.list-my-card a.refresh{background:no-repeat 0 0 url("../images/main/refresh@2x.png"); background-size: 24px 24px;}
 
+/* button */
+button{overflow: visible;}
+.btn { padding: 0 .5rem; font-size: 1.4rem; line-height: 2.5;; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center;    justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
+.btn-block{ display: block; width: 100%;}
+.btn-radius{border-radius: .3rem; border:1px solid #accafb}
 
-
-.mapArea{width:100%; height: 300px; margin-bottom:50px; border:2px solid #000}
-.searchList{width:100%; padding-top:30px; border-top:2px solid red; }
-.searchList li{padding: 10px 0}
-.container{padding:300px 0 0 0 }
+.shadow-box .dropdown-toggle{width:12px; height: 12px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto;text-indent: -999px}
+.shadow-box .dropup-toggle{width:12px; height: 12px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto;}
+.hide-text{text-indent: 100%; white-space: nowrap; overflow: hidden;}
