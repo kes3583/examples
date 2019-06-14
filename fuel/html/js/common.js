@@ -1,4 +1,43 @@
 $(function() {
+  var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  if(iOS) {$("body").addClass("ios");}
+  touchEvt($(".backBtn"), true);
+  touchEvt($(".rightBtn"), true);
+  $(".backBtn").click(function(){
+    if(location.href.indexOf("historyMonth") >= 0){
+      location.href = "myscore_month.html?index=" + location.href.split("?")[1].split("=")[1]
+    }else{
+      location.href = "index.html"
+    }
+  });
+
+  $("header .txt").click(function(){
+    location.reload();
+  });
+  function touchEvt(obj, delay, evtCancel){ // 터치이벤트
+  	obj.on("touchstart", function(event){
+  		if(!evtCancel){
+  			event.stopPropagation()
+  		}
+  		$(this).addClass("touch")
+  	});
+
+  	var touchEnd = function(){obj.removeClass("touch");}
+  	obj.on("touchend", function(event){
+  		if(!evtCancel){
+  			event.stopPropagation()
+  		}
+
+  		if(delay){
+  			setTimeout(touchEnd, 150);
+  		}else{
+  			touchEnd();
+  		}
+  	});
+  }
+
+
+  // added by Eunsim Kang 14062019
   //nav title transition
   const h1Pos = $('h1.t1').offset();
   const nav = $("header > .txt");
@@ -25,7 +64,31 @@ $(function() {
   });
 
   $( "#toggle" ).click(function() {
-    console.log('3')
-    //$(this).toggleClass("dropup").parent().next().slideToggle("fast");  
+    let _this = $(this);
+    _this.toggleClass("dropup").parent().next().slideToggle("fast");
   });
+
+  $('#accordion dt').click(function() {
+		let _this = $(this);
+  	var a = _this.closest('dl');
+  	var b = $(a).hasClass('open');
+  	var c = $(a).closest('#accordion').find('.open');
+
+  	if(!b) {
+  		$(c).find('dd').slideUp(300);
+  		$(c).removeClass('open');
+  	}
+
+  	$(a).toggleClass('open');
+  	$(a).find('dd').slideToggle(300);
+
+  });
+  addHeight();
 });
+function addHeight(){
+  if($(".list-faq").parent().outerHeight() > $(window).height()){
+    $(".list-faq").addClass("pdb100")
+  }else{
+    $(".list-faq").removeClass("pdb100")
+  }
+}

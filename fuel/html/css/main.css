@@ -1,19 +1,6 @@
 /* eunsim kang 12062017 from Alma */
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-.fs14{font-size: 1.4rem !important}
-.fs16{font-size: 1.6rem !important; font-weight: normal !important;}
-.fc-bl{color: #3673ee !important}
-.ht{text-indent: 100%; white-space: nowrap; overflow: hidden;}
-.fixed{position:fixed;left:0;bottom:0; width:100%; }
-.pd100{padding-bottom: 100px !important}
-header .txt{opacity: 0; }
 
 
-
-section.wrap{min-height: 100%; magin:0 auto -50px;}
-section.wrap .title{padding-top: 37px}
-section.wrap h1.t1 , h1.t1 span {font-size: 2.6rem}
 section.wrap p.t2{padding-top: 15px; line-height: 2rem}
 section.wrap p.t2, p.t2 span{font-size: 1.4rem}
 section.wrap .underline {position: relative;;}
@@ -34,23 +21,17 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .list-register-procedure li:nth-child(2) span.num{display: inline-block; font-size: 1.2rem; color:#56c6e4 !important;}
 
 
-
-.list-btn{border-top: 1px solid #ededed; background-color: #FFF}
-.list-btn li {float:left; width:50%; border-left: 1px solid #ededed}
-.list-btn li:nth-child(2n){}
-.list-btn li a {display:inline-block;padding:18px 0;color:#2f7bf5; text-align: center;font-size: 1.6rem;}
-
 /* 받은 혜택 */
 .col{padding-top: 32px;text-align: left;color: #262626}
 .col h2{font-size: 1.6rem; padding-bottom:20px }
 .col h2 a{float:right;font-size: 1.2rem; margin-right:15px;text-align: right; color: #a1a3a6}
 
 /* shadow box  */
-.shadow-box{/* min-width: 320px; */background: #fff; border-radius: 10px;border:1px solid #f1f2f4;padding: 18px 8px; box-shadow:  0px 17px 27px -30px rgba(0,0,0,0.71); position: relative; animation: cardTouchOut ease-out .2s forwards}
-.shadow-box h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; margin:0 15px; position: relative;}
+.shadow-box{/* min-width: 320px; */background: #fff; border-radius: 10px;border:1px solid #f1f2f4;padding: 18px 14px; box-shadow:  0px 17px 27px -30px rgba(0,0,0,0.71); position: relative; animation: cardTouchOut ease-out .2s forwards}
+.shadow-box h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; position: relative;}
 
-/* .shadow-box{display:none} */
-.list-my-benefit, .no-benefit{ padding:10px 15px 0;}
+.list-my-benefit {display:none}
+.list-my-benefit, .no-benefit{ padding:10px 0 0;}
 .no-benefit{ color:#a1a3a6; text-align:center; padding-top:20px}
 .shadow-box dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
 .shadow-box dl:last-child{padding-bottom:0}
@@ -83,12 +64,6 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 
 .area-map{height:208px;border:1px solid red}
 
-/* button */
-button{overflow: visible;}
-.btn { padding: 0 .5rem; font-size: 1.4rem; line-height: 2.5;; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center; justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
-.btn-block{ display: block; width: 100%;}
-.btn-radius{border-radius: .3rem; border:1px solid #accafb}
-.btn-bl{ background:#3673ee; color:#fff; line-height: 3}
 
 .shadow-box .toggle{width:20px; height: 20px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto; text-indent: -999px}
 .shadow-box .dropdown{background-position: left -20px}

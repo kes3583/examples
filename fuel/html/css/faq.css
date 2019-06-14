@@ -1,0 +1,42 @@
+.list-faq{overflow: hidden;margin:auto;text-align: left}
+.list-faq dt {
+  padding: 25px 0px 20px 25px;
+  font-size: 1.6rem;
+  color: #000;
+  line-height: 140%;
+  position: relative;
+}
+
+.list-faq dt:before {
+  content: 'Q';
+  font-size: 1.7rem;
+  color: #27a3f3;
+  position: absolute;
+  top: 25px;
+  left: 0px
+}
+
+.list-faq dt:after {
+  position: absolute;
+  width: 14px;
+  height: 8px;
+  background: url("../images/common/faq-arrow@2x.png") 0 -8px no-repeat;
+  background-size: 100% auto;
+  right: 10px;
+  top: 30px;
+  content: ''
+}
+
+.list-faq .open dt:after {
+  background: url("../images/common/faq-arrow@2x.png") 0 0 no-repeat !important;background-size: 100% auto !important;
+}
+
+.list-faq dd {
+  background: #f1f2f4;
+  line-height: 165%;
+  font-size: 1.5rem;
+  color: #333;
+  padding: 23px;
+  display: none;
+  border-top: 1px solid #eaeaea
+}

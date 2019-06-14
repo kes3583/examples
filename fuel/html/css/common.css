@@ -1,7 +1,37 @@
-.modal-open{
-  overflow: hidden;
-  position: fixed;
-  width: 100vw;
-  min-height: 100vh;
-  height: auto;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.fs14{font-size: 1.4rem !important}
+.fs16{font-size: 1.6rem !important; font-weight: normal !important;}
+.fc-bl{color: #3673ee !important}
+.fc-blc{color: #000 !important}
+.fc-262626{color: #262626 !important}
+.ht{text-indent: 100%; white-space: nowrap; overflow: hidden;}
+.df{display:flex;}
+.pdb100{padding-bottom: 100px !important}
+.tc{text-align: center}
+.tl{text-align: left}
+
+/* button */
+button{overflow: visible;}
+.btn { padding: 0 .5rem; font-size: 1.6rem; line-height: 3;; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center; justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
+.btn-block{ display: block; width: 100%;}
+.btn-radius{border-radius: .3rem; border:1px solid #accafb}
+.btn-bl{ background:#3673ee; color:#fff; }
+.btn-wh{ background-color:#fff; color:#3673ee; border-top: 1px solid #ededed;}
+.btn2 {width:50%; }
+.brl{border-left: 1px solid #ededed}
+.btn-faq{background:#fff no-repeat 29% 49% url("../images/common/cellphone.png"); background-size: 16px 16px;}
+
+
+.error{padding-top:100px !important}
+.error h1{ padding:20px 0;color: #000; font-size: 2.6rem; font-weight: bold;}
+.error p{  color: #262626; font-size: 1.6rem}
+.error img{ width:56px; height:56px}
+
+.fixed{position:fixed;left:0;bottom:0; width:100%; }
+
+header .txt{opacity: 0; }
+section.wrap{min-height: 100%; magin:0 auto -50px;}
+section.wrap .title{}
+section.wrap h1.t1{padding-top: 37px}
+section.wrap h1.t1 , h1.t1 span {font-size: 2.6rem}
