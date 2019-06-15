@@ -10,7 +10,11 @@
 .tc{text-align: center !important}
 .tl{text-align: left !important}
 .tr{text-align: right !important}
+.pdr0{padding-right:0 !important}
+.pdl0{padding-left:0 !important}
+.pdlr18{padding-left:18px !important; padding-right:18px !important}
 .pdb100{padding-bottom: 100px !important}
+.pdt30{padding-top: 30px !important}
 .pdt50{padding-top: 50px !important}
 .op1{opacity: 1 !important}
 
@@ -46,6 +50,9 @@ header .txt{opacity: 0; }
 section.wrap{min-height: 100%; magin:0 auto -50px;}
 section.wrap h1.t1{padding-top: 37px}
 section.wrap h1.t1 , h1.t1 span {font-size: 2.6rem}
+
+
+
 
 /* Modal Popup */
 header .list-card{background:#fff no-repeat url("../images/common/drop_down.png"); background-size: 24px 24px; background-position: right -5px top 15px; padding:0 20px}

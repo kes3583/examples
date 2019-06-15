@@ -49,7 +49,19 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .list-petrol-staion dt{flex-basis: 32px !important}
 .list-petrol-staion dt.num{flex-basis: auto; margin-right: 10px; width:32px; height:44px; background:no-repeat 0 0 url("../images/common/default@2x.png"); background-size: 32px 44px; font-size: 1.6rem; color:#fff; font-family: 'Roboto', sans-serif; text-align: center;line-height:2.3}
 .list-petrol-staion dd{flex-basis: 85%; height: 44px}
-.list-petrol-staion .ico-nav{position:absolute;right: 10px; top:-18px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 60px 60px; text-indent: -9999px}
+.list-petrol-staion .ico-nav{position:absolute;right: 0; top:-35px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 60px 60px; text-indent: -9999px}
+
+/* card list */
+.list-my-card{clear:both;padding:30px 0 0;}
+.list-my-card li{position:relative;margin:0 0 25px; padding:10px 0 13px 60px; font-size: 1.8rem; display: flex!important;}
+.list-my-card li h4{ flex-basis: 48%;padding-left: 13px; font-size: 1.8rem;font-weight: normal;}
+.list-my-card li div{flex-basis: 45%;  padding-right:5px; font-size: 1.8rem;color:#3673ee; text-align: right;}
+.list-my-card li.samsung{background:no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
+.list-my-card li.shinhan{background:no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
+.list-my-card li.hyundai{background:no-repeat 0 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
+.list-my-card a{position:absolute; right:0px; top:7px; width:24px; height:24px; display: inline-block; }
+.list-my-card a.arrow{background:no-repeat 0 0 url("../images/main/arrow_medium@2x.png"); background-size: 24px 24px;}
+.list-my-card a.refresh{background:no-repeat 0 0 url("../images/main/refresh@2x.png"); background-size: 24px 24px;}
 
 .shadow-box .toggle{width:20px; height: 20px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto; text-indent: -999px}
 .shadow-box .dropdown{background-position: left -20px}
@@ -75,15 +87,6 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .no-details img{width:56px; height:auto}
 
 
-.list-my-card{clear:both;padding:30px 0 0;}
-.list-my-card li{position:relative;margin:0 0 25px; padding:10px 0 13px 60px; font-size: 1.8rem; display: flex!important;}
-.list-my-card li h4{ flex-basis: 48%;padding-left: 13px; font-size: 1.8rem;font-weight: normal;}
-.list-my-card li div{flex-basis: 45%;  padding-right:5px; font-size: 1.8rem;color:#3673ee; text-align: right;}
-.list-my-card li.samsung{background:no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
-.list-my-card li.shinhan{background:no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
-.list-my-card li.hyundai{background:no-repeat 0 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
-.list-my-card a{position:absolute; right:0px; top:7px; width:24px; height:24px; display: inline-block; }
-.list-my-card a.arrow{background:no-repeat 0 0 url("../images/main/arrow_medium@2x.png"); background-size: 24px 24px;}
-.list-my-card a.refresh{background:no-repeat 0 0 url("../images/main/refresh@2x.png"); background-size: 24px 24px;}
+
 
 .area-map{height:208px;border:1px solid red}

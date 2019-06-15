@@ -7,6 +7,7 @@ $(function() {
     $('.modal').toggleClass('is-visible');
     $('body').toggleClass('modal-open');
 
+
     // if($(".modal-wrapper").outerHeight() > $(window).height()){
     //   $('body').removeClass('modal-open');
     // }else{
@@ -16,4 +17,5 @@ $(function() {
     //   e.preventDefault();
     // }
   });
+
 });

@@ -14,6 +14,7 @@ $(function() {
   $("header .txt").click(function(){
     location.reload();
   });
+
   function touchEvt(obj, delay, evtCancel){ // 터치이벤트
   	obj.on("touchstart", function(event){
   		if(!evtCancel){
@@ -100,6 +101,9 @@ $(function() {
 		}
   });
 
+
+
+  $('#sortable').sortable({ connectWith: '.droppable' })
 });
 function addHeight(){
   if($(".list-faq").parent().outerHeight() > $(window).height()){
