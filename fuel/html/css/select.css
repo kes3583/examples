@@ -9,7 +9,7 @@
 
 /*  */
 .sortable-my-card{padding:30px 0 0;}
-.sortable-my-card li{margin:0 0 10px; padding:12px 0 12px 16%; font-size: 1.8rem; display: flex!important;align-items: center;justify-content: space-between;  box-sizing: border-box;vertical-align: top;background:no-repeat 6% center url("../images/common/ico-move.png"); background-size: 18px 10px;}
+.sortable-my-card li{margin:0 0 10px; padding:12px 0 12px 16%; font-size: 1.8rem; display: flex!important;align-items: center;justify-content: space-between;  box-sizing: border-box;vertical-align: top;background:#fff no-repeat 6% center url("../images/common/ico-move.png"); background-size: 18px 10px;}
 .sortable-my-card li h4{ flex-basis: 48%; height:40px; padding:0 0 0 22%;font-size: 1.6rem;font-weight: normal;line-height: 2.5}
 .sortable-my-card li div{flex-basis: 18%; }
 .sortable-my-card li.samsung h4{background:#fff no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
