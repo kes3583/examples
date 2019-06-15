@@ -9,58 +9,15 @@
 
 /*  */
 .sortable-my-card{padding:30px 0 0;}
-.sortable-my-card li{position:relative;margin:0 0 25px; padding:10px 0 13px 37%; font-size: 1.8rem; display: flex!important;align-items: center;justify-content: space-between;}
-.sortable-my-card li:before{position:absolute;left:0;top:0;content:'';background:no-repeat 0 0 url("../images/common/ico-move.png"); background-size: 18px 10px;background: #333;}
-.sortable-my-card li h4{ flex-basis: 48%; font-size: 1.6rem;font-weight: normal;}
+.sortable-my-card li{margin:0 0 10px; padding:12px 0 12px 16%; font-size: 1.8rem; display: flex!important;align-items: center;justify-content: space-between;  box-sizing: border-box;vertical-align: top;background:no-repeat 6% center url("../images/common/ico-move.png"); background-size: 18px 10px;}
+.sortable-my-card li h4{ flex-basis: 48%; height:40px; padding:0 0 0 22%;font-size: 1.6rem;font-weight: normal;line-height: 2.5}
 .sortable-my-card li div{flex-basis: 18%; }
-.sortable-my-card li.samsung{background:no-repeat 16% 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
-.sortable-my-card li.shinhan{background:no-repeat 16% 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
-.sortable-my-card li.hyundai{background:no-repeat 16% 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
+.sortable-my-card li.samsung h4{background:#fff no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
+.sortable-my-card li.shinhan h4{background:#fff no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
+.sortable-my-card li.hyundai h4{background:#fff no-repeat 0 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
 .sortable-my-card .btn-trash{width:18px; height:18px; display: inline-block; background:no-repeat 0 0 url("../images/common/ico-trashcan.png"); background-size: 18px 18px; }
 
-.draggable, .droppable {
-  border: 1px dashed #000;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  display: inline-block;
-  box-sizing: border-box;
-  vertical-align: top;
-}
 
-.droppable {
-  border-color: #31b03d;
-  padding: 5px 2px;
-}
-
-.draggable.clone {
-  background-color: #abe2a5;
-}
-
-.droppable.big {
-  height: 60px;
-  width: 100px;
-}
-
-.droppable.big .droppable {
-  float: right;
-}
-
-.droppable.active {
-  background-color: #abe2a5;
-}
-
-.droppable.drop-here {
-  background-color: #3498db;
-}
-
-.droppable .draggable {
-  width: 16px;
-  height: 16px;
-  margin: 0 3px;
-  font-size: 10px;
-  padding: 2px;
-}
 ul.list, ul.grid {
   list-style-type: none;
   padding: 0;
@@ -95,7 +52,7 @@ ul.grid li {
   width: 50px;
 }
 
-ul.list li.placeholder, ul.grid li.placeholder {
-  border-style: dashed;
+ul#sortable li.placeholder{
+  border-bottom: 1px dashed #f0f0f0;
   background-color: transparent;
 }

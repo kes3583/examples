@@ -144,6 +144,7 @@
     // setting the css property `pointer-events` to `none` will let
     // the pointer events fire on the elements underneath the helper
     el[0].style.pointerEvents = 'none'
+    el[0].style.boxShadow = '0px 10px 16px -10px rgba(214,214,214,1)' /* add */
     this.windows.forEach(function(win) {
       $(win).on(MOVE_EVENT, $.proxy(this.move, this))
       $(win).on(END_EVENT, $.proxy(this.stop, this))
@@ -188,6 +189,7 @@
       vendorify('transform', el[0], origin.transform || '')
       setTimeout(transition.bind(null, el[0], origin.transition || ''), 250)
       el[0].style.pointerEvents = ''
+      el[0].style.boxShadow = '' /* add */
     }).bind(null, el, this.origin))
 
     this.windows.forEach(function(win) {
@@ -872,6 +874,7 @@
       // zepto <> jquery compatibility
       var height = dragging.el.outerHeight ? dragging.el.outerHeight() : dragging.el.height()
       dragging.css('margin-bottom', -height)
+      // dragging.css('box-shadow', 0px 10px 16px -10px rgba(214,214,214,1);)
     }
 
     if (this.opts.forcePlaceholderSize) {
