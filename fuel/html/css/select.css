@@ -15,10 +15,6 @@
 .sortable-my-card li.samsung h4{background:#fff no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
 .sortable-my-card li.shinhan h4{background:#fff no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
 .sortable-my-card li.hyundai h4{background:#fff no-repeat 0 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
-.sortable-my-card .btn-trash{width:18px; height:18px; display: inline-block; background:no-repeat 0 0 url("../images/common/ico-trashcan.png"); background-size: 18px 18px; }
+.sortable-my-card .btn-trash{width:36px; height:36px; display: inline-block; background:no-repeat 0 5px url("../images/common/ico-trashcan.png"); background-size: 18px 18px; text-indent: -999px}
 
-ul#sortable li.placeholder{
-  border-bottom: 1px dashed #f0f0f0;
-  background-color: transparent;
-  background: none;
-}
+ul#sortable li.placeholder{ border-bottom: 1px dashed #f0f0f0; background-color: transparent; background: none; }
