@@ -17,3 +17,85 @@
 .sortable-my-card li.shinhan{background:no-repeat 16% 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
 .sortable-my-card li.hyundai{background:no-repeat 16% 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
 .sortable-my-card .btn-trash{width:18px; height:18px; display: inline-block; background:no-repeat 0 0 url("../images/common/ico-trashcan.png"); background-size: 18px 18px; }
+
+.draggable, .droppable {
+  border: 1px dashed #000;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.droppable {
+  border-color: #31b03d;
+  padding: 5px 2px;
+}
+
+.draggable.clone {
+  background-color: #abe2a5;
+}
+
+.droppable.big {
+  height: 60px;
+  width: 100px;
+}
+
+.droppable.big .droppable {
+  float: right;
+}
+
+.droppable.active {
+  background-color: #abe2a5;
+}
+
+.droppable.drop-here {
+  background-color: #3498db;
+}
+
+.droppable .draggable {
+  width: 16px;
+  height: 16px;
+  margin: 0 3px;
+  font-size: 10px;
+  padding: 2px;
+}
+ul.list, ul.grid {
+  list-style-type: none;
+  padding: 0;
+  width: 162px;
+}
+
+ul.grid.wide {
+  width: 100%;
+  height: 50px;
+}
+
+ul.grid.active {
+  background-color: #abe2a5;
+}
+
+ul.list li, ul.grid li {
+  border: 1px solid #DCDBDD;
+  margin: 2px;
+  padding: 2px 5px;
+  background-color: #F6F5F7;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+ul.list li {
+  height: 28px;
+}
+
+ul.grid li {
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+
+ul.list li.placeholder, ul.grid li.placeholder {
+  border-style: dashed;
+  background-color: transparent;
+}
