@@ -39,19 +39,20 @@ $(function() {
 
   // added by Eunsim Kang 14062019
   //nav title transition
-  const h1Pos = $('h1.t1').offset();
-  const nav = $("header > .txt");
+  var h1Pos = $('h1.t1').offset();
+  var nav = $("header > .txt");
   $(window).scroll(function() {
-    if ($(document).scrollTop() > h1Pos.top) {
-      nav.css({
-        opacity          : 1,
-        WebkitTransition : 'opacity 0.3s ease-in-out',
-        MozTransition    : 'opacity 0.3s ease-in-out',
-        MsTransition     : 'opacity 0.3s ease-in-out',
-        OTransition      : 'opacity 0.3s ease-in-out',
-        transition       : 'opacity 0.3s ease-in-out'
-      });
-    } else {
+    if($("h1").length){
+      if ( $(document).scrollTop() > h1Pos.top) {
+        nav.css({
+          opacity          : 1,
+          WebkitTransition : 'opacity 0.3s ease-in-out',
+          MozTransition    : 'opacity 0.3s ease-in-out',
+          MsTransition     : 'opacity 0.3s ease-in-out',
+          OTransition      : 'opacity 0.3s ease-in-out',
+          transition       : 'opacity 0.3s ease-in-out'
+        });
+      } else {
       nav.css({
         opacity          : 0,
         WebkitTransition : 'opacity 0.3s ease-in-out',
@@ -61,8 +62,9 @@ $(function() {
         transition       : 'opacity 0.3s ease-in-out'
       });
     }
+    }
   });
-
+  $( ".list-recent-benefit" ).hide();
   $( "#toggle" ).click(function() {
     let _this = $(this);
     _this.toggleClass("dropup").parent().next().slideToggle("fast");
@@ -70,9 +72,9 @@ $(function() {
 
   $('#accordion dt').click(function() {
 		let _this = $(this);
-  	var a = _this.closest('dl');
-  	var b = $(a).hasClass('open');
-  	var c = $(a).closest('#accordion').find('.open');
+  	let a = _this.closest('dl');
+  	let b = $(a).hasClass('open');
+  	let c = $(a).closest('#accordion').find('.open');
 
   	if(!b) {
   		$(c).find('dd').slideUp(300);
@@ -81,9 +83,14 @@ $(function() {
 
   	$(a).toggleClass('open');
   	$(a).find('dd').slideToggle(300);
-
+    //addHeight();
   });
-  addHeight();
+
+  $('.modal-toggle').on('click', function(e) {
+    e.preventDefault();
+    $('.modal').toggleClass('is-visible');
+  });
+
 });
 function addHeight(){
   if($(".list-faq").parent().outerHeight() > $(window).height()){
