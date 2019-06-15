@@ -1,142 +1,73 @@
+
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-  <title>Bootstrap Full-Screen Modal</title>
-
-
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<!-- <link rel='stylesheet' href='https://keaukraine.github.io/bootstrap-fs-modal/dist/css/fs-modal.min.css'> -->
-<link rel="stylesheet" type="text/css" href="style2.css">
-<style >
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.6em;   /* 1 */
-  line-height: 1.5; /* 2 */
-  color: #444;
-}
-</style>
-
-
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Disable Modal Background Scrolling on iOS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="base.css" />
 </head>
-
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dolores laboriosam maiores dicta consequuntur? Commodi tempora distinctio illo dolore molestiae dolores non. Quaerat similique commodi voluptatum quasi, placeat unde nisi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo odit sit, natus, ipsa, doloribus aspernatur eos consectetur unde voluptate dolor nisi! Maxime aut eum facere doloremque, soluta iusto commodi voluptatum.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores quas saepe sed debitis porro suscipit deleniti optio voluptates omnis, officia ea, soluta, nesciunt illum dolore voluptatem eaque aliquam mollitia quia.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minima ratione inventore eius debitis, dolores consequuntur ea obcaecati iure corrupti quae autem architecto! Dolorum quos quasi atque minima, pariatur omnis!</p>
+                <p>Debitis ea delectus rerum laboriosam ullam! Consequatur, officia! Voluptatum recusandae explicabo hic, veniam quis repudiandae architecto ea, minus magnam tempora suscipit reiciendis adipisci ipsa, distinctio fugit vero odit quia at?</p>
+                <p>Atque similique quae alias vel itaque. Culpa et quaerat voluptate asperiores architecto saepe tempora vel atque officia obcaecati incidunt odio exercitationem dolorem sunt ratione dolore, neque, praesentium suscipit? Reiciendis, rem.</p>
+                <p>Nobis dolore hic facilis vel molestiae accusamus perspiciatis, quisquam sunt, aliquam nesciunt corrupti cumque libero magnam voluptatibus amet explicabo architecto doloremque expedita! Error temporibus enim ut inventore natus repellendus voluptatum!</p>
+                <p>Qui ipsam eaque iste impedit, ullam quaerat. Soluta omnis culpa mollitia quibusdam, provident nam neque praesentium asperiores! Beatae autem voluptates optio rerum, esse minus porro consectetur nisi laudantium debitis asperiores!</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quidem at quis cumque tempore vero ducimus in consectetur officia natus facilis voluptatum sequi. Sint tempora est iure ea voluptate dolor?</p>
+                <p>Praesentium, sapiente. Et, autem! Quam optio at ducimus delectus rem, aspernatur est aperiam nulla incidunt atque debitis nesciunt repellendus qui culpa ratione perferendis possimus tempora officia dicta doloribus dolorum veritatis!</p>
+                <p>Eaque sit quia sint tempore consequuntur facere assumenda nihil, praesentium magnam aspernatur voluptates sunt esse expedita illum sed quam ut culpa omnis, laborum, harum blanditiis. Blanditiis quia voluptatibus dolore minus.</p>
+                <p>Saepe nisi dignissimos vero iusto sequi, suscipit deserunt ratione, vitae praesentium similique et? Sint velit, nostrum odit recusandae voluptate nisi, aspernatur sed deleniti cum expedita minima earum laboriosam explicabo. Tenetur.</p>
+                <p>Veritatis nostrum pariatur, a eligendi praesentium, totam beatae aut dignissimos tempore ab excepturi recusandae perspiciatis quibusdam. Recusandae, maiores, pariatur natus neque illo nihil assumenda commodi ullam, maxime nostrum consequuntur voluptatibus!</p>
+                <p>Reprehenderit consequatur ad reiciendis dignissimos laborum unde blanditiis eos nihil quo. Excepturi sint omnis necessitatibus molestiae quidem dolor ullam ratione voluptate id, quisquam, blanditiis amet fugit voluptatum dolorem laboriosam voluptas?</p>
+                <p>Nobis, cum alias asperiores a architecto magni quae quisquam consequuntur nostrum totam, quos laboriosam delectus, temporibus repudiandae? Sed cumque repellendus voluptates quisquam. Recusandae vitae dolores, sint delectus possimus consectetur fugit.</p>
+                <p>Consequatur fugiat unde quo officia reiciendis corrupti repellat, sint provident alias, esse, voluptates porro molestias id vero hic explicabo voluptatum soluta facilis ducimus dolor nesciunt inventore consectetur mollitia. Harum, vel.</p>
+                <p>Placeat dicta fugiat obcaecati minus assumenda quod aliquid quibusdam tempore aperiam, corporis, consectetur esse aut impedit! Quod voluptates, illo veniam dolore, deserunt quasi perferendis quidem nulla tempora doloremque dignissimos voluptatem.</p>
+                <p>Vitae quos sit saepe maiores cum nam non voluptatibus hic ullam molestias impedit dolores eveniet atque excepturi, similique tempore? Eum labore sapiente tempore eveniet aperiam! Non est facere omnis ea.</p>
+                <p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+                </p>
+            </div>
 
-  <div class="container">
-  <h1>Fullscreen Mobile Modal Test Page</h1>
-  <p>
-    Fullscreen modal provides more native user experience for Bootstrap modals on mobile phones. This page is a comparison of regular and fullscreen modals. Please view it on mobile device or resize viewport to mobile width.
-  <p>
-    <div class="col-xs-6">
-      <button type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#modalLargeDefault">Default</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-xs-6">
-      <button type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#modalLarge">FullScreen</button>
-    </div>
-    <p>
-      In tempus neque vitae magna congue, convallis blandit dolor mollis. Fusce rutrum in diam ac pretium. Vivamus sagittis, elit at cursus lacinia, mauris urna feugiat quam, et tincidunt nulla justo eget dui. Nullam malesuada felis quis dolor aliquam scelerisque.
-      Maecenas porta, neque sit amet auctor bibendum, urna nibh porta enim, et auctor turpis ligula vel quam. In vulputate eu erat quis bibendum. Mauris vel felis luctus, ultricies nulla ac, euismod diam.
-    </p>
-    <p>
-      In tempus neque vitae magna congue, convallis blandit dolor mollis. Fusce rutrum in diam ac pretium. Vivamus sagittis, elit at cursus lacinia, mauris urna feugiat quam, et tincidunt nulla justo eget dui. Nullam malesuada felis quis dolor aliquam scelerisque.
-      Maecenas porta, neque sit amet auctor bibendum, urna nibh porta enim, et auctor turpis ligula vel quam. In vulputate eu erat quis bibendum. Mauris vel felis luctus, ultricies nulla ac, euismod diam.
-    </p>
-    <p>
-      In tempus neque vitae magna congue, convallis blandit dolor mollis. Fusce rutrum in diam ac pretium. Vivamus sagittis, elit at cursus lacinia, mauris urna feugiat quam, et tincidunt nulla justo eget dui. Nullam malesuada felis quis dolor aliquam scelerisque.
-      Maecenas porta, neque sit amet auctor bibendum, urna nibh porta enim, et auctor turpis ligula vel quam. In vulputate eu erat quis bibendum. Mauris vel felis luctus, ultricies nulla ac, euismod diam.
-    </p>
-    Get <i>boostrap-fs-plugin</i> <a href="https://github.com/keaukraine/bootstrap-fs-modal">from GitHub</a> or get it as an <a href="https://npmjs.com/package/bootstrap-fs-modal">npm package</a>.
-  </p>
-  <div class="row">
-    <div class="col-xs-12">
-      <h4>Large Modal Comparison:</h4>
-    </div>
 
-  </div>
-</div>
-
-<div class="modal fade modal-fullscreen" id="modalLarge" tabindex="-1" role="dialog" aria-labelledby="modalLargeLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLargeLabel">Modal with large content</h4>
-      </div>
-      <div class="modal-body">
-        <p>
-          <i>Fullscreen modal provides more native user experience on mobile phones by placing buttons in header for them to be easily reachable.</i>
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dui tempor, finibus ligula vitae, convallis mi. Sed posuere at neque nec hendrerit. Sed vitae felis gravida, ultricies dui eget, venenatis leo. Nunc hendrerit tellus non velit malesuada,
-          eu dapibus sapien placerat. Sed non viverra magna, sit amet ornare erat. Fusce eros mi, consequat ac elit vel, ullamcorper molestie mauris. Proin auctor orci eget lacinia condimentum. Phasellus ultricies ligula id lacinia posuere. Nulla rutrum
-          eros eu arcu tempor, imperdiet ornare lectus convallis. Nulla eleifend dapibus sem, vel viverra sapien.
-        </p>
-        <p>
-          Integer interdum ex augue, vel egestas nibh fermentum eu. Cras ut erat eu nisi ullamcorper scelerisque vitae in lorem. In hac habitasse platea dictumst. Pellentesque in ante aliquam, porta metus eu, viverra magna. Cras blandit, augue in consequat rhoncus,
-          nulla risus sodales mi, at tincidunt dolor leo semper mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus pellentesque purus porta maximus blandit. Suspendisse id lorem pellentesque, vehicula
-          nulla at, congue eros. Duis eleifend semper sodales. Morbi eu sagittis ex. Praesent commodo rhoncus nisi. Aenean quis arcu mauris.
-        </p>
-        <p>
-          Donec eget ex ut nibh ullamcorper commodo. Aenean ac faucibus mi. Nullam luctus dui diam, in congue sem fringilla et. Vivamus non metus at elit ornare maximus. Nam iaculis ex in dolor rutrum, at facilisis dolor euismod. Sed lacinia sagittis lobortis.
-          Suspendisse turpis tellus, pharetra scelerisque odio eget, condimentum tempus nibh. Praesent in diam ac sapien dignissim luctus a quis sapien. Duis sed lacus magna. Maecenas at fringilla quam. Ut purus risus, ultricies eget risus ut, convallis
-          hendrerit eros. Fusce vehicula libero quam, nec cursus nulla interdum eu. Quisque commodo suscipit justo, id auctor metus varius rutrum.
-        </p>
-        <p>
-          Integer et fermentum sapien. Proin eu eros efficitur, malesuada ipsum vel, tincidunt risus. Proin cursus laoreet varius. Donec eros sapien, accumsan ac facilisis id, egestas quis turpis. Mauris dignissim, sem et pellentesque consequat, erat dui tempus
-          nulla, ut laoreet neque ligula ac libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris dictum accumsan erat et tempus. Pellentesque ac ipsum at dui blandit mollis. Suspendisse a turpis non velit commodo iaculis. Donec
-          sit amet sem risus. Nunc pharetra lacus vitae faucibus mattis. Vestibulum molestie, quam et efficitur consequat, dui nibh pulvinar sapien, sit amet pharetra mauris sem sed massa.
-        </p>
-        <p>
-          Integer interdum ex augue, vel egestas nibh fermentum eu. Cras ut erat eu nisi ullamcorper scelerisque vitae in lorem. In hac habitasse platea dictumst. Pellentesque in ante aliquam, porta metus eu, viverra magna. Cras blandit, augue in consequat rhoncus,
-          nulla risus sodales mi, at tincidunt dolor leo semper mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus pellentesque purus porta maximus blandit. Suspendisse id lorem pellentesque, vehicula
-          nulla at, congue eros. Duis eleifend semper sodales. Morbi eu sagittis ex. Praesent commodo rhoncus nisi. Aenean quis arcu mauris.
-        </p>
-        <p>
-          In tempus neque vitae magna congue, convallis blandit dolor mollis. Fusce rutrum in diam ac pretium. Vivamus sagittis, elit at cursus lacinia, mauris urna feugiat quam, et tincidunt nulla justo eget dui. Nullam malesuada felis quis dolor aliquam scelerisque.
-          Maecenas porta, neque sit amet auctor bibendum, urna nibh porta enim, et auctor turpis ligula vel quam. In vulputate eu erat quis bibendum. Mauris vel felis luctus, ultricies nulla ac, euismod diam.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-default" data-glyphicon="glyphicon-refresh">Reload Data</button>
-        <button type="button" class="btn btn-default btn-primary" data-glyphicon="glyphicon-ok">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modalLargeDefault" tabindex="-1" role="dialog" aria-labelledby="modalLargeDefaultLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLargeDefaultLabel">Modal with large content</h4>
-      </div>
-      <div class="modal-body">
-        <p>
-          <i>Regular Bootstrap modals (with a lot of content) on mobile devices can cause additional scrolling to get to the bottom buttons of modal.</i>
-        </p>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-default">Reload Data</button>
-        <button type="button" class="btn btn-default btn-primary">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-<script src='https://keaukraine.github.io/bootstrap-fs-modal/dist/js/fs-modal.min.js'></script>
-
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="base.js"></script>
 </body>
-
 </html>
