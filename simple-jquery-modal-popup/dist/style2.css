@@ -2,7 +2,10 @@
   .modal.modal-fullscreen {
     box-shadow: 0 0 0 100px #fff
   }
-
+  body.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+  }
   .modal.modal-fullscreen .modal-dialog {
     margin: 0;
     width: 100%;
