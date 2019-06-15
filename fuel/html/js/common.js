@@ -88,9 +88,16 @@ $(function() {
 
   $('.modal-toggle').on('click', function(e) {
     //e.preventDefault();
-    $('.modal').toggleClass('is-visible');
-    $('body').toggleClass('modal-open');
+    $('.modal').addClass('is-visible');
 
+    if($(".modal-wrapper").outerHeight() > $(window).height()){
+      $('body').removeClass('modal-open');
+    }else{
+      $('body').addClass('modal-open');
+    }
+    document.ontouchmove = function (e) {
+		  e.preventDefault();
+		}
   });
 
 });
