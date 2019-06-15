@@ -6,6 +6,8 @@
     height: 100vh;
     overflow-y: hidden;
   }
+  .modal-dialog{position:absolute;bottom: 0}
+  .modal.fade .modal-dialog{transform: translate(0,0%);}
   .modal.modal-fullscreen .modal-dialog {
     margin: 0;
     width: 100%;
