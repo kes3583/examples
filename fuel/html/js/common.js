@@ -106,7 +106,7 @@ $(function() {
   });
 
   // sortable
-  $('#sortable').sortable({ 
+  $('#sortable').sortable({
     items: 'li, div',
     placeholder: 'placeholder',
     placeholderTag: null
@@ -114,7 +114,7 @@ $(function() {
 
   //remove li tag 카드 버리기
   $("button.btn-trash").click(function(){
-    $(this).parent().parent().remove();
+    $(this).parent().parent().slideUp(300).remove();
   });
 
 });
