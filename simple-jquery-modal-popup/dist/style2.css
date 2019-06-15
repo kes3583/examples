@@ -3,8 +3,9 @@
     box-shadow: 0 0 0 100px #fff
   }
   body.modal-open {
-    height: 100vh;
+    /* height: 100vh; */
     overflow-y: hidden;
+    padding:0 !important;
   }
   .modal-dialog{position:absolute;bottom: 0}
   .modal.fade .modal-dialog{transform: translate(0,0%);}
