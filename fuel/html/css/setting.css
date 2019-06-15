@@ -941,6 +941,6 @@ body>header.noUnder {
 
 @media screen and (orientation:landscape) {
   body {
-    padding-bottom: 60vh
+    /* padding-bottom: 60vh */
   }
 }

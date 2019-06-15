@@ -87,8 +87,10 @@ $(function() {
   });
 
   $('.modal-toggle').on('click', function(e) {
-    e.preventDefault();
+    //e.preventDefault();
     $('.modal').toggleClass('is-visible');
+    $('body').toggleClass('modal-open');
+
   });
 
 });

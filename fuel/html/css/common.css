@@ -49,6 +49,9 @@ section.wrap h1.t1 , h1.t1 span {font-size: 2.6rem}
 
 /* Modal Popup */
 header .list-card{background:#fff no-repeat url("../images/common/drop_down.png"); background-size: 24px 24px; background-position: right -5px top 15px; padding:0 20px}
+body.modal-open{height: 100vh;overflow-y: hidden;}
+
+
 .modal {
     position: absolute;
     z-index: 10000; /* 1 */
