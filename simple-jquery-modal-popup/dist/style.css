@@ -34,7 +34,7 @@ body {
   line-height: 1.5; /* 2 */
   color: #444;
 }
-body.modal-open{overflow: hidden; position:fixed}
+body.modal-open{overflow: hidden;position: relative;position:fixed}
 /* Page wrapper */
 .wrapper {
   width: 90%;

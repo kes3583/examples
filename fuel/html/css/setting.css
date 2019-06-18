@@ -134,7 +134,8 @@ body>header a.rightBtn {
 }
 
 
-body>header a.faq {
+
+body>header a. {
   background: url("../images/common/faq@2x.png") 0 0 no-repeat;
   background-size: 100% auto
 }

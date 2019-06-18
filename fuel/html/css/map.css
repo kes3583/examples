@@ -1,0 +1,19 @@
+
+body>header a.map-mv {
+  background: url("../images/main/map-move.png") 0 0 no-repeat;
+  background-size: 34px auto;
+}
+
+section.map{padding-top:50px}
+.area-map{position: relative;width:100%;min-height:100%}
+.list-filter{width:100%; position:absolute; left:15px; top:7px; display: flex!important;align-items: center!important;justify-content: flex-start !important;font-size: 1.4rem; position: relative;z-index: 1010}
+.list-filter li a{display: inline-block; margin-right:5px; padding:0 12px; font-size: 1.4rem; color:#3673ee; border-radius: 25px; border:1px solid #3673ee;line-height: 1.8; background-color: #fff}
+.list-filter li:last-child{position:absolute;right:20px}
+.list-filter li.filter a{width:32px; height: 32px; background:#fff no-repeat center center url("../images/main/filter.png"); background-size: 32px 32px;border-radius: 5px; border:1px solid #ddd; text-indent: -9999px}
+
+.box-dragup{position: absolute;left: 0; bottom: 0}
+
+.list-petrol-staion dt{flex-basis: 32px !important}
+.list-petrol-staion dt.num{flex-basis: auto; margin-right: 10px; width:32px; height:44px; background:no-repeat 0 0 url("../images/common/default@2x.png"); background-size: 32px 44px; font-size: 1.6rem; color:#fff; font-family: 'Roboto', sans-serif; text-align: center;line-height:2.3}
+.list-petrol-staion dd{flex-basis: 85%; height: 44px}
+.list-petrol-staion .ico-nav{position:absolute;right: 0; top:-35px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 60px 60px; text-indent: -9999px}

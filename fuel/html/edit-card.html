@@ -43,6 +43,16 @@
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
     <script src="js/plugins/touch-dnd.js"></script>
     <script src="js/common.js"></script>
+    <script>
+    $(function() {
+    // sortable
+    $('#sortable').sortable({
+        items: 'li, div',
+        placeholder: 'placeholder',
+        placeholderTag: null
+      });
+    });
+    </script>
 
   </body>
 </html>

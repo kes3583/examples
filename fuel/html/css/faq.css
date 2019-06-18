@@ -1,3 +1,7 @@
+body>header a.faq {
+  background: url("../images/common/faq@2x.png") 0 0 no-repeat;
+  background-size: 100% auto
+}
 .list-faq{overflow: hidden;margin:auto;text-align: left}
 .list-faq dt {
   padding: 25px 0px 20px 25px;

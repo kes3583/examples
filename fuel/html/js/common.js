@@ -92,25 +92,20 @@ $(function() {
   });
 
   $('.modal-toggle').on('click', function(e) {
-    //e.preventDefault();
+    e.preventDefault();
     $('.modal').addClass('is-visible');
 
     if ($(".modal-wrapper").outerHeight() > $(window).height()) {
-      $('body').removeClass('modal-open');
+      //$('body').removeClass('modal-open');
     } else {
-      $('body').addClass('modal-open');
+      //$('body').addClass('modal-open');
     }
     document.ontouchmove = function(e) {
       e.preventDefault();
     }
   });
 
-  // sortable
-  $('#sortable').sortable({
-    items: 'li, div',
-    placeholder: 'placeholder',
-    placeholderTag: null
-  })
+
 
   //remove li tag 카드 버리기
   $("button.btn-trash").click(function(){
