@@ -36,36 +36,73 @@
         <ul class="list-filter">
           <li><a href="#">거리순</a></li>
           <li><a href="#">휘발유</a></li>
-          <li class="filter"><a href="#">필터</a></li>
+          <li><a href="#">필터</a></li>
         </ul>
       </div>
 
-      <div class="col box-dragup">
-        <div class="list-group list-petrol-staion">
+      <div id="resizable" class="col box-dragup tc ui-widget-content">
+        <!-- <span class="dragup"></span> -->
+        <div class="list-group list-petrol-staion wrapper">
             <dl>
-              <dt class="num">1</dt>
+              <dt class="first-child">1</dt>
               <dd>
                 <ul>
-                  <li><h4>SK을지로점</h4> <button type="button" class="btn btn-block ico-nav ht">nav</button></li>
-                  <li>SK ・ 300m ・ 10000원할인 <span class="fs16 fc-bl">30,000원</span></li>
+                  <li><h4>SK을지로점</h4> </li>
+                  <li>SK ・ 300m ・ 10000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
                 </ul>
               </dd>
             </dl>
             <dl>
-              <dt class="num">2</dt>
+              <dt>2</dt>
               <dd>
                 <ul>
                   <li><h4>SK을지로점</h4></li>
-                  <li>SK ・ 300m ・ 10000원할인 <span class="fs16 fc-bl">30,000원</span></li>
+                  <li>현대오일 ・ 300m ・ 1000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
                 </ul>
               </dd>
             </dl>
             <dl>
-              <dt class="num">3</dt>
+              <dt>3</dt>
               <dd>
                 <ul>
-                  <li><h4>SK을지로점</h4></li>
-                  <li>SK ・ 300m ・ 10000원할인 <span class="fs16 fc-bl">30,000원</span></li>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
                 </ul>
               </dd>
             </dl>
@@ -76,7 +113,30 @@
     </section>
 
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins/jquery-ui.js"></script>
+    <script src="js/plugins/jquery.ui.touch-punch.min.js"></script>
     <script src="js/common.js"></script>
+    <script>
+      $(function() {
+        $( window ).resize(function() {
+
+          let h =  $(document).height();
+          console.log('resize!',h)
+          $("#resizable").resizable({
+            maxHeight: h,
+            minHeight: 80,
+            handles: 'n'
+          });
+        });
+        const h =  $(document).height();
+        $("#resizable").resizable({
+          maxHeight: h,
+          minHeight: 80,
+          handles: 'n'
+        });
+
+      });
+    </script>
   </body>
 
 </html>

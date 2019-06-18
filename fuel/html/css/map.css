@@ -1,19 +1,41 @@
 
 body>header a.map-mv {
-  background: url("../images/main/map-move.png") 0 0 no-repeat;
+  background: url("../images/main/map_move.png") 0 0 no-repeat;
   background-size: 34px auto;
 }
 
 section.map{padding-top:50px}
-.area-map{position: relative;width:100%;min-height:100%}
-.list-filter{width:100%; position:absolute; left:15px; top:7px; display: flex!important;align-items: center!important;justify-content: flex-start !important;font-size: 1.4rem; position: relative;z-index: 1010}
-.list-filter li a{display: inline-block; margin-right:5px; padding:0 12px; font-size: 1.4rem; color:#3673ee; border-radius: 25px; border:1px solid #3673ee;line-height: 1.8; background-color: #fff}
-.list-filter li:last-child{position:absolute;right:20px}
-.list-filter li.filter a{width:32px; height: 32px; background:#fff no-repeat center center url("../images/main/filter.png"); background-size: 32px 32px;border-radius: 5px; border:1px solid #ddd; text-indent: -9999px}
+.area-map{position: relative; width:100%; height:100%; background-color: blue;}
 
-.box-dragup{position: absolute;left: 0; bottom: 0}
+.area-map .list-filter{overflow: hidden; width:100%; position:absolute; left:0; top:0; display: flex!important; align-items: center!important; justify-content: flex-start !important;font-size: 1.4rem; z-index: 1010; background-color: rgba(240, 240, 240, 0.5); padding:7px 20px; }
+.area-map .list-filter li a{display: inline-block; margin-right:5px; padding:0 12px; font-size: 1.4rem; color:#3673ee; border-radius: 25px; border:1px solid #3673ee;line-height: 1.8; background-color: #fff}
+.area-map .list-filter li:last-child{position:absolute;right:20px; top:4px}
+.area-map .list-filter li:last-child a{width:32px; height: 32px; background:#fff no-repeat center center url("../images/main/filter.png"); background-size: 100% auto;border-radius: 5px; border:1px solid #ddd; text-indent: -9999px}
 
+.box-dragup{position: absolute;left: 0; bottom: 0;   width: 100%; padding: 0;  -webkit-border-radius: 9px 9px 0 0; border-radius: 10px 10px 0 0;border-top: 1px solid #cdcdcd;box-shadow: 0 -19px 24px -14px rgba(220,220,220,0.74) ;}
+.box-dragup span.dragup{display: block; width: 100%; height: 15px;-webkit-border-radius: 24px; border-radius: 24px; position: absolute; left:0; top: 0;  font-size: .1px; cursor: n-resize;}
+.box-dragup
+
+.list-petrol-staion{margin:30px 0 0 20px;}
+.list-petrol-staion dl{position: relative;padding-bottom:40px;}
 .list-petrol-staion dt{flex-basis: 32px !important}
-.list-petrol-staion dt.num{flex-basis: auto; margin-right: 10px; width:32px; height:44px; background:no-repeat 0 0 url("../images/common/default@2x.png"); background-size: 32px 44px; font-size: 1.6rem; color:#fff; font-family: 'Roboto', sans-serif; text-align: center;line-height:2.3}
-.list-petrol-staion dd{flex-basis: 85%; height: 44px}
-.list-petrol-staion .ico-nav{position:absolute;right: 0; top:-35px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 60px 60px; text-indent: -9999px}
+
+.list-petrol-staion dt{flex-basis: auto; margin-right: 10px; width:32px; height:44px; background:no-repeat 0 0 url("../images/common/default_off@2x.png"); background-size: 100% auto; font-size: 1.6rem; color:#fff; font-family: 'Roboto', sans-serif; text-align: center;line-height:2.3}
+.list-petrol-staion dt.first-child{ background:no-repeat 0 0 url("../images/common/default@2x.png") ; background-size: 100% auto;}
+
+.list-petrol-staion dd{flex-basis: 90%;}
+.list-petrol-staion dd ul{}
+.list-petrol-staion dd li{padding:0;}
+.list-petrol-staion dd li:last-child{display: flex!important; align-items: center!important; justify-content:space-between;!important;padding:0;}
+.list-petrol-staion dd li h4{padding-top:4px;}
+.list-petrol-staion dd li .price{display: inline-block;padding-right: 45px}
+.list-petrol-staion .ico-nav{position:absolute;right: 0; top:5px; width:40px; height: 40px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 100% auto; text-indent: -9999px}
+
+/* 주유소 리스트 drag up  */
+
+.ui-resizable-n {position: absolute; top: 0; height: 20px;  font-size: .1px; display: block; cursor: n-resize; width: 100%; left: 0; background: #fff}
+.ui-resizable-n:after{display: inline-block; width: 34px; height: 5px;-webkit-border-radius: 24px; border-radius: 24px; background: #dfe3e8; position: absolute; top: 8px;  left: 50%;margin-left:-10px; z-index: 100; content: '';}
+
+#resizable { height: 100px; overflow-y: hidden; overflow-x: hidden; }
+
+.wrapper { height: 100%; overflow-y: auto; }

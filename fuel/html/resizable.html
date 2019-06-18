@@ -10,25 +10,11 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
-  <link rel="shortcut icon" href="/ico/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+  <!-- <link href="css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet"> -->
 
   <style>
-    .container {
-      padding: 300px 0 0 0
-    }
 
-    .ui-resizable-n {
-      height: 20px;
-      background-color: blue
-    }
 
     .ui-widget-header {
       background: #b9cd6d;
@@ -47,7 +33,12 @@
       position: absolute;
       top: 0;
       height: 20px;
-      background-color: blue
+      background-color: blue;
+      font-size: .1px;
+      display: block;
+      cursor: n-resize;
+      width: 20px;
+      left: 0;
     }
 
     #resizable {
@@ -56,20 +47,25 @@
       padding: 0.5em;
       text-align: center;
       margin: 0;
-      bottom: 35px;
+      bottom: 5px;
       left: 35px;
       position: absolute;
-      overflow-y: auto;overflow-x: hidden;
+      overflow-y: hidden;
+      overflow-x: hidden;
     }
 
-.wrapper{
-  height: 100%;
-  overflow: auto;
-}
+    .wrapper {
+      height: 100%;
+      overflow-y: auto;
+      margin: 10px 0;
+    }
+
     #resizable h3 {
       text-align: center;
       margin: 0;
     }
+
+
     /* .searchList{width:inherit;overflow-y: auto;overflow-x: hidden; height:350px} */
   </style>
 
@@ -80,10 +76,31 @@
   <div class="container">
 
 
-    <div id="resizable" class="ui-widget-content">
-      <div class="wrapper">
-        <h3 class="ui-widget-header">Resize larger / smaller</h3>
-        <div class="searchList">
+    <div id="resizable" class="test ui-widget-content">
+      <div class="test wrapper">
+
+          <ul>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>bottom</li>
+          </ul>
           <ul>
             <li>을지로입구</li>
             <li>을지로입구</li>
@@ -107,7 +124,7 @@
             <li>bottom</li>
           </ul>
 
-        </div>
+
       </div>
     </div>
 
@@ -122,14 +139,13 @@
 
 
   </div>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+  <script src="js/plugins/jquery-1.11.1.min.js"></script>
+  <script src="js/plugins/jquery-ui.js"></script>
+  <script src="js/plugins/jquery.ui.touch-punch.min.js"></script>
   <script>
     $(function() {
       $("#resizable").resizable({
-        maxHeight: 350,
-
+        maxHeight: 650,
         minHeight: 150,
 
         handles: 'n'
