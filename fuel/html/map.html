@@ -118,9 +118,9 @@
     <script src="js/common.js"></script>
     <script>
       $(function() {
-        $( window ).resize(function() {
 
-          let h =  $(document).height();
+        $( document ).resize(function() {
+          let h =  $(document).height() - 50;
           console.log('resize!',h)
           $("#resizable").resizable({
             maxHeight: h,
