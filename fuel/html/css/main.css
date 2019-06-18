@@ -24,7 +24,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 /* 받은 혜택 */
 .col{padding-top: 32px;text-align: left;color: #262626}
 .col h2{font-size: 1.6rem; padding-bottom:20px }
-.col h2 a{float:right;font-size: 1.2rem; margin-right:15px;text-align: right; color: #a1a3a6}
+.col h2 a{float:right;font-size: 1.2rem; margin-right:0px;text-align: right; color: #a1a3a6}
 
 /* shadow box  */
 .box-shadow{/* min-width: 320px; */background: #fff; border-radius: 10px;border:1px solid #f1f2f4;padding: 18px 14px; box-shadow:  0px 17px 27px -30px rgba(0,0,0,0.71); position: relative;}
@@ -33,7 +33,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 /* .list-recent-benefit {display:none} */
 .list-group, .no-benefit{ position: relative;padding:10px 0 0;}
 .no-benefit{ color:#a1a3a6; text-align:center; padding-top:20px}
-.list-group dl{overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
+.list-group dl{ overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
 .list-group dl:last-child{padding-bottom:0}
 
 .list-group dt{flex-basis: 20%}
@@ -46,11 +46,35 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .list-group dd li:first-child span{font-size: 1.6rem;color:#3673ee}
 .list-group dd li:nth-child(2), .list-group dd li:nth-child(2) span{color:#a1a3a6; font-size: 1.2rem}
 
+/* petrol station list */
+.list-petrol-station{padding:30px 0 15px 20px;padding}
+.list-petrol-station dl{position: relative;padding-bottom:40px;}
+.list-petrol-station dt{flex-basis: 32px !important}
+
+.list-petrol-station dt{flex-basis: auto; margin-right: 10px; width:32px; height:44px; background:no-repeat 0 0 url("../images/common/default_off@2x.png"); background-size: 100% auto; font-size: 1.6rem; color:#fff; font-family: 'Roboto', sans-serif; text-align: center;line-height:2.3}
+.list-petrol-station dt.first-child{ background:no-repeat 0 0 url("../images/common/default@2x.png") ; background-size: 100% auto;}
+
+.list-petrol-station dd{flex-basis: 90%;}
+.list-petrol-station dd ul{position:relative;;}
+.list-petrol-station dd li{padding:0;}
+/* .list-petrol-station dd li:last-child{display: flex!important; align-items: center!important; justify-content:space-between;!important;padding:0;} */
+.list-petrol-station dd li h4{padding-top:4px;}
+.list-petrol-station dd li .price{/* position:absolute; left: 65%; top:20px; */ margin-right: 55px; text-align: right; display: inline-block;}
+
+.list-petrol-station .ico-nav{position:absolute; right:10px; top:5px; width:40px; height: 40px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 100% auto; text-indent: -9999px}
+
+.mystation .list-petrol-station dd li .price{margin-right: 35px; text-align: right; display: inline-block;}
+.mystation .list-petrol-station .ico-nav{position:absolute; right:0; top:-10px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation_main@2x.png"); background-size: 100% auto; font-size: .1px}
+
+/* main-list */
+.mystation .area-map{height:208px; text-align: center; background: #eee; border-radius: 10px; border:1px solid #eee}
+.mystation .list-petrol-station{padding:0}
+
 /* card list */
 .list-my-card{clear:both;padding:30px 0 0;}
 .list-my-card li{position:relative;margin:0 0 25px; padding:10px 0 13px 60px; font-size: 1.8rem; display: flex!important;}
 .list-my-card li h4{ flex-basis: 51%;padding-left: 10px; font-size: 1.8rem;font-weight: normal;}
-.list-my-card li div{flex-basis: 45%;  padding-right:5px; font-size: 1.8rem;color:#3673ee; text-align: right;}
+.list-my-card li div{flex-basis: 45%;  padding-right:10px; font-size: 1.8rem;color:#3673ee; text-align: right;}
 .list-my-card li.samsung{background:no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
 .list-my-card li.shinhan{background:no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
 .list-my-card li.hyundai{background:no-repeat 0 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
@@ -64,7 +88,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 
 .details .sum{padding: 37px 0 30px;border-bottom:1px solid #eee }
 .details .price{font-size: 2.6rem;color:#3673ee;}
-.details .price span{ letter-spacing: -0.3rem;line-height: 0.6}
+.details .price span{ letter-spacing: -0.2rem;line-height: 0.6}
 .details .list-group {padding:0 0 10px;}
 .details .list-group h2{border-top:1px solid #eee}
 .details .list-group h2 span{position:absolute;left:50%; top:-12px; margin-left:-32px; display: inline-block; width: 73px; padding:5px 0 3px; /* height:24px;line-height: 2.4; */border-radius: 16px;border:1px solid #eee;background-color: #fff;}
@@ -72,11 +96,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .details .list-group dl{padding-bottom:30px; align-items: flex-start !important;}
 /* .details .list-group dl{padding-bottom:25px; align-items: flex-start !important;} */
 
+
 .no-details h1{padding:30px 0 5px}
 .no-details h1, .no-details p{color:#a1a3a6 !important}
 .no-details img{width:56px; height:auto}
-
-
-
-
-.area-map{height:208px;border:1px solid red}

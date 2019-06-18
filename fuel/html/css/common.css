@@ -6,6 +6,7 @@
 .fc-bl{color: #3673ee !important}
 .fc-blc{color: #000 !important}
 .fc-262626{color: #262626 !important}
+.fc-red{color:#f8483b !important}
 .ht{text-indent: 100%; white-space: nowrap; overflow: hidden;}
 .tc{text-align: center !important}
 .tl{text-align: left !important}
@@ -17,6 +18,7 @@
 .pdt30{padding-top: 30px !important}
 .pdt50{padding-top: 50px !important}
 .op1{opacity: 1 !important}
+.brd0{border:none !important}
 
 
 /* layout */
@@ -37,6 +39,8 @@ button{overflow: visible;}
 .btn2 {width:50%; }
 .brl{border-left: 1px solid #ededed}
 .btn-faq{background:#fff no-repeat 29% 49% url("../images/common/cellphone.png"); background-size: 16px 16px;}
+.btn-reg{font-size:1.4rem; line-height: 2.5}
+.btn-reg:before{content: '+'; font-size: 2.2rem; font-weight: lighter; color:#3673ee; position: absolute; top: -10px; left: 50%; margin-left:-63px }
 
 
 .error{padding-top:100px !important}
