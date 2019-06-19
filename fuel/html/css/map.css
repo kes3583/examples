@@ -19,6 +19,6 @@ section.map{padding-top:50px}
 .ui-resizable-n {position: absolute; top: 0; height: 20px;  font-size: .1px; display: block; cursor: n-resize; width: 100%; left: 0; background: #fff}
 .ui-resizable-n:after{display: inline-block; width: 34px; height: 5px;-webkit-border-radius: 24px; border-radius: 24px; background: #dfe3e8; position: absolute; top: 8px;  left: 50%;margin-left:-10px; z-index: 100; content: '';}
 
-#resizable { height: 100px; overflow-y: hidden; overflow-x: hidden; }
+#resizable { /* height: 100px; */ overflow-y: hidden; overflow-x: hidden; }
 
 .wrapper { height: 100%; overflow-y: auto; margin-bottom:15px }

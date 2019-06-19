@@ -27,18 +27,20 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .col h2 a{float:right;font-size: 1.2rem; margin-right:0px;text-align: right; color: #a1a3a6}
 
 /* shadow box  */
-.box-shadow{/* min-width: 320px; */background: #fff; border-radius: 10px;border:1px solid #f1f2f4;padding: 18px 14px; box-shadow:  0px 17px 27px -30px rgba(0,0,0,0.71); position: relative;}
+.box-shadow{/* min-width: 320px; */background: #fff; border-radius: 10px;border:1px solid #f1f2f4;padding: 18px 14px; box-shadow: 0 5px 5px -4px rgba(234,234,234,1) ; position: relative;}
 .box-shadow h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; position: relative;}
 
 /* .list-recent-benefit {display:none} */
 .list-group, .no-benefit{ position: relative;padding:10px 0 0;}
 .no-benefit{ color:#a1a3a6; text-align:center; padding-top:20px}
-.list-group dl{ overflow:hidden; display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
+.list-group dl{ display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
 .list-group dl:last-child{padding-bottom:0}
 
 .list-group dt{flex-basis: 20%}
 .list-group dd{flex-basis: 80%; height: 44px}
-.list-group dt.img img{margin-right: 10px;width:48px; height:48px}
+
+.list-group dt.img{margin-right: 10px;width:48px; height:48px; padding: 5px;border:1px solid #f0f0f0; border-radius: 5px;}
+.list-group dt.img img{margin-right: 10px;width:33px; height:33px; text-align: center;vertical-align: middle;}
 
 .list-group dd li{display: flex!important;align-items: center!important;justify-content: space-between!important;}
 .list-group dd li{padding:2px 0; letter-spacing: 0}
@@ -46,8 +48,13 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .list-group dd li:first-child span{font-size: 1.6rem;color:#3673ee}
 .list-group dd li:nth-child(2), .list-group dd li:nth-child(2) span{color:#a1a3a6; font-size: 1.2rem}
 
+/* mybenefit */
+.mybenefit .list-group.list-recent-benefit img{}
+.mybenefit .list-group dt{flex-basis:0;}
+.mybenefit .list-group.list-recent-benefit{}
+
 /* petrol station list */
-.list-petrol-station{padding:30px 0 15px 20px;padding}
+.list-petrol-station{padding:30px 0 15px 20px;}
 .list-petrol-station dl{position: relative;padding-bottom:40px;}
 .list-petrol-station dt{flex-basis: 32px !important}
 
@@ -63,12 +70,14 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 
 .list-petrol-station .ico-nav{position:absolute; right:10px; top:5px; width:40px; height: 40px; background:no-repeat left top url("../images/main/navigation@2x.png"); background-size: 100% auto; text-indent: -9999px}
 
-.mystation .list-petrol-station dd li .price{margin-right: 35px; text-align: right; display: inline-block;}
-.mystation .list-petrol-station .ico-nav{position:absolute; right:0; top:-10px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation_main@2x.png"); background-size: 100% auto; font-size: .1px}
 
 /* main-list */
 .mystation .area-map{height:208px; text-align: center; background: #eee; border-radius: 10px; border:1px solid #eee}
+.mystation .box-shadow{margin-top:8px}
 .mystation .list-petrol-station{padding:0}
+.mystation .list-petrol-station dd li .price{margin-right: 0; text-align: right; display: inline-block;}
+.mystation .list-petrol-station .ico-nav{position:absolute; right:0; top:-37px; width:60px; height: 60px; background:no-repeat left top url("../images/main/navigation_main@2x.png"); background-size: 100% auto; font-size: .1px}
+
 
 /* card list */
 .list-my-card{clear:both;padding:30px 0 0;}
@@ -82,8 +91,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .list-my-card a.arrow{background:no-repeat 0 0 url("../images/main/arrow_medium@2x.png"); background-size: 24px 24px;}
 .list-my-card a.refresh{background:no-repeat 0 0 url("../images/main/refresh@2x.png"); background-size: 24px 24px;}
 
-.box-shadow .toggle{width:20px; height: 20px; background:no-repeat left top url("../images/main/arrowincircle@2x.png"); background-size: 100% auto; text-indent: -999px}
-.box-shadow .dropdown{background-position: left -20px}
+.box-shadow .toggle{width:20px; height: 20px; background:no-repeat left -20px url("../images/main/arrowincircle@2x.png"); background-size: 100% auto; text-indent: -999px}
 .box-shadow .dropup{background-position: left 0 !important}
 
 .details .sum{padding: 37px 0 30px;border-bottom:1px solid #eee }

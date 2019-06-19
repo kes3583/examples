@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+
+      <meta name="apple-mobile-web-app-title" content="fuel_discount_all" />
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+      <link rel="shortcut icon" href="/favicon.ico">
+      <link rel="apple-touch-icon-precomposed" sizes="114×114" href="/share/favicon.png">
+      <title>주유할인</title>
+      <meta property="og:title" content="주유할인">
+      <meta property="og:type" content="website">
+      <meta property="og:image" content="">
+      <meta property="og:site_name" content="주유할인">
+      <meta property="fb:app_id" content="">
+      <meta property="og:url" content="">
+      <meta property="og:description" content="주유할인">
+
+      <link rel="stylesheet" type="text/css" href="css/setting.css">
+      <link rel="stylesheet" type="text/css" href="css/common.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+      <link rel="stylesheet" type="text/css" href="css/map.css">
+  </head>
+  <body>
+    <header>
+      <a href="javascript:;" class="backBtn"></a>
+      <a href="javascript:;" class="txt op1">서울시 중구 을지로 100</a>
+      <a href="map-mv.html" class="rightBtn map-mv"></a>
+    </header>
+    <section class="map">
+      <div class="area-map">
+        <ul class="list-filter">
+          <li><a href="#">거리순</a></li>
+          <li><a href="#">휘발유</a></li>
+          <li><a href="#">필터</a></li>
+        </ul>
+      </div>
+
+      <div id="resizable" class="col box-dragup tc ui-widget-content">
+        <div class="list-group list-petrol-station wrapper">
+            <dl>
+              <dt class="first-child">1</dt>
+              <dd>
+                <ul>
+                  <li><h4>SK을지로점</h4> </li>
+                  <li>SK ・ 300m ・ 10000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>2</dt>
+              <dd>
+                <ul>
+                  <li><h4>SK을지로점</h4></li>
+                  <li>현대오일 ・ 300m ・ 1000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+
+
+      </div>
+    </section>
+
+    <script src="js/plugins/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins/jquery-ui.js"></script>
+    <script src="js/plugins/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      $(function() {
+
+        $( document ).resize(function() {
+          const h =  $(document).height() - 50;
+          const h2 =  $(document).height()/2;
+          console.log('resize!',h)
+          $("#resizable").resizable({
+            maxHeight: h,
+            minHeight: h2,
+            handles: 'n'
+          });
+        });
+        const h =  $(document).height()-50;
+        const h2 =  $(document).height()/2;
+        $('#resizable').css('height',h2)
+        console.log(h)
+        console.log(h2)
+        $("#resizable").resizable({
+          maxHeight: h,
+          // minHeight:h2,
+          handles: 'n'
+        });
+
+      });
+    </script>
+  </body>
+
+</html>

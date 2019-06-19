@@ -5,17 +5,17 @@ $(function() {
   }
   touchEvt($(".backBtn"), true);
   touchEvt($(".rightBtn"), true);
-  $(".backBtn").click(function() {
-    if (location.href.indexOf("historyMonth") >= 0) {
-      location.href = "myscore_month.html?index=" + location.href.split("?")[1].split("=")[1]
-    } else {
-      location.href = "index.html"
-    }
-  });
-
-  $("header .txt").click(function() {
-    location.reload();
-  });
+  // $(".backBtn").click(function() {
+  //   if (location.href.indexOf("historyMonth") >= 0) {
+  //     location.href = "myscore_month.html?index=" + location.href.split("?")[1].split("=")[1]
+  //   } else {
+  //     location.href = "index.html"
+  //   }
+  // });
+  //
+  // $("header .txt").click(function() {
+  //   location.reload();
+  // });
 
   function touchEvt(obj, delay, evtCancel) { // 터치이벤트
     obj.on("touchstart", function(event) {
@@ -69,11 +69,18 @@ $(function() {
       }
     }
   });
-  $(".list-recent-benefit").hide();
-  $("#toggle").click(function() {
-    let _this = $(this);
-    _this.toggleClass("dropup").parent().next().slideToggle("fast");
-  });
+  // 최근받은혜택 토글
+  //$(".list-recent-benefit").hide();
+  // $("#toggle").click(function() {
+  //   let _this = $(this);
+  //   //e.preventDefault();
+  //   // _this.toggleClass("dropup").parent().next().slideToggle("fast");
+  //   if(_this.hasClass("dropup")) {
+  //        $("#numbers").animate({"height": "200px"}).removeClass("dropup");
+  //     } else {
+  //       $("#numbers").animate({"height": "100px"}).addClass("toggled");
+  //     }
+  // });
 
   $('#accordion dt').click(function() {
     let _this = $(this);
