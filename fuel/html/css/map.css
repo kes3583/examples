@@ -20,5 +20,7 @@ section.map{padding-top:50px}
 .ui-resizable-n:after{display: inline-block; width: 34px; height: 5px;-webkit-border-radius: 24px; border-radius: 24px; background: #dfe3e8; position: absolute; top: 8px;  left: 50%;margin-left:-10px; z-index: 100; content: '';}
 
 #resizable { /* height: 100px; */ overflow-y: hidden; overflow-x: hidden; }
-
 .wrapper { height: 100%; overflow-y: auto; margin-bottom:15px }
+
+.dragup{position:relative; margin-top:50px; padding:90% 0 0 0}
+.dragup .box-dragup{position:relative;}

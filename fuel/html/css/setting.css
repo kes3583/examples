@@ -1,22 +1,3 @@
-@font-face {
-  font-family: 'SKPGoMM_subset';
-  src: url('../font/SKPGoMM_subset.eot');
-  src: url('../font/SKPGoMM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoMM_subset.woff') format('woff'), url('../font/SKPGoMM_subset.woff2') format('woff2'), url('../font/SKPGoMM_subset.ttf') format('truetype'), url('../font/SKPGoMM_subset.svg#SKPGoMM_subset') format('svg')
-}
-
-@font-face {
-  font-family: 'SKPGoLM_subset';
-  src: url('../font/SKPGoLM_subset.eot');
-  src: url('../font/SKPGoLM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoLM_subset.woff') format('woff'), url('../font/SKPGoLM_subset.woff2') format('woff2'), url('../font/SKPGoLM_subset.ttf') format('truetype'), url('../font/SKPGoLM_subset.svg#SKPGoLM_subset') format('svg')
-}
-
-@font-face {
-  font-family: 'SKPGoBM_subset';
-  src: url('../font/SKPGoBM_subset.eot');
-  src: url('../font/SKPGoBM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoBM_subset.woff') format('woff'), url('../font/SKPGoBM_subset.woff2') format('woff2'), url('../font/SKPGoBM_subset.ttf') format('truetype'), url('../font/SKPGoBM_subset.svg#SKPGoBM_subset') format('svg')
-}
-
-
 
 * {
   margin: 0;

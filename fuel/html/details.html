@@ -124,6 +124,7 @@
         </div>
       </div>
     </div>
+    <!-- // modal -->
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
     <script src="js/common.js"></script>
     <script>
@@ -131,9 +132,9 @@
         //modal
         const modal = $(".modal");
         modal.hide();
-        $(".modal-toggle").click(function() {
-          modal.addClass('is-visible');
-          modal.show();
+        $(".modal-toggle").click(function(e) {
+          e.preventDefault();
+          modal.addClass('is-visible').show();
         });
 
         $(window).click(function(e) {
@@ -141,8 +142,8 @@
             const str = $(event.target).attr('class').split(' ');
             //console.log(str[0])
             if (str[0] == 'modal') {
-              modal.hide();
               modal.removeClass('is-visible');
+              modal.hide();
             }
             document.ontouchmove = function(e) {
               return true;

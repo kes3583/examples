@@ -5,17 +5,7 @@ $(function() {
   }
   touchEvt($(".backBtn"), true);
   touchEvt($(".rightBtn"), true);
-  // $(".backBtn").click(function() {
-  //   if (location.href.indexOf("historyMonth") >= 0) {
-  //     location.href = "myscore_month.html?index=" + location.href.split("?")[1].split("=")[1]
-  //   } else {
-  //     location.href = "index.html"
-  //   }
-  // });
-  //
-  // $("header .txt").click(function() {
-  //   location.reload();
-  // });
+
 
   function touchEvt(obj, delay, evtCancel) { // 터치이벤트
     obj.on("touchstart", function(event) {
@@ -40,7 +30,6 @@ $(function() {
       }
     });
   }
-
 
   // added by Eunsim Kang 14062019
   //nav title transition
@@ -98,22 +87,10 @@ $(function() {
     //addHeight();
   });
 
-  // $('.modal-toggle').on('click', function(e) {
-  //   e.preventDefault();
-  //   $('.modal').addClass('is-visible');
-  //
-  //   if ($(".modal-wrapper").outerHeight() > $(window).height()) {
-  //     //$('body').removeClass('modal-open');
-  //   } else {
-  //     //$('body').addClass('modal-open');
-  //   }
-  //   document.ontouchmove = function(e) {
-  //     e.preventDefault();
-  //   }
-  // });
-
-
-
+  // 전 페이지로 가기
+  $(".backBtn").click(function() {
+    window.history.back();
+  });
   //remove li tag 카드 버리기
   // $("button.btn-trash").click(function(){
   //   $(this).parent().parent().remove();

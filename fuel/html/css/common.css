@@ -1,4 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+  font-family: 'SKPGoMM_subset';
+  src: url('../font/SKPGoMM_subset.eot');
+  src: url('../font/SKPGoMM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoMM_subset.woff') format('woff'), url('../font/SKPGoMM_subset.woff2') format('woff2'), url('../font/SKPGoMM_subset.ttf') format('truetype'), url('../font/SKPGoMM_subset.svg#SKPGoMM_subset') format('svg')
+}
+
+@font-face {
+  font-family: 'SKPGoLM_subset';
+  src: url('../font/SKPGoLM_subset.eot');
+  src: url('../font/SKPGoLM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoLM_subset.woff') format('woff'), url('../font/SKPGoLM_subset.woff2') format('woff2'), url('../font/SKPGoLM_subset.ttf') format('truetype'), url('../font/SKPGoLM_subset.svg#SKPGoLM_subset') format('svg')
+}
+
+@font-face {
+  font-family: 'SKPGoBM_subset';
+  src: url('../font/SKPGoBM_subset.eot');
+  src: url('../font/SKPGoBM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoBM_subset.woff') format('woff'), url('../font/SKPGoBM_subset.woff2') format('woff2'), url('../font/SKPGoBM_subset.ttf') format('truetype'), url('../font/SKPGoBM_subset.svg#SKPGoBM_subset') format('svg')
+}
 
 .fs14{font-size: 1.4rem !important}
 .fs16{font-size: 1.6rem !important; font-weight: normal !important;}
@@ -71,7 +88,7 @@ body.scroll-lock{height: 100vh;overflow-y: hidden;}
 .modal .modal-wrapper h1 { font-size:1.8rem; padding:0 0 2.5rem;  }
 .modal .modal-wrapper .modal-content{color:#666; font-size:1.5rem; margin-bottom:3.5rem; line-height:148%; text-align: center;}
 .modal .modal-wrapper .btn-list{display: flex;}
-.modal .modal-wrapper .btn-list li {height:5rem;line-height:5rem; color:#fff;font-size:1.6rem;width:50%;}
+.modal .modal-wrapper .btn-list li {height:5rem;line-height:5rem; color:#fff;font-size:1.6rem;width:50%;text-align: center;}
 .modal .modal-wrapper .btn-list li.btn-only{width:100%;}
 .modal .modal-wrapper .btn-list li.btn-gr {background:#595959;}
 .modal .modal-wrapper .btn-list li.btn-bl { background:#3673ee;}
@@ -79,12 +96,20 @@ body.scroll-lock{height: 100vh;overflow-y: hidden;}
 @media (max-width: 768px) .modal .modal-wrapper { width: 500px; }
 @media (max-width:600px){ .modal .modal-wrapper{margin: 0 10px; width: auto!important;} }
 
-.modal-select{}
 .modal-select .modal-wrapper{width:100% !important; position:absolute; bottom: 0; left: 0; padding:38px 20px 15px; border-radius:0; text-align:left; margin:0; }
-.modal-select.is-visible .modal-wrapper {  }
-.modal-select .modal-transition { transition: all 0.3s 0.12s; transform: translateY(20%); opacity: 0; }
-.modal-select.is-visible .modal-transition { transform: translateY(0); opacity: 1; }
+
 .modal-select .modal-content {margin:0 !important}
 .modal-select h2{padding-bottom:20px; text-align:left; }
 .modal-select .modal-content li{font-size: 1.5rem;line-height: 3; color:#262626; padding:0 !important;text-align:left; }
 .modal-select .modal-content li.selected{color: #3673ee;background:no-repeat url("../images/common/ico_selected.png"); background-size: 15px 11px; background-position: right 0px top 15px;}
+
+.modal-filter .modal-wrapper{width:100% !important; position:absolute; bottom: 0; left: 0; padding:32px 0 0; border-radius:0; text-align:left; margin:0; }
+.modal-filter .modal-content {margin:0 !important; padding:0 20px; text-align: left !important;}
+.modal-filter .modal-content dl{padding-bottom: 24px}
+.modal-filter .modal-content dt{font-size: 1.6rem; width:100%; padding-bottom:12px; font-family: 'SKPGoBM_subset'}
+.modal-filter .modal-content dd{display: inline-block; font-size: 1.4rem; width:32.5%; border:1px solid #f0f0f0; border-radius: 5px; text-align: center; line-height: 2.5}
+.modal-filter .modal-content dd.selected{color: #3673ee;border:1px solid #3673ee;}
+
+/* transition */
+.modal-select .modal-transition, .modal-filter .modal-transition { transition:all 0.3s ease-out; transform: translateY(100%); opacity: 0; }
+.modal-select.is-visible .modal-transition, .modal-filter.is-visible .modal-transition { transform: translateY(0); opacity: 1; }
