@@ -32,18 +32,19 @@
       <a href="map-mv.html" class="rightBtn map-mv"></a>
     </header>
     <section class="map">
+      <ul class="list-filter">
+        <li><a href="#">거리순</a></li>
+        <li><a href="#">휘발유</a></li>
+        <!-- <li><a href="#">할인높은순</a></li>
+        <li><a href="#">경유</a></li> -->
+        <li><a href="#modal-filter" class="modal-filter">필터</a></li>
+      </ul>
       <div class="area-map">
-        <ul class="list-filter">
-          <li><a href="#">거리순</a></li>
-          <li><a href="#">휘발유</a></li>
-          <li><a href="#">할인높은순</a></li>
-          <li><a href="#">경유</a></li>
-          <li><a href="#modal-filter" class="modal-filter">필터</a></li>
-        </ul>
+
       </div>
 
     <div class="dragup">
-      <div id="resizable" class="col box-dragup tc ui-widget-content">
+      <div id="resizable" class="col box-dragup tc bar">
         <div class="list-group list-petrol-station wrapper">
             <dl>
               <dt class="first-child">1</dt>
@@ -227,7 +228,7 @@
 
         //modal
         const modal = $(".modal");
-        modal.hide();
+        //modal.hide();
         $(".modal-filter").click(function() {
           modal.addClass('is-visible');
           modal.show();
