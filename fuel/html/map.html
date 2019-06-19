@@ -44,7 +44,7 @@
       </div>
 
     <div class="dragup">
-      <div id="resizable" class="col box-dragup tc bar">
+      <div id="scrollup" class="col box-dragup tc bar">
         <div class="list-group list-petrol-station wrapper">
             <dl>
               <dt class="first-child">1</dt>
@@ -207,24 +207,10 @@
     <script src="js/common.js"></script>
     <script>
       $(function() {
-        //resiable
-        // $( document ).resize(function() {
-        //   let h =  $(document).height() - 80;
-        //   console.log('resize!',h)
-        //   $("#resizable").resizable({
-        //     maxHeight: h,
-        //     minHeight: 80,
-        //     handles: 'n'
-        //   });
-        // });
-        //
-        // const h =  $(document).height()-80;
-        // $('#resizable').css('height',100)
-        // $("#resizable").resizable({
-        //   maxHeight: h,
-        //   minHeight: 100,
-        //   handles: 'n'
-        // });
+        //dragup height 100px
+        const docHeight = $(window).outerHeight() - 140;
+        $("#scrollup").css('margin-top', docHeight);
+
 
         //modal
         const modal = $(".modal");
