@@ -115,9 +115,9 @@ $(function() {
 
 
   //remove li tag 카드 버리기
-  $("button.btn-trash").click(function(){
-    $(this).parent().parent().remove();
-  });
+  // $("button.btn-trash").click(function(){
+  //   $(this).parent().parent().remove();
+  // });
 
 });
 

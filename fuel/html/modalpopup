@@ -1,0 +1,63 @@
+<link rel="stylesheet" type="text/css" href='/share/css/card.css?v=20190402_1'>
+<link rel="stylesheet" type="text/css" href='/share/css/swiper.min.css'>
+
+<!-- 카드취소 팝업 -->
+   <div class="dimed">
+     <div class="message_pop">
+       <h1>삼성카드 삭제</h1>
+       <div class="pop_con">
+	        카드를 삭제하면 더 이상 해당 카드로<br>
+		 T map 주유 할인을 받을 수 없습니다.<br>
+		 계속 진행하시겠습니까?
+       </div>
+       <ul class="btn_list">
+        <li class="btn_cancel">취소</li>
+        <li id="cardCancel" class="btn_confirm">확인</li>
+       </ul>
+     </div>
+  </div>
+  <!-- //카드취소 팝업 -->
+
+  $(".btn_cancel").click(function() {
+      		$(".dimed").css("display","none")
+      	});
+
+        .dimed { display:none; justify-content: center; align-items: center;  z-index:1020;position:fixed; background:rgba(0,0,0,.8);width:100%; height:100%; top:0; left:0}
+        .message_pop {overflow:hidden; width:310px; background:#fff; border-radius:5px; text-align:center}
+        .message_pop h1 { font-size:1.8rem;padding:3.5rem 0 2.5rem;  }
+        .message_pop .pop_con{color:#666; font-size:1.6rem; margin-bottom:4rem; line-height:148%;}
+        .message_pop .btn_list {font-size:0}
+        .message_pop .btn_list li { display:inline-block; height:5rem;line-height:5rem; color:#fff;font-size:1.6rem;width:50%;}
+        .message_pop .btn_list li.btn_cancel {background:#595959;}
+        .message_pop .btn_list li.btn_confirm { background:#476ade;}
+        @media (min-height: 730px) {
+        /* .btnList { position:absolute; bottom:0;}
+        .btnList.fixed {position:absolute; bottom:0;} */	
+        }
+        .btnList { width:100%; background:#fff; margin-top:5rem;}
+        .btnList.fixed {position: fixed; left:0; bottom:0; z-index: 10000}
+        .btnList:after {display:block;content:'';clear:both}
+        .btnList li {position:relative; float:left; box-sizing:border-box;background:#fafafa;border-top:1px solid #e0e0e0;width:50%; text-align:center; padding:2.1rem 0}
+        .btnList li.on {background:#f5f5f5}
+        .btnList li:first-child {border-right:1px solid  #e0e0e0;}
+        .btnList li a {font-size:1.4rem; color:#000;display:block;font-family:'skpgo_LM' }
+        .btnList li a.first:before{display:block; content:''; background:url("/images/fuel/ico_friends_v2.png") 0 0 no-repeat; background-size:100% auto; width:2.55rem; height:2.85rem; /*margin:-0.2rem auto 1rem auto;*/ margin:0 auto 1.15rem auto;}
+        .btnList li a.second:before{display:block; content:''; background:url("/images/fuel/ico_card2_v2.png") 0 0 no-repeat; background-size:100% auto; width:3.95rem; height:2.65rem; margin:0.2rem auto 1.15rem auto;}
+        .btnList li a.second.no {color:rgba(0,0,0,.5)}
+        .btnList li a.second.no:before { opacity:0.3}
+        .btnList li .tooltip {position:absolute; top:-2.7rem; left:50%; margin-left:-7.4rem; border-radius: 25px;;
+        	-webkit-box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.13);
+        	-moz-box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.13);
+        	box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.13);
+        }
+        .btnList li .tooltip span {position:relative; display:block; font-size:1.4rem; line-height:200%; border-radius: 25px; background-color:#fff; padding:0.2rem 1.5rem; color:#4461e0; background:#fff; z-index:20;}
+        .btnList li .tooltip:before {content: ''; position: absolute; bottom:-0.3rem; left:50%; margin-left:-0.8rem; z-index:10;
+        	background-color:#fff; width:15px; height:15px; transform:rotate(45deg); margin-top:-0.3rem;
+        	/* border-top: 13px solid #fff;
+        	border-right: 12px solid transparent;
+        	border-left: 12px solid transparent;
+        	background-color:transparent;  */
+        	-webkit-box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.13);
+        	-moz-box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.13);
+        	box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.13);
+        }
