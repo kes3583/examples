@@ -98,19 +98,19 @@ $(function() {
     //addHeight();
   });
 
-  $('.modal-toggle').on('click', function(e) {
-    e.preventDefault();
-    $('.modal').addClass('is-visible');
-
-    if ($(".modal-wrapper").outerHeight() > $(window).height()) {
-      //$('body').removeClass('modal-open');
-    } else {
-      //$('body').addClass('modal-open');
-    }
-    document.ontouchmove = function(e) {
-      e.preventDefault();
-    }
-  });
+  // $('.modal-toggle').on('click', function(e) {
+  //   e.preventDefault();
+  //   $('.modal').addClass('is-visible');
+  //
+  //   if ($(".modal-wrapper").outerHeight() > $(window).height()) {
+  //     //$('body').removeClass('modal-open');
+  //   } else {
+  //     //$('body').addClass('modal-open');
+  //   }
+  //   document.ontouchmove = function(e) {
+  //     e.preventDefault();
+  //   }
+  // });
 
 
 
