@@ -119,7 +119,7 @@
       $(function() {
 
         $( document ).resize(function() {
-          let h =  $(document).height() - 50;
+          let h =  $(document).height() - 80;
           console.log('resize!',h)
           $("#resizable").resizable({
             maxHeight: h,
@@ -127,10 +127,13 @@
             handles: 'n'
           });
         });
-        const h =  $(document).height();
+
+        const h =  $(document).height()-80;
+
+        $('#resizable').css('height',100)
         $("#resizable").resizable({
           maxHeight: h,
-          minHeight: 80,
+          // minHeight: 100,
           handles: 'n'
         });
 
