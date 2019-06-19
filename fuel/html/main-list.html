@@ -22,7 +22,9 @@
 
       <link rel="stylesheet" type="text/css" href="css/setting.css">
       <link rel="stylesheet" type="text/css" href="css/common.css">
+      <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
+
   </head>
   <body>
     <header>
@@ -30,7 +32,7 @@
       <a href="javascript:;" class="txt">Tmap 주유할인</a>
       <a href="faq.html" class="rightBtn faq"></a>
     </header>
-    <section class="wrap">
+    <section class="wrap pdb100">
       <h1 class="t1 tl"><span class="fc-bl">주유할인 서비스</span>를 <br>이용하세요.</h1>
 
       <div class="col mybenefit">
@@ -95,31 +97,73 @@
         <!-- <button type="button" class="btn btn-radius btn-block btn-reg">+ 카드사 등록하기</button> -->
         <a href="/" class="btn btn-radius btn-block btn-reg fs-14">카드사 등록하기</a>
       </div>
-      <div class="col mystation pdb100">
+      <div class="col mystation">
         <h2 class="bold">주변 제휴 주유소<a href="map.html">전체보기</a></h2>
         <div class="area-map">
           this is for map api
         </div>
-        <div class="box-shadow">
-          <div class="list-group list-petrol-station">
-              <dl>
-                <dt class="first-child">1</dt>
-                <dd>
-                  <ul>
-                    <li><h4>SK을지로점</h4> </li>
-                    <li>SK ・ 300m ・ 10000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
-                  </ul>
-                </dd>
-              </dl>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="box-shadow swiper-slide">
+              <div class="list-group list-petrol-station">
+                  <dl>
+                    <dt class="first-child">1</dt>
+                    <dd>
+                      <ul>
+                        <li><h4>SK을지로점</h4> </li>
+                        <li>SK ・ 300m ・ 10000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                      </ul>
+                    </dd>
+                  </dl>
+              </div>
             </div>
-      </div>
+            <div class="box-shadow swiper-slide">
+              <div class="list-group list-petrol-station">
+                  <dl>
+                    <dt class="first-child">1</dt>
+                    <dd>
+                      <ul>
+                        <li><h4>SK을지로점</h4> </li>
+                        <li>SK ・ 300m ・ 10000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                      </ul>
+                    </dd>
+                  </dl>
+              </div>
+            </div>
+            <div class="box-shadow swiper-slide">
+              <div class="list-group list-petrol-station">
+                  <dl>
+                    <dt class="first-child">1</dt>
+                    <dd>
+                      <ul>
+                        <li><h4>SK을지로점</h4> </li>
+                        <li>SK ・ 300m ・ 10000원할인 <span class="price fs16 fc-bl">30,000원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                      </ul>
+                    </dd>
+                  </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
     </section>
+
+
     <div class="fixed">
       <button class="btn btn-bl btn-block fixed" type="button">카드발급</button>
     </div>
 
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins/swiper.min.4.1.0.js"></script>
     <script src="js/common.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        // slidesPerView: auto,
+        spaceBetween: 40,
+        centeredSlides: true,
+      });
+    </script>
   </body>
 
 </html>

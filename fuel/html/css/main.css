@@ -108,3 +108,18 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .no-details h1{padding:30px 0 5px}
 .no-details h1, .no-details p{color:#a1a3a6 !important}
 .no-details img{width:56px; height:auto}
+
+/* swiper */
+.swiper-container { overflow: none; width: 100%; height: 100%; }
+.swiper-slide {
+ /* height:100px;
+  /* display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; */
+}
