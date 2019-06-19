@@ -82,7 +82,7 @@ body.scroll-lock{height: 100vh;overflow-y: hidden;}
 .modal-select{}
 .modal-select .modal-wrapper{width:100% !important; position:absolute; bottom: 0; left: 0; padding:38px 20px 15px; border-radius:0; text-align:left; margin:0; }
 .modal-select.is-visible .modal-wrapper {  }
-.modal-select .modal-transition { transition: all 0.3s 0.12s; transform: translateY(-10%); opacity: 0; }
+.modal-select .modal-transition { transition: all 0.3s 0.12s; transform: translateY(20%); opacity: 0; }
 .modal-select.is-visible .modal-transition { transform: translateY(0); opacity: 1; }
 .modal-select .modal-content {margin:0 !important}
 .modal-select h2{padding-bottom:20px; text-align:left; }
