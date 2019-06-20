@@ -1,5 +1,6 @@
 /* eunsim kang 12062017 from Alma */
 
+header .faq{font-size: .1px; background:no-repeat 0 0 url("../images/common/faq@2x.png"); background-size: 34px 34px;}
 
 section.wrap p.t2{padding-top: 15px; line-height: 2rem}
 section.wrap p.t2, p.t2 span{font-size: 1.4rem}
@@ -31,8 +32,8 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .box-shadow h3{display: flex!important;align-items: center!important;justify-content: space-between!important;font-size: 1.4rem; position: relative;}
 
 /* .list-recent-benefit {display:none} */
-.list-group, .no-benefit{ position: relative;padding:10px 0 0;}
-.no-benefit{ color:#a1a3a6; text-align:center; padding-top:20px}
+
+.t0{position: relative; padding:20px 0 10px; color:#a1a3a6; text-align:center;}
 .list-group dl{ display: flex; align-items: center!important;justify-content: space-between!important;width:100%; padding-bottom:15px}
 .list-group dl:last-child{padding-bottom:0}
 
@@ -72,6 +73,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 
 
 /* main-list */
+.mystation{padding-top:45px}
 .mystation .area-map{height:208px; text-align: center; background: #eee; border-radius: 10px; border:1px solid #eee}
 .mystation .box-shadow{margin-top:8px}
 .mystation .list-petrol-station{padding:0}
@@ -111,15 +113,3 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 
 /* swiper */
 .swiper-container { overflow: none; width: 100%; height: 100%; }
-.swiper-slide {
- /* height:100px;
-  /* display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center; */
-}

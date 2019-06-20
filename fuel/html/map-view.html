@@ -32,15 +32,19 @@
       <a href="map-mv.html" class="rightBtn map-mv"></a>
     </header>
     <section class="map">
+      <ul class="list-filter">
+        <li><a href="#">거리순</a></li>
+        <li><a href="#">휘발유</a></li>
+        <!-- <li><a href="#">할인높은순</a></li>
+        <li><a href="#">경유</a></li> -->
+        <li><a href="#modal-filter" class="modal-filter">필터</a></li>
+      </ul>
       <div class="area-map">
-        <ul class="list-filter">
-          <li><a href="#">거리순</a></li>
-          <li><a href="#">휘발유</a></li>
-          <li><a href="#">필터</a></li>
-        </ul>
+
       </div>
 
-      <div id="resizable" class="col box-dragup tc ui-widget-content">
+    <div class="dragup">
+      <div id="scrollup" class="col box-dragup tc bar">
         <div class="list-group list-petrol-station wrapper">
             <dl>
               <dt class="first-child">1</dt>
@@ -105,39 +109,129 @@
                 </ul>
               </dd>
             </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+              <dt>3</dt>
+              <dd>
+                <ul>
+                  <li><h4>360 사이즈 최대 글자수임.</h4></li>
+                  <li>몇자가능 ・ 300m ・ -10000원할인 <span class="price fs16 fc-bl">10000 원</span><button type="button" class="btn btn-block ico-nav ht">show map</button></li>
+                </ul>
+              </dd>
+            </dl>
           </div>
-
-
       </div>
+    </div>
     </section>
 
+    <!-- modal -->
+    <div class="modal modal-filter" id="modal-filter">
+      <div class="modal-wrapper modal-transition">
+        <div class="modal-content">
+          <dl>
+            <dt>정렬</dt>
+            <dd class="selected">거리순</dd>
+            <dd>낮은 가격순</dd>
+            <dd>할인 높은순</dd>
+          </dl>
+          <dl>
+            <dt>유종</dt>
+            <dd>휘발유</dd>
+            <dd>경유</dd>
+            <dd class="selected">고급 휘발유</dd>
+          </dl>
+        </div>
+        <ul class="btn-list">
+          <li class="btn-only btn-bl btn-confirm">확인</li>
+        </ul>
+      </div>
+    </div>
+    <!-- // modal -->
+
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
-    <script src="js/plugins/jquery-ui.js"></script>
-    <script src="js/plugins/jquery.ui.touch-punch.min.js"></script>
     <script src="js/common.js"></script>
     <script>
       $(function() {
+        //dragup height 100px
+        const docHeight = $(window).outerHeight() / 2;
+        $("#scrollup").css('margin-top', docHeight);
 
-        $( document ).resize(function() {
-          const h =  $(document).height() - 50;
-          const h2 =  $(document).height()/2;
-          console.log('resize!',h)
-          $("#resizable").resizable({
-            maxHeight: h,
-            minHeight: h2,
-            handles: 'n'
-          });
+
+        //modal
+        const modal = $(".modal");
+        modal.hide();
+        $(".modal-filter").click(function(e) {
+          e.preventDefault();
+          modal.addClass('is-visible').show();
         });
-        const h =  $(document).height()-50;
-        const h2 =  $(document).height()/2;
-        $('#resizable').css('height',h2)
-        console.log(h)
-        console.log(h2)
-        $("#resizable").resizable({
-          maxHeight: h,
-          // minHeight:h2,
-          handles: 'n'
+
+        $(window).click(function(e) {
+          if (modal.hasClass('is-visible')){
+            const str = $(event.target).attr('class').split(' ');
+            //console.log(str[0])
+            if (str[0] == 'modal') {
+              modal.removeClass('is-visible');
+              modal.hide();
+            }
+            document.ontouchmove = function(e) {
+              return true;
+            }
+          }
         });
+
 
       });
     </script>

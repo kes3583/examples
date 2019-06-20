@@ -164,7 +164,7 @@
               </dd>
             </dl>
             <dl>
-              <dt>3</dt>
+              <dt>10</dt>
               <dd>
                 <ul>
                   <li><h4>360 사이즈 최대 글자수임.</h4></li>
@@ -176,6 +176,9 @@
       </div>
     </div>
     </section>
+    <div class="fixed">
+      <button class="btn btn-bl btn-block" type="button">지도로 보기</button>
+    </div>
 
     <!-- modal -->
     <div class="modal modal-filter" id="modal-filter">
@@ -195,29 +198,22 @@
           </dl>
         </div>
         <ul class="btn-list">
-          <li class="btn-only btn-bl">확인</li>
+          <li class="btn-only btn-bl btn-confirm">확인</li>
         </ul>
       </div>
     </div>
     <!-- // modal -->
 
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
-    <script src="js/plugins/jquery-ui.js"></script>
-    <script src="js/plugins/jquery.ui.touch-punch.min.js"></script>
     <script src="js/common.js"></script>
     <script>
       $(function() {
-        //dragup height 100px
-        const docHeight = $(window).outerHeight() - 140;
-        $("#scrollup").css('margin-top', docHeight);
-
-
         //modal
         const modal = $(".modal");
-        //modal.hide();
-        $(".modal-filter").click(function() {
-          modal.addClass('is-visible');
-          modal.show();
+        modal.hide();
+        $(".modal-filter").click(function(e) {
+          e.preventDefault();
+          modal.addClass('is-visible').show();
         });
 
         $(window).click(function(e) {
