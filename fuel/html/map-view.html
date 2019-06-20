@@ -44,8 +44,8 @@
       <div class="area-map h100p" id="map_div"> </div>
       <!-- //map div -->
 
-      <div class="dragup">
-        <div id="scrollup" class="col box-dragup tc bar">
+      <div class="scrollup">
+        <div class="col box-scrollup tc bar">
           <div class="list-group list-petrol-station wrapper">
               <dl>
                 <dt class="first-child">1</dt>
@@ -227,21 +227,19 @@
         const docHeight = $(window).outerHeight(); //dragup height 100px
         //필터 영역 opacity 1
         function detectScroll (){
-          console.log($(window).scrollTop())
-          if ($(window).scrollTop() > (docHeight / 2) - 20) {
+          //console.log($(window).scrollTop())
+          if ($(window).scrollTop() > (docHeight / 2) - 40) {
             $( ".list-filter" ).css('background-color','rgba(240, 240, 240, 1)');
 
           }else{
             $( ".list-filter" ).css('background-color','rgba(240, 240, 240, 0.8)');
           }
         }
-        $(".box-dragup").css('margin-top', docHeight / 2);
+        $(".scrollup").css('display', 'block'); // prevent a full box
+        $(".box-scrollup").css('margin-top', docHeight / 2); // center vertically
         $(".h100p").css('height', (docHeight)); // map height 100%
 
         $(window).scroll(_debounce(detectScroll, 30));
-
-
-
 
         //modal
         const modal = $(".modal");
