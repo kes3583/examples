@@ -137,16 +137,13 @@
           modal.addClass('is-visible').show();
         });
 
-        $(window).click(function(e) {
+        $(window).on("click ontouchstart", function(){
           if (modal.hasClass('is-visible')){
             const str = $(event.target).attr('class').split(' ');
             //console.log(str[0])
             if (str[0] == 'modal') {
               modal.removeClass('is-visible');
               modal.hide();
-            }
-            document.ontouchmove = function(e) {
-              return true;
             }
           }
         });
