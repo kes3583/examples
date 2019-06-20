@@ -5,7 +5,7 @@ body>header a.map-mv {
 }
 
 section.map{padding-top:50px}
-.area-map{position: relative; width:100%; height:100%; background-color: blue;}
+.area-map{position: fixed; width:100%; height:100%; }
 
 .list-filter{overflow: hidden; width:100%; position:fixed; left:0; top:50px; display: flex!important; align-items: center!important; justify-content: flex-start !important;font-size: 1.4rem; z-index: 1010; background-color: rgba(240, 240, 240, .8); padding:7px 20px; }
 .list-filter li a{display: inline-block; margin-right:5px; padding:0 12px; font-size: 1.4rem; color:#3673ee; border-radius: 25px; border:1px solid #3673ee;line-height: 1.8; background-color: #fff}
@@ -13,10 +13,10 @@ section.map{padding-top:50px}
 .list-filter li:last-child a{width:32px; height: 32px; background:#fff no-repeat center center url("../images/main/filter.png"); background-size: 100% auto;border-radius: 5px; border:1px solid #ddd; text-indent: -9999px}
 
 /* 주유소 리스트 drag up  */
-.box-dragup{position: absolute;left: 0; bottom: 0;   width: 100%; padding: 0;  -webkit-border-radius: 9px 9px 0 0; border-radius: 10px 10px 0 0;border-top: 1px solid #cdcdcd;box-shadow: 0 -19px 24px -14px rgba(220,220,220,0.74) ;}
+.box-dragup{position: absolute;left: 0; bottom: 0;   width: 100%; padding: 0;  -webkit-border-radius: 9px 9px 0 0; border-radius: 10px 10px 0 0;border-top: 1px solid #cdcdcd;box-shadow: 0 -19px 24px -14px rgba(220,220,220,0.74); background-color: #fff; overflow: hidden;}
 .bar:before{display: inline-block; width: 34px; height: 5px;-webkit-border-radius: 24px; border-radius: 24px; background: #dfe3e8; position: absolute; top: 8px;  left: 50%;margin-left:-10px; z-index: 100; content: '';}
 
 .dragup{position:relative; }
-.dragup .col{position:relative; margin-top:25px; padding-bottom:65px;}
+.dragup .col{position:relative; margin-top:25px; padding-bottom:20px;}
 .dragup .price{margin-right: 67px !important;}
 .dragup .ico-nav{right: 20px !important;}

@@ -74,7 +74,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 
 /* main-list */
 .mystation{padding-top:45px}
-.mystation .area-map{height:208px; text-align: center; background: #eee; border-radius: 10px; border:1px solid #eee}
+.mystation .area-map{height:208px; overflow: hidden;text-align: center; background: #eee; border-radius: 10px; border:1px solid #eee}
 .mystation .box-shadow{margin-top:8px}
 .mystation .list-petrol-station{padding:0}
 .mystation .list-petrol-station dd li .price{margin-right: 0; text-align: right; display: inline-block;}
