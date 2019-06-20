@@ -137,8 +137,8 @@
           modal.addClass('is-visible').show();
         });
 
-        $(window).on("click ontouchstart ontouchend", function(){
-          //alert('touch')
+        $(window).on("click touchstart touchend", function(){
+          alert('touch')
           if (modal.hasClass('is-visible')){
             const str = $(event.target).attr('class').split(' ');
             //console.log(str[0])
