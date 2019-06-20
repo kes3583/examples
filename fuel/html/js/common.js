@@ -58,6 +58,7 @@ $(function() {
       }
     }
   });
+  
   // 최근받은혜택 토글
   //$(".list-recent-benefit").hide();
   // $("#toggle").click(function() {

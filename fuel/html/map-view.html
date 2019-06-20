@@ -41,7 +41,7 @@
       </ul>
 
       <!-- map div -->
-      <div class="area-map h100" id="map_div"> </div>
+      <div class="area-map h100p" id="map_div"> </div>
       <!-- //map div -->
 
       <div class="dragup">
@@ -206,11 +206,40 @@
     <script src="js/common.js"></script>
     <script src="https://toptmap.tmap.co.kr:10612/tmapv20/js?version=1&format=javascript&appKey=8156aff8-fff4-4b85-8329-ffc228d9624c"></script>
     <script>
+
       $(function() {
-        //dragup height 100px
-        const docHeight = $(window).outerHeight();
-        $("#scrollup").css('margin-top', (docHeight/2));
-        $(".h100").css('height', (docHeight));
+        function _debounce(func, wait, immediate = true) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      }
+
+
+        const docHeight = $(window).outerHeight(); //dragup height 100px
+        //필터 영역 opacity 1
+        function detectScroll (){
+          console.log($(window).scrollTop())
+          if ($(window).scrollTop() > (docHeight / 2) - 20) {
+            $( ".list-filter" ).css('background-color','rgba(240, 240, 240, 1)');
+
+          }else{
+            $( ".list-filter" ).css('background-color','rgba(240, 240, 240, 0.8)');
+          }
+        }
+        $(".box-dragup").css('margin-top', docHeight / 2);
+        $(".h100p").css('height', (docHeight)); // map height 100%
+
+        $(window).scroll(_debounce(detectScroll, 30));
+
 
 
 
@@ -229,9 +258,6 @@
             if (str[0] == 'modal') {
               modal.removeClass('is-visible');
               modal.hide();
-            }
-            document.ontouchmove = function(e) {
-              return true;
             }
           }
         });

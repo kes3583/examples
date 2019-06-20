@@ -13,10 +13,10 @@ section.map{padding-top:50px}
 .list-filter li:last-child a{width:32px; height: 32px; background:#fff no-repeat center center url("../images/main/filter.png"); background-size: 100% auto;border-radius: 5px; border:1px solid #ddd; text-indent: -9999px}
 
 /* 주유소 리스트 drag up  */
-.box-dragup{position: absolute;left: 0; bottom: 0;   width: 100%; padding: 0;  -webkit-border-radius: 9px 9px 0 0; border-radius: 10px 10px 0 0;border-top: 1px solid #cdcdcd;box-shadow: 0 -19px 24px -14px rgba(220,220,220,0.74); background-color: #fff; overflow: hidden;}
-.bar:before{display: inline-block; width: 34px; height: 5px;-webkit-border-radius: 24px; border-radius: 24px; background: #dfe3e8; position: absolute; top: 8px;  left: 50%;margin-left:-10px; z-index: 100; content: '';}
-
-.dragup{position:relative; }
-.dragup .col{position:relative; margin-top:25px; padding-bottom:20px;}
+.dragup{position:relative;  }
+.dragup .col{position:relative; padding-bottom:20px;}
 .dragup .price{margin-right: 67px !important;}
 .dragup .ico-nav{right: 20px !important;}
+
+.box-dragup{ /* position: absolute;left: 0; bottom: 0;  */ width: 100%; padding: 0;  -webkit-border-radius: 9px 9px 0 0; border-radius: 10px 10px 0 0;border-top: 1px solid #cdcdcd;box-shadow: 0 -19px 24px -14px rgba(220,220,220,0.74); background-color: #fff; overflow: hidden;}
+.bar:before{display: inline-block; width: 34px; height: 5px;-webkit-border-radius: 24px; border-radius: 24px; background: #dfe3e8; position: absolute; top: 8px;  left: 50%;margin-left:-10px; z-index: 100; content: '';}

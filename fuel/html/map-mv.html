@@ -32,9 +32,7 @@
       <!-- <a href="map-mv.html" class="rightBtn map-mv ht">지도크게보기</a> -->
     </header>
     <section class="map">
-      <div class="area-map">
-
-      </div>
+      <div class="area-map h100" id="map_div"> </div>
     </section>
     <div class="fixed">
       <button class="btn btn-wh btn-block" type="button">이 위치에서 재검색</button>
@@ -44,6 +42,9 @@
     <script src="js/common.js"></script>
     <script src="https://toptmap.tmap.co.kr:10612/tmapv20/js?version=1&format=javascript&appKey=8156aff8-fff4-4b85-8329-ffc228d9624c"></script>
     <script>
+    const docHeight = $(window).outerHeight();
+    $(".h100").css('height', (docHeight));
+
     // 페이지가 로딩이 된 후 호출하는 함수입니다.
     function initTmap(){
     	// map 생성
