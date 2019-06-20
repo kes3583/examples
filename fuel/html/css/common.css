@@ -16,7 +16,12 @@
   src: url('../font/SKPGoBM_subset.eot');
   src: url('../font/SKPGoBM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoBM_subset.woff') format('woff'), url('../font/SKPGoBM_subset.woff2') format('woff2'), url('../font/SKPGoBM_subset.ttf') format('truetype'), url('../font/SKPGoBM_subset.svg#SKPGoBM_subset') format('svg')
 }
-
+:root {
+  --main-color: #3673ee !important;
+  --main-txt-color:#262626;
+  --sub-txt-color: #a1a3a6;
+  --sub-txt-color-exc: #f8483b;
+}
 .fs14{font-size: 1.4rem !important}
 .fs16{font-size: 1.6rem !important; font-weight: normal !important;}
 .fs18{font-size: 1.8rem !important; font-weight: normal !important;}
