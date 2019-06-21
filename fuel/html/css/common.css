@@ -76,7 +76,7 @@ button{overflow: visible;}
 .error p{  color: #262626; font-size: 1.6rem}
 .error img{ width:56px; height:56px}
 
-.fixed{position:fixed;left:0;bottom:0; width:100%; z-index: 1001}
+.fixed{position:fixed;left:0;bottom:0; width:100%; z-index: 10000}
 
 header .txt{opacity: 0; }
 section.wrap{min-height: 100%; margin:0 auto -50px;}
