@@ -176,6 +176,10 @@
             </div>
         </div>
       </div>
+
+      <!-- <div class="fixed">
+        <button class="btn btn-bl btn-block fixed" type="button">지도로 보기</button>
+      </div> -->
     </section>
 
     <!-- modal -->
@@ -183,22 +187,22 @@
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper modal-transition">
         <div class="modal-content">
-          <dl>
-            <dt>정렬</dt>
-            <dd class="selected">거리순</dd>
-            <dd>낮은 가격순</dd>
-            <dd>할인 높은순</dd>
+          <dl class="sortby1">
+            <dt >정렬</dt>
+            <dd class="selected"><button type="button">거리순</button></dd>
+            <dd><button type="button">낮은 가격순</button></dd>
+            <dd><button type="button">할인 높은순</button></dd>
           </dl>
-          <dl>
+          <dl class="sortby2">
             <dt>유종</dt>
-            <dd>휘발유</dd>
-            <dd>경유</dd>
-            <dd class="selected">고급 휘발유</dd>
+            <dd class="selected"><button type="button">휘발유</button></dd>
+            <dd><button type="button">경유</button></dd>
+            <dd><button type="button">고급 휘발유</button></dd>
           </dl>
         </div>
-        <ul class="btn-list">
-          <li class="btn-only btn-bl btn-confirm">확인</li>
-        </ul>
+        <div class="df btn-list">
+          <button type="button" class="btn-only btn-bl fs16 btn-confirm">확인</button>
+        </div>
       </div>
     </div>
     <!-- // modal -->
@@ -214,7 +218,15 @@
 
         //modal
         $(".modal-toggle").click(showMConfirmModal);
-        
+
+        //filter select
+        $('.sortby1 button').on('click', {name : 'sortby1', tag:'dd'}, sortby);
+        $('.sortby2 button').on('click', {name : 'sortby2', tag:'dd'}, sortby);
+        $(".btn-list .btn-confirm").click(function(){
+          $('.modal').removeClass('is-visible');
+        });
+
+
       });
 
       // 페이지가 로딩이 된 후 호출하는 함수입니다.

@@ -101,16 +101,6 @@ $(function() {
 
 });
 
-//myfunction
-function addHeight() {
-  const listFaq = $(".list-faq");
-  if (listFaq.parent().outerHeight() > $(window).height()) {
-    listFaq.addClass("pdb100")
-  } else {
-    listFaq.removeClass("pdb100")
-  }
-}
-
 //api
 function _debounce(func, wait, immediate = true) {
   var timeout;
@@ -127,6 +117,15 @@ function _debounce(func, wait, immediate = true) {
   };
 }
 
+//myfunction
+function addHeight() {
+  const listFaq = $(".list-faq");
+  if (listFaq.parent().outerHeight() > $(window).height()) {
+    listFaq.addClass("pdb100")
+  } else {
+    listFaq.removeClass("pdb100")
+  }
+}
 
 //modal popup
 var modal = $(".modal");
@@ -192,3 +191,9 @@ function mapView(){
   height100() // map height 100%
   $(window).scroll(_debounce(detectScroll, 30));
 }
+
+function sortby(event) {
+  console.log('.' + event.data.name +' ' + event.data.tag)
+  $('.' + event.data.name +' ' + event.data.tag).removeClass('selected');
+  $(this).closest(event.data.tag).addClass('selected')
+};

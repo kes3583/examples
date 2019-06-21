@@ -117,8 +117,8 @@
       <div class="modal-wrapper modal-transition">
         <h2 class="fs16">카드사 전체</h2>
         <div class="modal-content">
-          <ul>
-            <li >삼성카드</li>
+          <ul class="sortby">
+            <li>삼성카드</li>
             <li class="selected">신한카드</li>
             <li>현대카드</li>
           </ul>
@@ -132,6 +132,10 @@
       $(function() {
         //modal
         $(".modal-toggle").click(showMConfirmModal);
+
+        //select credit card provider
+        $('.sortby li').on('click', {name : 'sortby', tag:'li'}, sortby);
+
       });
     </script>
 

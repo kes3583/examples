@@ -32,6 +32,7 @@
 .fc-262626{color: #262626 !important}
 .fc-737373{color: #737373 !important}
 .fc-red{color:#f8483b !important}
+.fc-fff{color:#fff !important}
 .lh1-4{line-height: 1.4 !important}
 
 .ht{text-indent: 100%; white-space: nowrap; overflow: hidden;}
@@ -51,6 +52,7 @@
 /* layout */
 .tit{font-size: 1.6rem;font-weight: normal;}
 .cap{color:#a1a3a6 !important; font-size: 1.2rem !important}
+.w50p {width:50%; }
 
 .df{display:flex;}
 .ai-fs{align-items: flex-start!important;}
@@ -64,11 +66,13 @@ button{overflow: visible;}
 .btn-radius{border-radius: .3rem; border:1px solid #accafb}
 .btn-bl{ background:#3673ee; color:#fff; }
 .btn-wh{ background-color:#fff; color:#3673ee; border-top: 1px solid #ededed;}
-.btn2 {width:50%; }
+
 .brl{border-left: 1px solid #ededed}
 .btn-faq{display: flex; background:#fff no-repeat 29% 49% url("../images/common/cellphone.png"); background-size: 16px 16px;}
 .btn-reg{height:auto;font-size:1.4rem; line-height: 2.7}
 .btn-reg:before{content: '+'; font-size: 2.2rem; font-weight: lighter; color:#3673ee; position: absolute; top: -10px; left: 50%; margin-left:-63px }
+.btn-only{width:100%; display: flex;justify-content: center;align-items: center;}
+.btn-gr {color:#fff;background:#595959;}
 
 
 .error{padding-top:100px !important}
@@ -134,11 +138,9 @@ animation-duration: 0.4s; }
 .modal-confirm .modal-wrapper{position: relative; margin: 0 10px; top:0; bottom:auto; padding:35px 0 0; border-radius: 4px;}
 .modal-wrapper h1 { font-size:1.8rem;  padding-bottom: 35px}
 .modal-wrapper .modal-content{color:#666; font-size:1.5rem; margin-bottom:3.5rem; line-height:2.3; text-align: center;}
-.modal-wrapper .btn-list{display: flex;}
-.modal-wrapper .btn-list li {height:5rem;line-height:5rem; color:#fff;font-size:1.6rem;width:50%;text-align: center;}
-.modal-wrapper .btn-list li.btn-only{width:100%; display: flex;justify-content: center;align-items: center;}
-.modal-wrapper .btn-list li.btn-gr {background:#595959;}
-.modal-wrapper .btn-list li.btn-bl { background:#3673ee;}
+
+.modal-wrapper .btn-list{height:5rem;line-height:5rem; color:#fff;font-size:1.6rem;text-align: center;}
+
 
 /* @media (max-width: 768px) .modal .modal-wrapper { width: 500px; }
 @media (max-width:600px){ .modal .modal-wrapper{margin: 0 10px; width: auto!important;} } */
@@ -155,8 +157,10 @@ animation-duration: 0.4s; }
 .modal-filter .modal-content {margin:0 !important; padding:0 20px; text-align: left !important;}
 .modal-filter .modal-content dl{padding-bottom: 24px}
 .modal-filter .modal-content dt{font-size: 1.6rem; width:100%; padding-bottom:12px; font-family: 'SKPGoBM_subset'}
-.modal-filter .modal-content dd{display: inline-block; font-size: 1.4rem; width:32.5%; border:1px solid #f0f0f0; border-radius: 5px; text-align: center; line-height: 2.5}
-.modal-filter .modal-content dd.selected{color: #3673ee;border:1px solid #3673ee;}
+.modal-filter .modal-content dd { display: inline-flex; justify-content: center;align-items: center;width:32.3%;  text-align: center; }
+.modal-filter .modal-content dd button{border: none;width:100%; font-size: 1.4rem !important;color:#262626;line-height: 2.5;height:auto; border-radius: 5px; border:1px solid #f0f0f0;}
+.modal-filter .modal-content dd.selected button{color: #3673ee;border:1px solid #3673ee;}
+
 
 /* countdown loading */
 .count-wrap{position:relative; margin-left:7px; width: 25px; height: 25px;}
