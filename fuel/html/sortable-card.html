@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 
@@ -35,13 +34,13 @@
     <h1 class="t1 tl pdlr18"><span class="fc-bl">등록할 제휴 카드사</span>를 <br>선택하세요.</h1>
     <ul id="sortable" class="sortable-container sortable-my-card ">
       <li class="samsung">
-        <h4>삼성카드</h4><button class="btn ht btn-trash" type="button"> 카드 삭제 </button>
+        <h4>삼성카드</h4><button class="btn ht btn-trash modal-toggle" type="button"> 카드 삭제 </button>
       </li>
       <li class="shinhan">
-        <h4>신한카드</h4><button class="btn ht btn-trash"> 카드 삭제 </button>
+        <h4>신한카드</h4><button class="btn ht btn-trash modal-toggle"> 카드 삭제 </button>
       </li>
       <li class="hyundai">
-        <h4>현대카드</h4><button class="btn ht btn-trash"> 카드 삭제 </button>
+        <h4>현대카드</h4><button class="btn ht btn-trash modal-toggle"> 카드 삭제 </button>
       </li>
     </ul>
     <div class="fixed">
@@ -49,11 +48,12 @@
     </div>
 
     <!-- 카드삭제 팝업 -->
-    <div id="modal-confirm" class="modal">
+    <div id="modal" class="modal modal-confirm">
+      <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper">
-        <h1>카드 삭제 안내</h1>
+        <h1 class="tc">카드 삭제 안내</h1>
         <div class="modal-content fc-737373">
-          카드를 삭제하면 더 이상 해당 카드로<br> T map 주유 할인을 받을 수 없습니다.<br> 계속 진행하시겠습니까?
+          삭제 시 [$카드사$]가 삭제되며, 보유한 <br> 모든 [$카드사$] 카드로 더이상 T map<br> 주유할인 혜택을 받으실 수 없습니다.<br> 계속 진행하시겠습니까?
         </div>
         <ul class="btn-list">
           <li class="btn-gr btn-cancel">취소</li>
@@ -64,9 +64,10 @@
     <!-- //카드삭제 팝업 -->
 
     <!-- 종료 팝업  -->
-    <!-- <div id="modal-end-service" class="modal">
+    <!-- <div id="modal" class="modal modal-confirm">
+      <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper">
-        <div class="modal-content fs18">
+        <div class="modal-content fs18 fc-blc lh1-4">
           그동안 주유할인 서비스를<br> 이용해주셔서 감사합니다.
         </div>
         <ul class="btn-list">
@@ -91,14 +92,15 @@
 
         //modal
         const modal = $(".modal");
-        modal.hide();
-        $(".btn-trash").click(function() {
-          const modalPosY = $(document).outerHeight() / 2 - 132.5;
+        const modalHeight = $(".modal-wrapper").height();
+        $(".modal-toggle").click(function() {
+
+          const modalPosY = $(document).outerHeight() / 2 - modalHeight/2;
           $(".modal-wrapper").css("margin-top", modalPosY)
-          modal.show();
+          $('.modal').toggleClass('is-visible');
         });
         $(".btn-cancel").click(function(e) {
-          modal.hide();
+          $('.modal').removeClass('is-visible');
         });
 
         $(window).click(function(e) {

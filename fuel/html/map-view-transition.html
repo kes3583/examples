@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+
+  <meta name="apple-mobile-web-app-title" content="fuel_discount_all" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="114×114" href="/share/favicon.png">
+  <title>주유할인</title>
+  <meta property="og:title" content="주유할인">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="주유할인">
+  <meta property="fb:app_id" content="">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="주유할인">
+
+  <link rel="stylesheet" type="text/css" href="css/setting.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/map.css">
+
+
+
+  <style>
+
+
+
+
+/* new */
+.modal { position: fixed; z-index: 10000; /* 1 */ top: 0; left: 0; visibility: hidden; width: 100%; height: 100%; }
+.modal.is-visible { visibility: visible; }
+.modal-overlay { position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; background: hsla(0, 0%, 0%, 0.5); visibility: hidden; opacity: 0; transition: visibility 0s linear 0.3s, opacity 0.3s; }
+.modal.is-visible .modal-overlay { opacity: 1; visibility: visible; transition-delay: 0s; }
+.modal-wrapper { position: fixed; z-index: 9999; bottom: 0; left: 0; width: 100%; margin-left: 0; background-color: #fff; box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35); }
+.modal-transition { transition: all 0.3s 0.12s; -webkit-transform: translateY(10%); transform: translateY(10%); opacity: 0; }
+.modal.is-visible .modal-transition { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+
+  </style>
+</head>
+
+<body>
+
+  <section class="map">
+    <ul class="list-filter">
+      <li><a href="#">거리순</a></li>
+      <li><a href="#">휘발유</a></li>
+      <!-- <li><a href="#">할인높은순</a></li>
+        <li><a href="#">경유</a></li> -->
+      <li><a href="#modal-filter" class="filter modal-toggle">필터</a></li>
+    </ul>
+  </section>
+
+
+  <!-- modal -->
+  <div class="modal modal-filter" id="modal-filter">
+    <div class="modal-overlay modal-toggle"></div>
+    <div class="modal-wrapper modal-transition">
+      <div class="modal-content">
+        <dl>
+          <dt>정렬</dt>
+          <dd class="selected">거리순</dd>
+          <dd>낮은 가격순</dd>
+          <dd>할인 높은순</dd>
+        </dl>
+        <dl>
+          <dt>유종</dt>
+          <dd>휘발유</dd>
+          <dd>경유</dd>
+          <dd class="selected">고급 휘발유</dd>
+        </dl>
+      </div>
+      <ul class="btn-list">
+        <li class="btn-only btn-bl btn-confirm">확인</li>
+      </ul>
+    </div>
+  </div>
+  <!-- // modal -->
+
+  <script src="js/plugins/jquery-1.11.1.min.js"></script>
+
+  <script>
+    $(function() {
+
+
+
+
+
+
+      //modal
+      const modal = $("#modal");
+      // modal.hide();
+      $(".modal-toggle").click(function(e) {
+        e.preventDefault();
+        $('.modal').toggleClass('is-visible');
+        // modal.removeClass('inactive').addClass('is-visible').show();
+
+      });
+
+      // $(window).click(function(e) {
+      //
+      //   if (modal.hasClass('is-visible') && e.target.id == 'modal') {
+      //     console.log(modal.hasClass('is-visible'))
+      //     modal.removeClass('is-visible').addClass('inactive');
+      //
+      //
+      //   } else {
+      //     return
+      //   }
+      // });
+    });
+  </script>
+</body>
+
+</html>
