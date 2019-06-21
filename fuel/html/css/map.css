@@ -53,7 +53,7 @@ section.map{padding-top:50px}
 }
 
 @keyframes moving {
-    from { width: 70%; }
+    from { }
     50% {transform: translateY(-200px);  }
     to {transform: translateY(0px); width:100%; }
 }
