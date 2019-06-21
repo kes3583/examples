@@ -92,15 +92,15 @@
 
         //modal
         const modal = $(".modal");
-        const modalHeight = $(".modal-wrapper").height();
+        const modalWrapper = $(".modal-wrapper");
+        const modalHeight = modalWrapper.height();
         $(".modal-toggle").click(function() {
-
           const modalPosY = $(document).outerHeight() / 2 - modalHeight/2;
-          $(".modal-wrapper").css("margin-top", modalPosY)
-          $('.modal').toggleClass('is-visible');
+          modalWrapper.css("margin-top", modalPosY)
+          modal.toggleClass('is-visible');
         });
         $(".btn-cancel").click(function(e) {
-          $('.modal').removeClass('is-visible');
+          modal.removeClass('is-visible');
         });
 
         $(window).click(function(e) {
