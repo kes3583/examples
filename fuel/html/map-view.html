@@ -41,7 +41,7 @@
         <li><a href="#modal-filter" class="filter modal-toggle">필터</a></li>
       </ul>
       <!-- map div -->
-      <div class="area-map h100p" id="map_div"> </div>
+      <div class="area-map h100" id="map_div"> </div>
       <!-- //map div -->
 
       <div class="scrollup">
@@ -208,25 +208,13 @@
     <script src="https://toptmap.tmap.co.kr:10612/tmapv20/js?version=1&format=javascript&appKey=8156aff8-fff4-4b85-8329-ffc228d9624c"></script>
     <script>
       $(function() {
-        const docHeight = $(window).outerHeight(); //dragup height 100px
-        const listFilter = $( ".list-filter" );
-        //필터 영역 opacity 1
-        function detectScroll (){
-          //console.log($(window).scrollTop())
-          if ($(window).scrollTop() > (docHeight / 2) - 40) {
-            listFilter.css('background-color','rgba(240, 240, 240, 1)');
 
-          }else{
-            listFilter.css('background-color','rgba(240, 240, 240, 0.8)');
-          }
-        }
-        $(".scrollup").css('display', 'block'); // prevent a full box
-        $(".box-scrollup").css('margin-top', docHeight / 2); // center vertically
-        $(".h100p").css('height', (docHeight)); // map height 100%
-        $(window).scroll(_debounce(detectScroll, 30));
+        //just for this page
+        mapView();
 
         //modal
         $(".modal-toggle").click(showMConfirmModal);
+        
       });
 
       // 페이지가 로딩이 된 후 호출하는 함수입니다.

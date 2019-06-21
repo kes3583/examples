@@ -111,6 +111,23 @@ function addHeight() {
   }
 }
 
+//api
+function _debounce(func, wait, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+
 //modal popup
 var modal = $(".modal");
 var modalWrapper = $(".modal-wrapper");
@@ -154,23 +171,24 @@ var showMConfirmModal = function (e) {
 }
 
 //height100
+const docHeight = $(window).outerHeight();
+const listFilter = $( ".list-filter" );
 var height100 = function (){
-  const docHeight = $(window).outerHeight();
   $(".h100").css('height', docHeight);
 }
 
-//api
-function _debounce(func, wait, immediate = true) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
+//필터 영역 opacity 1
+function detectScroll (){
+  //console.log($(window).scrollTop())
+  if ($(window).scrollTop() > (docHeight / 2) - 40) {
+    listFilter.css('background-color','rgba(240, 240, 240, 1)');
+  }else{
+    listFilter.css('background-color','rgba(240, 240, 240, 0.8)');
+  }
+}
+function mapView(){
+  $(".scrollup").css('display', 'block'); // prevent a full box
+  $(".box-scrollup").css('margin-top', docHeight / 2); // centering vertically
+  height100() // map height 100%
+  $(window).scroll(_debounce(detectScroll, 30));
 }
