@@ -207,22 +207,7 @@
     <script src="js/common.js"></script>
     <script src="https://toptmap.tmap.co.kr:10612/tmapv20/js?version=1&format=javascript&appKey=8156aff8-fff4-4b85-8329-ffc228d9624c"></script>
     <script>
-
       $(function() {
-        function _debounce(func, wait, immediate = true) {
-          var timeout;
-          return function() {
-            var context = this, args = arguments;
-            var later = function() {
-              timeout = null;
-              if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-          };
-        }
         const docHeight = $(window).outerHeight(); //dragup height 100px
         const listFilter = $( ".list-filter" );
         //필터 영역 opacity 1
@@ -238,17 +223,12 @@
         $(".scrollup").css('display', 'block'); // prevent a full box
         $(".box-scrollup").css('margin-top', docHeight / 2); // center vertically
         $(".h100p").css('height', (docHeight)); // map height 100%
-
         $(window).scroll(_debounce(detectScroll, 30));
 
-
         //modal
-        $(".modal-toggle").click(function(e) {
-          e.preventDefault();
-          $('.modal').toggleClass('is-visible');
-
-        });
+        $(".modal-toggle").click(showMConfirmModal);
       });
+
       // 페이지가 로딩이 된 후 호출하는 함수입니다.
       function initTmap(){
       	// map 생성

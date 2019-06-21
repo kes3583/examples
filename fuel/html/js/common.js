@@ -56,7 +56,7 @@ $(function() {
           transition: 'opacity 0.3s ease-in-out'
         });
       }
-    }
+    }else{return;}
   });
 
   // 최근받은혜택 토글
@@ -72,6 +72,7 @@ $(function() {
   //     }
   // });
 
+  //faq
   $('#accordion dt').click(function() {
     let _this = $(this);
     let a = _this.closest('dl');
@@ -92,6 +93,7 @@ $(function() {
   $(".backBtn").click(function() {
     window.history.back();
   });
+
   //remove li tag 카드 버리기
   // $("button.btn-trash").click(function(){
   //   $(this).parent().parent().remove();
@@ -99,6 +101,7 @@ $(function() {
 
 });
 
+//myfunction
 function addHeight() {
   const listFaq = $(".list-faq");
   if (listFaq.parent().outerHeight() > $(window).height()) {
@@ -108,6 +111,7 @@ function addHeight() {
   }
 }
 
+//modal popup
 var modal = $(".modal");
 var modalWrapper = $(".modal-wrapper");
 var modalHeight = modalWrapper.height();
@@ -127,7 +131,7 @@ function coundDown() {
     }else{
       modalToggle.bind('click',showMConfirmModal)
       clearInterval(downloadTimer);
-      $(".modal").removeClass("is-visible");
+      modal.removeClass("is-visible");
     }
   }, 1000);
 }
@@ -147,4 +151,26 @@ var showMConfirmModal = function (e) {
   e.preventDefault();
    modal.toggleClass('is-visible');
   }
+}
+
+//height100
+var height100 = function (){
+  const docHeight = $(window).outerHeight();
+  $(".h100").css('height', docHeight);
+}
+
+//api
+function _debounce(func, wait, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
 }

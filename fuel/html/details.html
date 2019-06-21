@@ -131,12 +131,7 @@
     <script>
       $(function() {
         //modal
-        const modal = $(".modal");
-
-        $(".modal-toggle").click(function(e) {
-          e.preventDefault();
-          modal.toggleClass('is-visible');
-        });
+        $(".modal-toggle").click(showMConfirmModal);
       });
     </script>
 
