@@ -24,42 +24,22 @@
       <link rel="stylesheet" type="text/css" href="css/common.css">
       <link rel="stylesheet" type="text/css" href="css/map.css">
   </head>
-  <body class="map">
+  <body>
     <header>
       <a href="javascript:;" class="backBtn"></a>
-      <a href="javascript:;" class="txt op1">서울시 중구 을지로 100</a> -->
+      <a href="javascript:;" class="txt op1">서울시 중구 을지로 100</a>
       <!-- <a href="map-mv.html" class="rightBtn map-mv ht">지도크게보기</a> -->
-  </header>
-
-    <div id="wrapper" class="wrapper">
-      <div class="img loading"><img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" alt=""></div>
-    </div>
-
-
-
-
-    <!-- <section class="map">
+    </header>
+    <section class="map">
       <div class="area-map h100" id="map_div"> </div>
-    </section> -->
+    </section>
     <div class="fixed">
       <button class="btn btn-wh btn-block" type="button">이 위치에서 재검색</button>
     </div>
 
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
     <script src="js/common.js"></script>
-    <script>
-    $(function() {
-      //$('body').addClass('map-open');
-    })
-    window.addEventListener("load", animation);
-
-    function animation(){
-      // var box = document.getElementById('wrapper');
-      // var img = box.querySelector(".img");
-      // img.classList.add("loading");
-    }
-    </script>
-    <!-- <script src="https://toptmap.tmap.co.kr:10612/tmapv20/js?version=1&format=javascript&appKey=8156aff8-fff4-4b85-8329-ffc228d9624c"></script>
+    <script src="https://toptmap.tmap.co.kr:10612/tmapv20/js?version=1&format=javascript&appKey=8156aff8-fff4-4b85-8329-ffc228d9624c"></script>
     <script>
     const docHeight = $(window).outerHeight();
     $(".h100").css('height', (docHeight));
@@ -75,7 +55,7 @@
     }
     // 맵 생성 실행
     initTmap();
-    </script> -->
+    </script>
 
 
   </body>
