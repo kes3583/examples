@@ -48,7 +48,7 @@
     </div>
 
     <!-- 카드삭제 팝업 -->
-    <div id="modal" class="modal modal-confirm">
+    <!-- <div id="modal" class="modal modal-confirm">
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper">
         <h1 class="tc">카드 삭제 안내</h1>
@@ -60,21 +60,21 @@
           <li id="cardCancel" class=" btn-bl btn-confirm">확인</li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <!-- //카드삭제 팝업 -->
 
     <!-- 종료 팝업  -->
-    <!-- <div id="modal" class="modal modal-confirm">
+    <div id="modal" class="modal modal-confirm">
       <div class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper">
         <div class="modal-content fs18 fc-blc lh1-4">
           그동안 주유할인 서비스를<br> 이용해주셔서 감사합니다.
         </div>
         <ul class="btn-list">
-          <li class="btn-only btn-bl">T map 메인화면으로 가기</li>
+          <li class="btn-only btn-bl">T map 메인화면으로 가기<div id="count-loading" class="count-wrap"><span class="number" id="countdown-number"></span><div id="loader"></div></div></li>
         </ul>
       </div>
-    </div> -->
+    </div>
     <!-- //카드삭  팝업 -->
 
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
@@ -91,6 +91,21 @@
         });
 
         //modal
+        function coundDown() {
+          //console.log(1);
+          var countdownNumberEl = document.getElementById("countdown-number");
+          var countdown = 5;
+          countdownNumberEl.textContent = countdown;
+          var downloadTimer = setInterval(function() {
+            countdown--;// 5 to 0
+            countdownNumberEl.textContent = countdown;
+            if (countdown <= 0) {
+              clearInterval(downloadTimer);
+              $(".modal").removeClass("is-visible");
+            }
+          }, 1000);
+        }
+
         const modal = $(".modal");
         const modalWrapper = $(".modal-wrapper");
         const modalHeight = modalWrapper.height();
@@ -98,6 +113,7 @@
           const modalPosY = $(document).outerHeight() / 2 - modalHeight/2;
           modalWrapper.css("margin-top", modalPosY)
           modal.toggleClass('is-visible');
+          coundDown();
         });
         $(".btn-cancel").click(function(e) {
           modal.removeClass('is-visible');
