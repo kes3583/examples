@@ -65,7 +65,7 @@
 
     <!-- 종료 팝업  -->
     <div id="modal" class="modal modal-confirm">
-      <div class="modal-overlay modal-toggle"></div>
+      <div id="modal-toggle" class="modal-overlay modal-toggle"></div>
       <div class="modal-wrapper">
         <div class="modal-content fs18 fc-blc lh1-4">
           그동안 주유할인 서비스를<br> 이용해주셔서 감사합니다.
@@ -75,7 +75,7 @@
         </ul>
       </div>
     </div>
-    <!-- //카드삭  팝업 -->
+    <!-- //카드삭제  팝업 -->
 
     <script src="js/plugins/jquery-1.11.1.min.js"></script>
     <script src="js/plugins/touch-dnd.js"></script>
@@ -90,42 +90,10 @@
           placeholderTag: null
         });
 
-        //modal
-        function coundDown() {
-          //console.log(1);
-          var countdownNumberEl = document.getElementById("countdown-number");
-          var countdown = 5;
-          countdownNumberEl.textContent = countdown;
-          var downloadTimer = setInterval(function() {
-            countdown--;// 5 to 0
-            countdownNumberEl.textContent = countdown;
-            if (countdown <= 0) {
-              clearInterval(downloadTimer);
-              $(".modal").removeClass("is-visible");
-            }
-          }, 1000);
-        }
-
-        const modal = $(".modal");
-        const modalWrapper = $(".modal-wrapper");
-        const modalHeight = modalWrapper.height();
-        $(".modal-toggle").click(function() {
-          const modalPosY = $(document).outerHeight() / 2 - modalHeight/2;
-          modalWrapper.css("margin-top", modalPosY)
-          modal.toggleClass('is-visible');
-          coundDown();
-        });
+        //modal popup
+        $(".modal-toggle").click(showMConfirmModal);
         $(".btn-cancel").click(function(e) {
           modal.removeClass('is-visible');
-        });
-
-        $(window).click(function(e) {
-          if ($(event.target).attr('class') == 'modal') {
-            modal.hide();
-          }
-          document.ontouchmove = function(e) {
-            return true;
-          }
         });
       });
     </script>

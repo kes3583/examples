@@ -58,7 +58,7 @@ $(function() {
       }
     }
   });
-  
+
   // 최근받은혜택 토글
   //$(".list-recent-benefit").hide();
   // $("#toggle").click(function() {
@@ -100,9 +100,51 @@ $(function() {
 });
 
 function addHeight() {
-  if ($(".list-faq").parent().outerHeight() > $(window).height()) {
-    $(".list-faq").addClass("pdb100")
+  const listFaq = $(".list-faq");
+  if (listFaq.parent().outerHeight() > $(window).height()) {
+    listFaq.addClass("pdb100")
   } else {
-    $(".list-faq").removeClass("pdb100")
+    listFaq.removeClass("pdb100")
+  }
+}
+
+var modal = $(".modal");
+var modalWrapper = $(".modal-wrapper");
+var modalHeight = modalWrapper.height();
+var modalToggle = $(".modal-toggle");
+
+//countdown
+function coundDown() {
+  console.log('countdown');
+  var countdownNumberEl = document.getElementById("countdown-number");
+  var countdown = 5;
+  countdownNumberEl.textContent = countdown;
+  var downloadTimer = setInterval(function() {
+    countdown--;// 5 to 0
+    countdownNumberEl.textContent = countdown;
+    if (countdown > 0) {
+      modalToggle.unbind('click',showMConfirmModal)
+    }else{
+      modalToggle.bind('click',showMConfirmModal)
+      clearInterval(downloadTimer);
+      $(".modal").removeClass("is-visible");
+    }
+  }, 1000);
+}
+
+//show confirm modal
+var showMConfirmModal = function (e) {
+  console.log('icon click');
+  const modalPosY = $(document).outerHeight() / 2 - modalHeight/2;
+  modalWrapper.css("margin-top", modalPosY)
+  //fire countedown modal
+  if ($("#count-loading").length) {
+    e.preventDefault();
+    modal.addClass('is-visible');
+    coundDown();
+  }else{
+  //fire confirm modal
+  e.preventDefault();
+   modal.toggleClass('is-visible');
   }
 }
