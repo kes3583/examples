@@ -220,8 +220,8 @@
         $(".modal-toggle").click(showMConfirmModal);
 
         //filter select
-        $('.sortby1 button').on('click', {name : 'sortby1', tag:'dd'}, sortby);
-        $('.sortby2 button').on('click', {name : 'sortby2', tag:'dd'}, sortby);
+        $('.sortby1 button').on('click', {name : 'sortby1', tag:'dd'}, addClassSelected);
+        $('.sortby2 button').on('click', {name : 'sortby2', tag:'dd'}, addClassSelected);
         $(".btn-list .btn-confirm").click(function(){
           $('.modal').removeClass('is-visible');
         });

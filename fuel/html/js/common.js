@@ -194,7 +194,7 @@ function mapView(){
   $(window).scroll(_debounce(detectScroll, 30));
 }
 
-function sortby(event) {
+function addClassSelected(event) {
   console.log('.' + event.data.name +' ' + event.data.tag)
   $('.' + event.data.name +' ' + event.data.tag).removeClass('selected');
   $(this).closest(event.data.tag).addClass('selected')
