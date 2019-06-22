@@ -100,7 +100,7 @@ section.wrap .underline::after {  position:absolute; left: 0; bottom:0; z-index:
 .details .price{font-size: 2.6rem;color:#3673ee;}
 .details .price span{ letter-spacing: -0.2rem;line-height: 0.6}
 .details .list-group {padding:0 0 10px;}
-.details .list-group h2{border-top:1px solid #eee}
+.details .list-group h2{position:relative; border-top:1px solid #eee}
 .details .list-group h2 span{position:absolute;left:50%; top:-12px; margin-left:-32px; display: inline-block; width: 73px; padding:5px 0 3px; /* height:24px;line-height: 2.4; */border-radius: 16px;border:1px solid #eee;background-color: #fff;}
 .details .list-group h3{padding:25px 0 25px;}
 .details .list-group dl{padding-bottom:30px; align-items: flex-start !important;}
