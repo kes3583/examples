@@ -1,0 +1,20 @@
+
+.select-card{display:flex;flex-direction: column;justify-content: center;justify-content: center;}
+.select-card li{margin-bottom:5px}
+.select-txt{margin-top:25px;color: #dbdbdb; font-size: 1.6rem}
+.select-card li a{display:block;width:100%; height:auto; padding:60px 0 30px; font-size: 1.4rem; color:#a1a3a6; border-radius: 5px; border:1px solid #f0f0f0;}
+.select-card li.samsung a{ background: url("../images/common/ico-samsung.png") center 40% no-repeat;background-size: 108px auto;}
+.select-card li.shinhan a{ background: url("../images/common/ico-shinhan.png") center 40% no-repeat;background-size: 65px auto;}
+.select-card li.hyundai a{ background: url("../images/common/ico-hyundai.png") center 40% no-repeat;background-size: 96px auto;}
+
+/*  */
+.sortable-my-card{padding:30px 0 0;}
+.sortable-my-card li{margin:10px 0 10px; height:70px; padding:20px 0 20px 16%; font-size: 1.8rem; display: flex!important;align-items: center;justify-content: space-between;  box-sizing: border-box;vertical-align: top;background:#fff no-repeat 6% center url("../images/common/ico-move.png"); background-size: 18px 10px;}
+.sortable-my-card li h4{ flex-basis: 60%; height:40px; padding:0 0 0 80px;font-size: 1.6rem;font-weight: normal;line-height: 2.5}
+/* .sortable-my-card li div{flex-basis: 15%; } */
+.sortable-my-card li.samsung h4{background:#fff no-repeat 0 0 url("../images/main/samsung.png"); background-size: 60px 40px;}
+.sortable-my-card li.shinhan h4{background:#fff no-repeat 0 0 url("../images/main/shinhan.png"); background-size: 60px 40px;}
+.sortable-my-card li.hyundai h4{background:#fff no-repeat 0 0 url("../images/main/hyundai.png"); background-size: 60px 40px;}
+.sortable-my-card .btn-trash{width:36px; height:36px; display: inline-block; background:no-repeat 0 5px url("../images/common/ico-trashcan.png"); background-size: 18px 18px; text-indent: -999px}
+
+ul#sortable li.placeholder{ border-bottom: 1px dashed #f0f0f0; background-color: transparent; background: none; }

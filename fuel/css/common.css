@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+  font-family: 'SKPGoMM_subset';
+  src: url('../font/SKPGoMM_subset.eot');
+  src: url('../font/SKPGoMM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoMM_subset.woff') format('woff'), url('../font/SKPGoMM_subset.woff2') format('woff2'), url('../font/SKPGoMM_subset.ttf') format('truetype'), url('../font/SKPGoMM_subset.svg#SKPGoMM_subset') format('svg')
+}
+
+@font-face {
+  font-family: 'SKPGoLM_subset';
+  src: url('../font/SKPGoLM_subset.eot');
+  src: url('../font/SKPGoLM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoLM_subset.woff') format('woff'), url('../font/SKPGoLM_subset.woff2') format('woff2'), url('../font/SKPGoLM_subset.ttf') format('truetype'), url('../font/SKPGoLM_subset.svg#SKPGoLM_subset') format('svg')
+}
+
+@font-face {
+  font-family: 'SKPGoBM_subset';
+  src: url('../font/SKPGoBM_subset.eot');
+  src: url('../font/SKPGoBM_subset.eot?#iefix') format('embedded-opentype'), url('../font/SKPGoBM_subset.woff') format('woff'), url('../font/SKPGoBM_subset.woff2') format('woff2'), url('../font/SKPGoBM_subset.ttf') format('truetype'), url('../font/SKPGoBM_subset.svg#SKPGoBM_subset') format('svg')
+}
+:root {
+  --main-color: #3673ee !important;
+  --main-txt-color:#262626;
+  --sub-txt-color: #a1a3a6;
+  --sub-txt-color-exc: #f8483b;
+}
+.fs14{font-size: 1.4rem !important}
+.fs16{font-size: 1.6rem !important; font-weight: normal !important;}
+.fs18{font-size: 1.8rem !important; font-weight: normal !important;}
+.fs40{font-size: 4rem !important;}
+.ff-SKPGoBM{  font-family: 'SKPGoBM_subset';}
+
+.fc-bl{color: #3673ee !important}
+.fc-blc{color: #000 !important}
+.fc-262626{color: #262626 !important}
+.fc-737373{color: #737373 !important}
+.fc-red{color:#f8483b !important}
+.fc-fff{color:#fff !important}
+.lh1-4{line-height: 1.4 !important}
+
+.ht{text-indent: 100%; white-space: nowrap; overflow: hidden;}
+.tc{text-align: center !important}
+.tl{text-align: left !important}
+.tr{text-align: right !important}
+.vm{vertical-align: middle !important;}
+
+.pdr0{padding-right:0 !important}
+.pdl0{padding-left:0 !important}
+.pdlr18{padding-left:18px !important; padding-right:18px !important}
+.pdb100{padding-bottom: 100px !important}
+.pdt30{padding-top: 30px !important}
+.pdt50{padding-top: 50px !important}
+.mrl5{margin-left: 5px !important}
+
+.op1{opacity: 1 !important}
+.brd0{border:none !important}
+
+
+/* layout */
+.tit{font-size: 1.6rem;font-weight: normal;}
+.cap{color:#a1a3a6 !important; font-size: 1.2rem !important;}
+.w50p {width:50%; }
+
+.df{display:flex;}
+.ai-fs{align-items: flex-start !important;}
+.ai-ct{align-items: center !important;}
+.ai-bl{align-items: baseline !important;}
+.js-sb{justify-content: space-between !important;}
+.oh-x{overflow-x: hidden;}
+
+/* button */
+button{overflow: visible;}
+.btn {display:flex; height:55px; font-size: 1.6rem; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center; justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
+.btn-block{ display: block; width: 100%;}
+.btn-radius{border-radius: .3rem; border:1px solid #accafb}
+.btn-bl{ background:#3673ee; color:#fff; }
+.btn-wh{ background-color:#fff; color:#3673ee; border-top: 1px solid #ededed;}
+
+.brl{border-left: 1px solid #ededed}
+.btn-faq{display: flex; background:#fff no-repeat 29% 49% url("../images/common/cellphone.png"); background-size: 16px 16px;}
+.btn-reg{height:auto;font-size:1.4rem; line-height: 2.7}
+.btn-reg:before{content: '+'; font-size: 2.2rem; font-weight: lighter; color:#3673ee; position: absolute; top: -12px; left: 50%; margin-left:-71px }
+.btn-only{width:100%; display: flex;justify-content: center;align-items: center;}
+.btn-gr {color:#fff;background:#595959;}
+
+
+.error{padding-top:100px !important}
+.error h1{ padding:20px 0;color: #000; font-size: 2.6rem; font-weight: bold;}
+.error p{  color: #262626; font-size: 1.6rem}
+.error img{ width:56px; height:56px}
+
+.fixed{position:fixed;left:0;bottom:0; width:100%; z-index: 10000}
+
+header .txt{opacity: 0; }
+section.wrap{min-height: 100%; margin:0 auto -50px;}
+section.wrap h1.t1{padding-top: 37px}
+section.wrap h1.t1 , h1.t1 span {font-size: 2.6rem}
+section.wrap h1.t1 span { font-family: 'SKPGoBM_subset';}
+
+/* Modal Popup */
+header .list-card{background:#fff no-repeat url("../images/common/drop_down.png"); background-size: 24px 24px; background-position: right -5px top 15px; padding:0 20px}
+body.scroll-lock{height: 100vh;overflow-y: hidden;}
+
+
+.modal { position: fixed; z-index: 10000; /* 1 */ top: 0; left: 0; visibility: hidden; width: 100%; height: 100%; }
+.modal.is-visible { visibility: visible; }
+.modal-overlay { position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; background: hsla(0, 0%, 0%, 0.5); visibility: hidden; opacity: 0;  }
+.modal.is-visible .modal-overlay { opacity: 1; visibility: visible; animation-name: fadeIn;
+animation-duration: 0.4s; }
+.modal-wrapper { position: fixed; z-index: 9999; bottom: 0; left: 0; background-color: #fff; box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35); }
+.modal-transition {}
+.modal.is-visible .modal-transition { animation-name: slideIn; animation-duration: 0.4s }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+/* transition
+.modal { position: fixed; z-index: 10000; top: 0; left: 0; visibility: hidden; width: 100%; height: 100%; }
+.modal.is-visible { visibility: visible; }
+.modal-overlay { position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; background: hsla(0, 0%, 0%, 0.5); visibility: hidden; opacity: 0; transition: visibility 0s linear 0.3s, opacity 0.3s; }
+.modal.is-visible .modal-overlay { opacity: 1; visibility: visible; transition-delay: 0s; }
+.modal-wrapper { position: fixed; z-index: 9999; bottom: 0; left: 0; background-color: #fff; box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35); }
+.modal-transition { transition: all 0.3s 0.12s; -webkit-transform: translateY(10%); transform: translateY(10%); opacity: 0; }
+.modal.is-visible .modal-transition { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+
+ */
+
+/* modal popup - confirm */
+.open{overflow: hidden;}
+.modal-confirm .modal-wrapper{position: relative; margin: 0 10px; top:0; bottom:auto; padding:35px 0 0; border-radius: 4px;}
+.modal-wrapper h1 { font-size:1.8rem;  padding-bottom: 35px}
+.modal-wrapper .modal-content{color:#666; font-size:1.5rem; margin-bottom:3.5rem; line-height:2.3; text-align: center;}
+
+.modal-wrapper .btn-list{height:5rem;line-height:5rem; color:#fff;font-size:1.6rem;text-align: center;}
+
+
+/* @media (max-width: 768px) .modal .modal-wrapper { width: 500px; }
+@media (max-width:600px){ .modal .modal-wrapper{margin: 0 10px; width: auto!important;} } */
+
+/* .modal-select */
+.modal-select .modal-wrapper{width:100% !important; position:absolute; bottom: 0; left: 0; padding:38px 20px 15px; border-radius:0; text-align:left; margin:0;border-radius: 10px 10px 0 0;}
+.modal-select .modal-content {margin:0 !important}
+.modal-select h2{padding-bottom:20px; text-align:left; }
+.modal-select .modal-content li{font-size: 1.6rem;line-height: 3; color:#262626; padding:0 !important;text-align:left; }
+.modal-select .modal-content li.selected{color: #3673ee;background:no-repeat url("../images/common/ico_selected.png"); background-size: 15px 11px; background-position: right 0px top 15px; font-family:'SKPGoBM_subset' }
+
+/* .modal-filter */
+.modal-filter .modal-wrapper{ width:100%; padding:32px 0 0; border-radius:10px; text-align:left; margin:0; }
+.modal-filter .modal-content {margin:0 !important; padding:0 20px; text-align: left !important;}
+.modal-filter .modal-content dl{padding-bottom: 24px}
+.modal-filter .modal-content dt{font-size: 1.6rem; width:100%; padding-bottom:12px; font-family: 'SKPGoBM_subset'}
+.modal-filter .modal-content dd { display: inline-flex; justify-content: center;align-items: center;width:32.3%;  text-align: center; }
+.modal-filter .modal-content dd button{border: none;width:100%; font-size: 1.4rem !important;color:#262626;line-height: 2.5;height:auto; border-radius: 5px; border:1px solid #f0f0f0;background:none}
+.modal-filter .modal-content dd.selected button{color: #3673ee;border:1px solid #3673ee;}
+
+
+/* countdown loading */
+.count-wrap{position:relative; margin-left:7px; width: 25px; height: 25px;}
+#loader { position: absolute; left:0; top: 0; z-index: 10; border: 2px solid #fff; border-radius: 50%; border-top: 2px solid #2f7bf5; width: inherit; height: inherit;; animation: spin .9s linear infinite; }
+.count-wrap .number{display:flex;width:inherit; height:inherit; padding-top: 1px; z-index:20; font-size:1.4rem; justify-content:center; align-items:center; line-height: 0; color: #fff}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

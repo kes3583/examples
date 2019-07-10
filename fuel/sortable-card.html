@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+
+  <meta name="apple-mobile-web-app-title" content="fuel_discount_all" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="114×114" href="/share/favicon.png">
+  <title>등록할 제휴 카드사를 선택하세요.</title>
+  <meta property="og:title" content="주유할인">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="주유할인">
+  <meta property="fb:app_id" content="">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="주유할인">
+
+  <link rel="stylesheet" type="text/css" href="css/setting.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/select.css">
+</head>
+
+<body>
+  <header>
+    <a href="javascript:;" class="backBtn"></a>
+    <a href="javascript:;" class="txt"></a>
+  </header>
+  <section class="wrap tl pdr0 pdl0">
+    <h1 class="t1 tl pdlr18"><span class="fc-bl">등록할 제휴 카드사</span>를 <br>선택하세요.</h1>
+    <ul id="sortable" class="sortable-container sortable-my-card ">
+      <li class="samsung">
+        <h4>삼성카드</h4><button class="btn ht btn-trash modal-toggle" type="button"> 카드 삭제 </button>
+      </li>
+      <li class="shinhan">
+        <h4>신한카드</h4><button class="btn ht btn-trash modal-toggle"> 카드 삭제 </button>
+      </li>
+      <li class="hyundai">
+        <h4>현대카드</h4><button class="btn ht btn-trash modal-toggle"> 카드 삭제 </button>
+      </li>
+    </ul>
+    <div class="fixed">
+      <button class="btn btn-bl btn-block fixed" type="button">제휴 카드사 등록</button>
+    </div>
+  </secion>
+    <!-- 카드삭제 팝업 -->
+    <div id="modal" class="modal modal-confirm">
+      <div class="modal-overlay modal-toggle"></div>
+      <div class="modal-wrapper">
+        <h1 class="tc">카드 삭제 안내</h1>
+        <div class="modal-content fc-737373">
+          삭제 시 [$카드사$]가 삭제되며, 보유한 <br> 모든 [$카드사$] 카드로 더이상 T map<br> 주유할인 혜택을 받으실 수 없습니다.<br> 계속 진행하시겠습니까?
+        </div>
+        <div class="df btn-list">
+          <a class="btn btn-gr w50p btn-cancel">취소</a>
+          <a id="cardCancel" class="btn btn-bl w50p btn-confirm">확인</a>
+        </div>
+      </div>
+    </div>
+    <!-- //카드삭제 팝업 -->
+
+    <!-- 종료 팝업  -->
+    <!-- <div id="modal" class="modal modal-confirm">
+      <div id="modal-toggle" class="modal-overlay modal-toggle"></div>
+      <div class="modal-wrapper">
+        <div class="modal-content fs18 fc-blc lh1-4">
+          그동안 주유할인 서비스를<br> 이용해주셔서 감사합니다.
+        </div>
+        <div class="df btn-list">
+          <a href="#" class="btn btn-only btn-bl">T map 메인화면으로 가기<div id="count-loading" class="count-wrap"><span class="number" id="countdown-number"></span><div id="loader"></div></div></a>
+        </div>
+      </div>
+    </div> -->
+    <!-- //카드삭제  팝업 -->
+
+    <script src="js/plugins/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins/touch-dnd.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      $(function() {
+
+        // sortable
+        $('#sortable').sortable({
+          items: 'li, div',
+          placeholder: 'placeholder',
+          placeholderTag: null
+        });
+
+        //modal popup
+        $(".modal-toggle").click(showMConfirmModal);
+        $(".btn-cancel").click(function(e) {
+          modal.removeClass('is-visible');
+          $("#sortable li").removeClass('selected');
+          $('body').removeClass('open');
+        });
+      });
+    </script>
+
+</body>
+
+</html>

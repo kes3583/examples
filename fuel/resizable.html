@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>jQuery UI Touch Punch - Mobile Device Touch Event Support for jQuery UI</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <!-- <link href="css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet"> -->
+
+  <style>
+
+
+    .ui-widget-header {
+      background: #b9cd6d;
+      border: 1px solid #b9cd6d;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+
+    .ui-widget-content {
+      background: #cedc98;
+      border: 1px solid #DDDDDD;
+      color: #333333;
+    }
+
+    .ui-resizable-n {
+      position: absolute;
+      top: 0;
+      height: 20px;
+      background-color: blue;
+      font-size: .1px;
+      display: block;
+      cursor: n-resize;
+      width: 20px;
+      left: 0;
+    }
+
+    #resizable {
+      width: 150px;
+      height: 150px;
+      padding: 0.5em;
+      text-align: center;
+      margin: 0;
+      bottom: 5px;
+      left: 35px;
+      position: absolute;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    .wrapper {
+      height: 100%;
+      overflow-y: auto;
+      margin: 10px 0;
+    }
+
+    #resizable h3 {
+      text-align: center;
+      margin: 0;
+    }
+
+
+    /* .searchList{width:inherit;overflow-y: auto;overflow-x: hidden; height:350px} */
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+
+    <div id="resizable" class="test ui-widget-content">
+      <div class="test wrapper">
+
+          <ul>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>bottom</li>
+          </ul>
+          <ul>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>을지로입구</li>
+            <li>bottom</li>
+          </ul>
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="demo-description">
+      <p>Limit the resizable element to a maximum or minimum height or width using the <code>maxHeight</code>, <code>maxWidth</code>, <code>minHeight</code>, and <code>minWidth</code> options.</p>
+    </div><!-- End demo-description -->
+
+
+
+  </div>
+  <script src="js/plugins/jquery-1.11.1.min.js"></script>
+  <script src="js/plugins/jquery-ui.js"></script>
+  <script src="js/plugins/jquery.ui.touch-punch.min.js"></script>
+  <script>
+    $(function() {
+      $("#resizable").resizable({
+        maxHeight: 650,
+        minHeight: 150,
+
+        handles: 'n'
+      });
+    });
+  </script>
+
+</body>
+
+</html>

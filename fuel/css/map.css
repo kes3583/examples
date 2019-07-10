@@ -1,0 +1,67 @@
+
+body>header a.map-mv {
+  background: url("../images/main/map_move.png") 0 0 no-repeat;
+  background-size: 34px auto;
+}
+
+section.map{padding-top:50px}
+.area-map{position: fixed; height:100%; }
+.map-animation{width: 70%; height:100%; animation: moving 1s cubic-bezier(0.25,0.1,0.25,1) 1.5s forwards;}
+
+.list-filter{overflow: hidden; width:100%; position:fixed; left:0; top:50px; display: flex!important; align-items: center!important; justify-content: flex-start !important;font-size: 1.4rem; z-index: 1010; background-color:#f0f0f0; opacity: .8; padding:7px 20px; }
+.list-filter li a{display: inline-block; margin-right:5px; padding:0 12px; font-size: 1.4rem; color:#3673ee; border-radius: 25px; border:1px solid #3673ee;line-height: 1.8; background-color: #fff}
+.list-filter li:last-child{position:absolute;right:20px; top:4px}
+.list-filter li:last-child a{width:32px; height: 32px; background:#fff no-repeat center center url("../images/main/filter@2x.png"); background-size: 100% auto; border:none; text-indent: -9999px; font-size: .1px; border-radius:0px }
+
+/* 주유소 리스트 scroll up  */
+.scrollup{position:relative; display: none}
+.scrollup .col{position:relative; padding-bottom:20px;}
+.scrollup .price{margin-right: 67px !important;}
+
+.map .list-petrol-station ul:first-child{margin-top:21px}
+.map .list-petrol-station ul{padding:24px 13px 24px 20px; }
+.map .list-petrol-station h4{font-size: 1.6rem}
+.map .list-petrol-station .ico-nav{top:-30px; right:0;}
+.map .list-petrol-station .ico-nav-gr{background:no-repeat left top url("../images/main/select_grey@2x.png"); background-size: 100% auto; font-size: .1px}
+
+
+.box-scrollup{ /* position: absolute;left: 0; bottom: 0;  */ width: 100%; padding: 0;  -webkit-border-radius: 9px 9px 0 0; border-radius: 10px 10px 0 0;border-top: 1px solid #cdcdcd;box-shadow: 0 -19px 24px -14px rgba(220,220,220,0.74); background-color: #fff; overflow: hidden;}
+.bar:before{display: inline-block; width: 34px; height: 5px;-webkit-border-radius: 24px; border-radius: 24px; background: #dfe3e8; position: absolute; top: 8px;  left: 50%;margin-left:-10px; z-index: 100; content: '';}
+
+
+
+
+.map .wrapper {
+
+  width: 100%;
+  height:700px;
+  display:flex;
+  justify-content: center;
+  padding:70px 0 0 0;
+  /* align-items: center; */
+  /* cursor: pointer;
+  position: absolute;
+  border-radius: 3px;
+  left: 50%;
+  top: 50%; */
+  /* overflow: hidden; */
+  /* transform: translate(-50%, -50%); */
+  /* transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); */
+  /* transition: transform 375ms, width 275ms 100ms, height 375ms; */
+
+}
+.map .img {
+  width: 70%;
+  height: 300px;
+  border-radius: 10px;
+  /* overflow: hidden; */
+  /* transition: all 1s ease-in-out .5s; */
+  /* transition: transform 375ms, width 375ms, height 275ms 100ms; */
+  animation: moving .3s cubic-bezier(0.25,0.1,0.25,1) 0.5s forwards;
+}
+
+@keyframes moving {
+    from { }
+    50% {transform: translateY(-200px);  }
+    to {transform: translateY(0px); width:100%; }
+}
