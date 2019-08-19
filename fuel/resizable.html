@@ -11,59 +11,25 @@
   <meta name="author" content="">
 
 
+  
+
+
   <!-- <link href="css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet"> -->
 
   <style>
+    .class{}
 
+    .ui-widget-header { background: #b9cd6d; border: 1px solid #b9cd6d; color: #FFFFFF; font-weight: bold; }
 
-    .ui-widget-header {
-      background: #b9cd6d;
-      border: 1px solid #b9cd6d;
-      color: #FFFFFF;
-      font-weight: bold;
-    }
+    .ui-widget-content { background: #cedc98; border: 1px solid #DDDDDD; color: #333333; }
 
-    .ui-widget-content {
-      background: #cedc98;
-      border: 1px solid #DDDDDD;
-      color: #333333;
-    }
+    .ui-resizable-n { position: absolute; top: 0; height: 20px; background-color: blue; font-size: .1px; display: block; cursor: n-resize; width: 100%; left: 0; }
 
-    .ui-resizable-n {
-      position: absolute;
-      top: 0;
-      height: 20px;
-      background-color: blue;
-      font-size: .1px;
-      display: block;
-      cursor: n-resize;
-      width: 20px;
-      left: 0;
-    }
+    #resizable { width: 150px; height: 150px; padding: 0.5em; text-align: center; margin: 0; bottom: 5px; left: 35px; position: absolute; overflow-y: hidden; overflow-x: hidden; }
 
-    #resizable {
-      width: 150px;
-      height: 150px;
-      padding: 0.5em;
-      text-align: center;
-      margin: 0;
-      bottom: 5px;
-      left: 35px;
-      position: absolute;
-      overflow-y: hidden;
-      overflow-x: hidden;
-    }
+    .wrapper { height: 100%; overflow-y: auto; margin: 10px 0; }
 
-    .wrapper {
-      height: 100%;
-      overflow-y: auto;
-      margin: 10px 0;
-    }
-
-    #resizable h3 {
-      text-align: center;
-      margin: 0;
-    }
+    #resizable h3 { text-align: center; margin: 0; }
 
 
     /* .searchList{width:inherit;overflow-y: auto;overflow-x: hidden; height:350px} */
