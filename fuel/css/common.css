@@ -66,7 +66,7 @@
 .js-sb{justify-content: space-between !important;}
 .oh-x{overflow-x: hidden;}
 
-/* button */
+/* button is */
 button{overflow: visible;}
 .btn {display:flex; height:55px; font-size: 1.6rem; color: #3673ee;    border-color: #dadce0; position: relative; z-index: 0;align-items: center; justify-content: center;text-align: center; letter-spacing: .009375rem; vertical-align: middle;background-color: #fff; }
 .btn-block{ display: block; width: 100%;}
