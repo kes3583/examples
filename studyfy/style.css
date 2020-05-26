@@ -44,9 +44,13 @@ h2 {
     font-size: 2rem;
     background-color: aquamarine;
 }
-.item{margin:10px 0; padding:10px; background-color: rgb(243, 234, 204);}
+.item{height:100px; line-height: 1.8; margin:10px 0; padding:10px; background-color: rgb(243, 234, 204);}
 .item h3{font-size:1.8rem; }
-.item p{font-size:1.2rem; margin-bottom:10px }
+.item p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 2.5;
+}
 .item button {
     font-size: 1.2rem;
     background: #e2dcd7;
