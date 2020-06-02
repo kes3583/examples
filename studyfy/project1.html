@@ -10,33 +10,33 @@
     <div class="wrap">    
         <h1>나의 해야할 일들</h1><button type="button" class="register">할일등록+</button>
         <div class="group-items">
-            <section class="col">
+            <section class="col" id="todo">
                 <h2>Todo</h2>
                 <div class="item">
                     <h3>자바스크립트공부하기</h3>
                     <p>등록날짜:2018.03.10, 홍길동 우선순위1</p>
-                    <button>넘기기</button>
+                    <button type="button">넘기기</button>
                 </div>
                 <div class="item">
                     <h3>자바스크립트공부하기</h3>
                     <p>등록날짜:2018.03.10, 홍길동 우선순위1</p>
-                    <button>넘기기</button>
+                    <button type="button">넘기기</button>
                 </div>
             </section>
-            <section class="col">
+            <section class="col" id="doing">
                 <h2>Doing</h2>
                 <div class="item">
                     <h3>자바스크립트공부하기</h3>
                     <p>등록날짜:2018.03.10, 홍길동 우선순위1</p>
-                    <button>넘기기</button>
+                    <button type="button">넘기기</button>
                 </div>
                 <div class="item">
                     <h3>자바스크립트공부하기</h3>
                     <p>등록날짜:2018.03.10, 홍길동 우선순위1</p>
-                    <button>넘기기</button>
+                    <button type="button">넘기기</button>
                 </div>
             </section>
-            <section class="col">
+            <section class="col" id="done">
                 <h2>Done</h2>
                 <div class="item">
                     <h3>자바스크립트공부하기</h3>
@@ -51,5 +51,22 @@
             </section>
         </div>
     </div>
+    <script>
+        
+        document.querySelectorAll('button').forEach(item => {
+            item.addEventListener('click', event => {
+                let ev = event.target;
+                let html = ev.parentElement;
+                let nextElementSibling = ev.parentElement.parentElement.nextElementSibling;               
+                
+                if(nextElementSibling.id === 'done'){                    
+                    ev.parentElement.removeChild(ev)                   
+                }
+                
+                nextElementSibling.appendChild(html)
+            })
+        })
+        
+    </script>
 </body>
 </html>
