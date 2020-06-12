@@ -51,10 +51,10 @@ const playing = function (e) {
             trs.forEach((el, i) => {                
                 const tds = el.querySelectorAll('td')
                 tds.forEach((el, j) => {
-                    el.innerHTML = '';
+                    el.removeEventListener('click', playing, true)
+                    //el.innerHTML = '';
                 });
-            });
-            return;
+            });            
 
         }else{
             currentPlayer = currentPlayer === player[0] ? player[1] : player[0]; //player change
@@ -79,7 +79,7 @@ trs.forEach((el, i) => {
     column.push([]) // column = [ [td,td,td],[td,td,td],[td,td,td]  ]
     const tds = el.querySelectorAll('td') 
     tds.forEach( (el, j) => {        
-        el.addEventListener('click', playing) //when td click, play starts       
+        el.addEventListener('click', playing, true) //when td click, play starts       
         column[i].push(el)
     });
 });
