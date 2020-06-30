@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="네이버 예약, 네이버 예약이 연동된 곳 어디서나 바로 예약하고, 네이버 예약 홈(나의예약)에서 모두 관리할 수 있습니다.">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>네이버 예약</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        
+        <div class="event">
+            <div class="section_visual">
+                <div class="group_visual">
+                    <div class="container_visual">
+                        <div class="prev_e" style="display:none;">
+                            <div class="prev_inn">
+                                <a href="#" class="btn_pre_e" title="이전"> <i class="spr_book_event spr_event_pre">이전</i> </a>
+                            </div>
+                        </div>
+                        <div class="nxt_e" style="display:none;">
+                            <div class="nxt_inn">
+                                <a href="#" class="btn_nxt_e" title="다음"> <i class="spr_book_event spr_event_nxt">다음</i> </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="container_visual">
+                                <!-- 슬라이딩기능: 이미지 (type = 'th')를 순차적으로 노출 -->
+                                <ul class="visual_img">
+                                    <li class="item" style="background-image: url(1_th_1.png);"></li>
+                                    <li class="item" style="background-image: url(5_th_13.png);"></li>
+                                    <li class="item" style="background-image: url(6_th_18.png);"></li>
+                                </ul>
+                            </div>
+                            <span class="nxt_fix" style="display:none;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div> 
+</div>
+    <script>
+        window.onload = function () { // same as window.addEventListener('load', (event) => {
+            const slideContainer = document.querySelector('.container_visual'); // Slide container dom
+            const slideList = document.querySelector('.visual_img'); // Slide parent dom
+            let slideContents = slideList.querySelectorAll('.item'); // each slide dom           
+            let slideLen = slideContents.length; // each slide dom 
+            const slideWidth = slideContents[0].offsetWidth; // each slide dom
+            const slideSpeed = 300; // slide speed
+            const startNum = 0; // initial slide index (0 ~ 4)           
+            
+            slideList.style.width = (slideWidth * (slideLen + 2)) + 'px'
+           
+            // Copy first and last slide
+            let firstChild = slideList.firstElementChild;
+            let lastChild = slideList.lastElementChild;
+            let clonedFirst = firstChild.cloneNode(true);
+            let clonedLast = lastChild.cloneNode(true);           
+
+            // Add copied Slides
+            slideList.appendChild(clonedFirst);
+            slideList.insertBefore(clonedLast, slideList.firstElementChild); 
+            
+            
+            let curIndex = startNum; // current slide index (except copied slide)
+            let curSlide = slideContents[curIndex]; // current slide dom
+            
+            
+            function moving(result) {
+                console.log('moving start')
+               if (curIndex <= slideLen - 1) {
+                    slideList.style.transition = slideSpeed + "ms";
+                    slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+                }
+                if (curIndex === slideLen - 1) {
+                    setTimeout(function () {
+                        slideList.style.transition = "0ms";
+                        slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+                    }, slideSpeed);
+                    curIndex = -1;
+                }
+                curIndex++;
+                //curSlide = slideContents[++curIndex]; // 클랙스추가하고 싶을때 이렇게 쓴다. 
+                //curSlide.classList.remove('slide_active');
+               
+                setTimeout(moving, 2000);
+               console.log('moving stop')
+            }
+
+            console.log('first')
+            //slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+            function delay(ms) {
+                slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            delay(2000)
+            .then(function (result) {
+               console.log('between') 
+                moving()
+                console.log('then1 end')
+            })
+            
+            console.log('last?')
+            // setTimeout(function(){
+            //     console.log('first el')
+            //     slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+            // }, 3000);
+            
+            //moving()
+            //console.log('end')
+           
+           
+        };
+    </script>
+
+    
+    
+</body>
+
+</html>
