@@ -11,7 +11,7 @@
 
 <body>
     <div id="container">
-        
+
         <div class="event">
             <div class="section_visual">
                 <div class="group_visual">
@@ -40,10 +40,10 @@
                     </div>
                 </div>
             </div>
-       </div> 
-</div>
+        </div>
+    </div>
     <script>
-        window.onload = function () { // same as window.addEventListener('load', (event) => {
+        window.onload = function() { // same as window.addEventListener('load', (event) => {
             const slideContainer = document.querySelector('.container_visual'); // Slide container dom
             const slideList = document.querySelector('.visual_img'); // Slide parent dom
             let slideContents = slideList.querySelectorAll('.item'); // each slide dom           
@@ -51,102 +51,108 @@
             const slideWidth = slideContents[0].offsetWidth; // each slide dom
             const slideSpeed = 300; // slide speed
             const startNum = 0; // initial slide index (0 ~ 4)           
-            
+
             slideList.style.width = (slideWidth * (slideLen + 2)) + 'px'
-           
+
             // Copy first and last slide
             let firstChild = slideList.firstElementChild;
             let lastChild = slideList.lastElementChild;
             let clonedFirst = firstChild.cloneNode(true);
-            let clonedLast = lastChild.cloneNode(true);           
+            let clonedLast = lastChild.cloneNode(true);
 
             // Add copied Slides
             slideList.appendChild(clonedFirst);
-            slideList.insertBefore(clonedLast, slideList.firstElementChild); 
-            
-            
+            slideList.insertBefore(clonedLast, slideList.firstElementChild);
+
+
             let curIndex = startNum; // current slide index (except copied slide)
+            //let curIndex;
             let curSlide = slideContents[curIndex]; // current slide dom
-            
-            
-            // function moving(result) {
-            //     console.log('moving start')
-            //    if (curIndex <= slideLen - 1) {
-            //         slideList.style.transition = slideSpeed + "ms";
-            //         slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
-            //     }
-            //     if (curIndex === slideLen - 1) {
-            //         setTimeout(function () {
-            //             slideList.style.transition = "0ms";
-            //             slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
-            //         }, slideSpeed);
-            //         curIndex = -1;
-            //     }
-            //     curIndex++;
-            //     //curSlide = slideContents[++curIndex]; // 클랙스추가하고 싶을때 이렇게 쓴다. 
-            //     //curSlide.classList.remove('slide_active');
-               
-            //     setTimeout(moving, 2000);
-            //    console.log('moving stop')
-            // }
+            slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
 
             function moving() {
                 console.log('moving start')
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                         console.log('moving setTimeout')
-                         
-                        if (curIndex <= slideLen - 1) {
-                        slideList.style.transition = slideSpeed + "ms";
-                        slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
-                        }
-                        if (curIndex === slideLen - 1) {
-                            setTimeout(function () {
-                                slideList.style.transition = "0ms";
-                                slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
-                            }, slideSpeed);
-                            curIndex = -1;
-                        }
-                        curIndex++;
-                        return moving();
-                    }, 1000);
-                });
+                if (curIndex <= slideLen - 1) {
+                    slideList.style.transition = slideSpeed + "ms";
+                    slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+                }
+                if (curIndex === slideLen - 1) {
+                    setTimeout(function() {
+                        slideList.style.transition = "0ms";
+                        slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+                    }, slideSpeed);
+                    curIndex = -1;
+                }
+                curIndex++;
+                //curSlide = slideContents[++curIndex]; // 클랙스추가하고 싶을때 이렇게 쓴다. 
+                //curSlide.classList.remove('slide_active');
 
-                //setTimeout(moving, 2000);
+                setTimeout(moving, 2000);
                 console.log('moving stop')
             }
-
-            console.log('first')
-            //slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
-            function delay(ms) {
-                slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-            delay(2000)
-            .then(function (result) {
-               console.log('between') 
+            setTimeout(() => {
                 moving()
-                console.log('then1 end')
-            })
-            .then(function (result) {                    
-                console.log('then2 end')
-            })
-            
-            console.log('last?')
+            }, 2000)
+
+            // function moving(curIndex) {
+            //     console.log('moving start')
+            //     curIndex = result
+            //     return new Promise((resolve, reject) => {
+            //         setTimeout(() => {
+            //             console.log('moving setTimeout')
+
+            //             if (curIndex <= slideLen - 1) {
+            //                 slideList.style.transition = slideSpeed + "ms";
+            //                 slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+            //             }
+            //             if (curIndex === slideLen - 1) {
+            //                 setTimeout(function() {
+            //                     slideList.style.transition = "0ms";
+            //                     slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+            //                 }, slideSpeed);
+            //                 curIndex = -1;
+            //             }
+            //             curIndex++;
+            //             return moving(curIndex);
+            //         }, 1000);
+            //     });
+
+            //     //setTimeout(moving, 2000);
+            //     console.log('moving stop')
+            // }
+
+
+            //slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+            // function delay(ms) {
+            //     slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+            //     new Promise(resolve => setTimeout(resolve(startNum), ms));
+            // }
+            // delay(2000)
+            //     .then(function(result) {
+
+            //         console.log('프로미스 진행중')
+            //         moving(result)
+
+            //     })
+            //     .then(function(result) {
+            //         console.log('then2 end')
+            //     })
+
+            // console.log('last?')
             // setTimeout(function(){
             //     console.log('first el')
             //     slideList.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
             // }, 3000);
-            
-            //moving()
+
+
             //console.log('end')
-           
-           
+
+
         };
     </script>
 
-    
-    
+
+
 </body>
 
 </html>
