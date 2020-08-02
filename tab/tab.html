@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial;
+        }
+        /* Style the tab */
+        
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        /* Style the buttons inside the tab */
+        
+        .tab a {
+            background-color: inherit;
+            float: left;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        /* Change background color of buttons on hover */
+        
+        .tab a:hover {
+            background-color: #ddd;
+        }
+        /* Create an active/current tablink class */
+        
+        .tab a.active {
+            background-color: #ccc;
+        }
+        /* Style the tab content */
+        
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .pagenumbers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+    .pagenumbers button {
+        width: 50px;
+        height: 50px;
+
+        appearance: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        background-color: #44AAEE;
+
+        margin: 5px;
+        transition: 0.4s;
+
+        color: #FFF;
+        font-size: 18px;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .pagenumbers button:hover {
+        background-color: #44EEAA;
+    }
+
+    .pagenumbers button.active {
+        background-color: #44EEAA;
+        box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>코드</th>
+                    <th>코드명</th>
+                    <th>xxxx</th>
+                    <th>yyyy</th>
+                </tr>
+                <tbody>
+                </tbody>
+            </thead>
+            
+            
+        </table>
+        <div class="pagenumbers" id="pagination"></div>
+    </div>
+    <div class="tab">
+        <a href="#London" class="tablinks">London</a>
+        <a href="#Paris" class="tablinks">Paris</a>
+        <a href="#Tokyo" class="tablinks">Tokyo</a>
+    </div>
+
+    <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $('.tab a').on('click', function(event) {
+            event.preventDefault();
+
+            $('.tab a').removeClass('active');
+            $(this).addClass('active');
+            $('.tabcontent').hide();
+            $($(this).attr('href')).show();
+        });
+
+        $('.tab a:first').trigger('click'); // Default
+        
+        let request = obj => {
+            return new Promise((resolve, reject) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open(obj.method || "GET", obj.url);
+                if (obj.headers) {
+                    Object.keys(obj.headers).forEach(key => {
+                        xhr.setRequestHeader(key, obj.headers[key]);
+                    });
+                }
+                xhr.onload = () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        var resp = xhr.responseText;
+                        var respJson = JSON.parse(resp);
+                        resolve(respJson);
+                    } else {
+                        reject(xhr.statusText);
+                    }
+                };
+                xhr.onerror = () => reject(xhr.statusText);
+                xhr.send(obj.body);
+            });
+        };
+        const tableEl = document.querySelector('table > tbody');
+        const list_element = document.getElementById('list');
+        const pagination_element = document.getElementById('pagination');
+        let current_page = 1;
+        let rows = 5;
+        request({
+                url: "test.json"
+            })
+            .then(result => {
+                console.log(result);
+                let innerHtml = '';
+                let data = result.scores;
+                // for (const prop in obj) {
+                //     //console.log(`obj.${prop} = ${obj[prop]}`);
+                //     innerHtml += `<tr>`;
+                //     innerHtml += `<td>${prop}</td>`;
+                //     let childObj = Object.values(obj[prop])[0];
+                    
+                //     let array = childObj.split(',');                     
+                //     innerHtml += `<td>${array[0]}</td>`;
+                //     innerHtml += `<td>${array[1]}</td>`;
+                //     innerHtml += `<td>${array[2]}</td>`;  
+                //     innerHtml += `</tr>`;               
+                    
+                // }
+                // tableEl.insertAdjacentHTML('beforeend', innerHtml)
+
+                DisplayList(data, tableEl, rows, current_page);
+                SetupPagination(tableEl, pagination_element, rows);
+
+            })
+            .catch(err => console.log('then error : ', err))
+        
+        
+        
+        function DisplayList(items, wrapper, rows_per_page, page) {
+            wrapper.innerHTML = "";
+            page--;
+
+            let start = rows_per_page * page;
+            let end = start + rows_per_page;
+            let paginatedItems = items.slice(start, end);
+
+            for (let i = 0; i < paginatedItems.length; i++) {
+                let item = paginatedItems[i];
+
+                let item_element = document.createElement('div');
+                item_element.classList.add('item');
+                item_element.innerText = item;
+
+                wrapper.appendChild(item_element);
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
