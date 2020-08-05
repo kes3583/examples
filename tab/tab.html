@@ -124,6 +124,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script>
+        //tab
         $('.tab a').on('click', function(event) {
             event.preventDefault();
 
@@ -135,6 +136,7 @@
 
         $('.tab a:first').trigger('click'); // Default
         
+        //request json
         let request = obj => {
             return new Promise((resolve, reject) => {
                 let xhr = new XMLHttpRequest();
@@ -157,11 +159,76 @@
                 xhr.send(obj.body);
             });
         };
+
         const tableEl = document.querySelector('table > tbody');
         const list_element = document.getElementById('list');
         const pagination_element = document.getElementById('pagination');
+        
         let current_page = 1;
         let rows = 5;
+        let page;
+
+        function DisplayList(items, wrapper, rows_per_page, page) {
+            
+            page--;
+            //console.log('page', page)
+            console.log('items', items)
+            let start = rows_per_page * page;
+            let end = start + rows_per_page;
+            //let paginatedItems = items.slice(start, end);
+            let paginatedItems = Object.fromEntries(
+                Object.entries(items).slice(start, end)
+            ) //slice for object
+            console.log('paginatedItems', paginatedItems)
+            let innerHtml = '';
+            for (const prop in paginatedItems) {
+                let item = paginatedItems[prop];
+                console.log(`item ${paginatedItems[prop]}`)
+
+
+                innerHtml += `<tr>`;
+                innerHtml += `<td>${prop}</td>`;
+                let childItems = Object.values(paginatedItems[prop])[0];
+
+                let arrayItems = childItems.split(',');
+                innerHtml += `<td>${arrayItems[0]}</td>`;
+                innerHtml += `<td>${arrayItems[1]}</td>`;
+                innerHtml += `<td>${arrayItems[2]}</td>`;
+            }
+            wrapper.insertAdjacentHTML('beforeend', innerHtml)
+        }
+
+        function SetupPagination(items, wrapper, rows_per_page) {
+            wrapper.innerHTML = "";
+            
+             console.log('items len', Object.keys(items).length)
+            let page_count = Math.ceil(Object.keys(items).length / rows_per_page);
+           
+            for (let i = 1; i < page_count + 1; i++) {
+                let btn = PaginationButton(i, items);
+                wrapper.appendChild(btn);
+            }
+        }
+
+        function PaginationButton(page, items) {
+            let button = document.createElement('button');
+            button.innerText = page;
+
+            if (current_page == page) button.classList.add('active');
+
+            button.addEventListener('click', function () {
+                current_page = page;
+                DisplayList(items, list_element, rows, current_page);
+
+                let current_btn = document.querySelector('.pagenumbers button.active');
+                current_btn.classList.remove('active');
+
+                button.classList.add('active');
+            });
+
+            return button;
+        }
+
         request({
                 url: "test.json"
             })
@@ -169,47 +236,31 @@
                 console.log(result);
                 let innerHtml = '';
                 let data = result.scores;
-                // for (const prop in obj) {
-                //     //console.log(`obj.${prop} = ${obj[prop]}`);
+                //let innerHtml = '';
+                // for (const prop in data) {
+                //     //console.log(`data.${prop} = ${data[prop]}`);
                 //     innerHtml += `<tr>`;
                 //     innerHtml += `<td>${prop}</td>`;
-                //     let childObj = Object.values(obj[prop])[0];
+                //     let childObj = Object.values(data[prop])[0];
                     
-                //     let array = childObj.split(',');                     
-                //     innerHtml += `<td>${array[0]}</td>`;
-                //     innerHtml += `<td>${array[1]}</td>`;
-                //     innerHtml += `<td>${array[2]}</td>`;  
+                //     let arrayData = childObj.split(',');                     
+                //     innerHtml += `<td>${arrayData[0]}</td>`;
+                //     innerHtml += `<td>${arrayData[1]}</td>`;
+                //     innerHtml += `<td>${arrayData[2]}</td>`;  
                 //     innerHtml += `</tr>`;               
                     
                 // }
-                // tableEl.insertAdjacentHTML('beforeend', innerHtml)
+                //tableEl.insertAdjacentHTML('beforeend', innerHtml)
 
                 DisplayList(data, tableEl, rows, current_page);
-                SetupPagination(tableEl, pagination_element, rows);
+                SetupPagination(data, tableEl, rows);
 
             })
             .catch(err => console.log('then error : ', err))
         
         
         
-        function DisplayList(items, wrapper, rows_per_page, page) {
-            wrapper.innerHTML = "";
-            page--;
-
-            let start = rows_per_page * page;
-            let end = start + rows_per_page;
-            let paginatedItems = items.slice(start, end);
-
-            for (let i = 0; i < paginatedItems.length; i++) {
-                let item = paginatedItems[i];
-
-                let item_element = document.createElement('div');
-                item_element.classList.add('item');
-                item_element.innerText = item;
-
-                wrapper.appendChild(item_element);
-            }
-        }
+        
         
     </script>
 </body>

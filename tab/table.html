@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial;
+        }
+        /* Style the tab */
+        
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        /* Style the buttons inside the tab */
+        
+        .tab a {
+            background-color: inherit;
+            float: left;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        /* Change background color of buttons on hover */
+        
+        .tab a:hover {
+            background-color: #ddd;
+        }
+        /* Create an active/current tablink class */
+        
+        .tab a.active {
+            background-color: #ccc;
+        }
+        /* Style the tab content */
+        
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .pagenumbers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+    .pagenumbers button {
+        width: 50px;
+        height: 50px;
+
+        appearance: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        background-color: #44AAEE;
+
+        margin: 5px;
+        transition: 0.4s;
+
+        color: #FFF;
+        font-size: 18px;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .pagenumbers button:hover {
+        background-color: #44EEAA;
+    }
+
+    .pagenumbers button.active {
+        background-color: #44EEAA;
+        box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>코드</th>
+                    <th>코드명</th>
+                    <th>xxxx</th>
+                    <th>yyyy</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+            </tbody>            
+        </table>
+        <div class="pagenumbers" id="pagination"></div>
+    </div>
+    
+    <script>       
+        
+        //request json
+        let request = obj => {
+            return new Promise((resolve, reject) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open(obj.method || "GET", obj.url);
+                if (obj.headers) {
+                    Object.keys(obj.headers).forEach(key => {
+                        xhr.setRequestHeader(key, obj.headers[key]);
+                    });
+                }
+                xhr.onload = () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        var resp = xhr.responseText;
+                        var respJson = JSON.parse(resp);
+                        resolve(respJson);
+                    } else {
+                        reject(xhr.statusText);
+                    }
+                };
+                xhr.onerror = () => reject(xhr.statusText);
+                xhr.send(obj.body);
+            });
+        };
+
+        const tableEl = document.querySelector('table > tbody');
+        const listEl = document.getElementById('list');
+        const paginationEl = document.getElementById('pagination');
+        let state = {
+            'querySet' : null,
+            'page': 1,
+            'rows': 10,
+            'window': 5,
+            'pages': null,
+            'pagingStart': 1,
+            'pagingEnd': null
+        }       
+        function setPagination(querySet, page, rows) {
+
+            let trimStart = (page - 1) * rows //0부터시작, 5개씩 자름
+            let trimEnd = trimStart + rows
+
+            let trimmedData = Object.fromEntries(
+                Object.entries(querySet).slice(trimStart, trimEnd)
+            ) //slice for object 5개씩 자른 데이터
+
+            let pages = Math.round(Object.keys(querySet).length / rows);
+            console.log('pages',pages)    
+            return {
+                'querySet': trimmedData,
+                'pages': pages,
+            }
+        }
+        
+        function buildTable(items, rows, page) {
+            
+            
+            let trimStart = (page - 1) * rows //0부터시작, 5개씩 자름
+            let trimEnd = trimStart + rows
+            
+
+            let trimmedData = Object.fromEntries(
+                Object.entries(items).slice(trimStart, trimEnd)
+            ) //slice for object 5개씩 자른 데이터
+
+            pages = Math.round(Object.keys(items).length / rows);
+            
+            console.log(trimmedData) 
+            
+            for (const prop in trimmedData) {
+                let item = trimmedData[prop];
+                let childItems = Object.values(trimmedData[prop])[0];
+                let arrayItems = childItems.split(',');
+                console.log(`item ${trimmedData[prop]}`)
+
+                let row = `<tr>
+                    <td>${prop}</td>                    
+                    <td>${arrayItems[0]}</td>
+                    <td>${arrayItems[1]}</td>
+                    <td>${arrayItems[2]}</td>`;
+
+                tableEl.insertAdjacentHTML('beforeend', row)
+            }
+            
+        }
+
+       
+
+        function setPaginationButton() {
+            const wrapper = document.getElementById('pagination')
+
+            
+            for (let i = state.page; i <= state.window; i++) {
+                let btn = PaginationButton(i)
+                wrapper.appendChild(btn);
+            } 
+            
+           
+           
+        }
+        const wrapper = document.getElementById('pagination')
+        const buttonBack = `<button value=${1}>&#171;</button>`
+        const buttonNext = `<button>&#187;</button>`
+        buttonNext.addEventListener('click', function () {
+
+            state.page = state.window + 1
+            setPaginationButton();
+            
+        });
+        function setNextButton() {
+            
+
+           
+            wrapper.insertAdjacentHTML('beforeend', buttonNext)
+            
+
+
+        }
+        
+        function PaginationButton(page) {
+            let button = document.createElement('button');
+            button.innerText = page;
+            button.value = page;
+
+            button.addEventListener('click', function () {
+                console.log('click')
+                console.log('value', this.value)
+                tableEl.innerHTML = ``;
+                state.page = this.value
+                buildTable(state.querySet, state.rows, state.page)
+            });
+
+            return button;
+        }
+
+        request({
+                url: "test.json"
+            })
+            .then(result => {
+                console.log(result);
+                
+                state.querySet = result.scores;
+                console.log('state data', state.querySet)
+
+                buildTable(state.querySet, state.rows, state.page)
+                setPaginationButton(pages) 
+                setNextButton()
+
+            })
+            .catch(err => console.log('then error : ', err))
+        
+        
+        
+        
+        
+    </script>
+</body>
+
+</html>
