@@ -205,6 +205,7 @@
             } 
             
             setNextButton()
+            setPrevButton() 
            
         }
         
@@ -231,6 +232,28 @@
 
             wrapper.appendChild(nextButton);
         }
+
+        function setPrevButton() {
+                let prevButton = document.createElement('button');
+                prevButton.innerText = `<<`
+                prevButton.value = state.window - 5
+                prevButton.addEventListener('click', function () {
+                    console.log('prev')
+                     console.log(`state.page prev ${state.page}`)
+                      console.log(`state.window prev ${state.window}`)
+
+                    state.page = state.window - 5
+                    console.log(`state.page prev ${state.page}`)
+                    state.window = state.window - 5
+                    wrapper.innerText = ''
+                    buildTable(state.querySet, state.rows, state.page)
+
+                    setPaginationButton();
+                });
+
+
+                wrapper.prepend(prevButton);
+            }
         
         function PaginationButton(page) {
             let button = document.createElement('button');
