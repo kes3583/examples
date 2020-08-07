@@ -140,22 +140,22 @@
             'pagingStart': 1,
             'pagingEnd': null
         }       
-        function setPagination(querySet, page, rows) {
+        // function setPagination(querySet, page, rows) {
 
-            let trimStart = (page - 1) * rows //0부터시작, 5개씩 자름
-            let trimEnd = trimStart + rows
+        //     let trimStart = (page - 1) * rows //0부터시작, 5개씩 자름
+        //     let trimEnd = trimStart + rows
 
-            let trimmedData = Object.fromEntries(
-                Object.entries(querySet).slice(trimStart, trimEnd)
-            ) //slice for object 5개씩 자른 데이터
+        //     let trimmedData = Object.fromEntries(
+        //         Object.entries(querySet).slice(trimStart, trimEnd)
+        //     ) //slice for object 5개씩 자른 데이터
 
-            let pages = Math.round(Object.keys(querySet).length / rows);
-            console.log('pages',pages)    
-            return {
-                'querySet': trimmedData,
-                'pages': pages,
-            }
-        }
+        //     let pages = Math.round(Object.keys(querySet).length / rows);
+        //     console.log('pages',pages)    
+        //     return {
+        //         'querySet': trimmedData,
+        //         'pages': pages,
+        //     }
+        // }
         
         function buildTable(items, rows, page) {
             
@@ -163,15 +163,17 @@
             let trimStart = (page - 1) * rows //0부터시작, 5개씩 자름
             let trimEnd = trimStart + rows
             
-
+            
             let trimmedData = Object.fromEntries(
                 Object.entries(items).slice(trimStart, trimEnd)
             ) //slice for object 5개씩 자른 데이터
 
-            pages = Math.round(Object.keys(items).length / rows);
+            pages = Math.ceil(Object.keys(items).length / rows); //ceil = roundUp
+            console.log(`Object.keys(items).length=${Object.keys(items).length}`) 
+            console.log(`pages=${pages}`) 
+            console.log(`pages=${pages/5}`) 
             
-            console.log(trimmedData) 
-            
+            tableEl.innerHTML = ""
             for (const prop in trimmedData) {
                 let item = trimmedData[prop];
                 let childItems = Object.values(trimmedData[prop])[0];
@@ -189,37 +191,45 @@
             
         }
 
-       
+       const wrapper = document.getElementById('pagination')
 
         function setPaginationButton() {
-            const wrapper = document.getElementById('pagination')
-
+            
+            console.log(`state.page set ${state.page}`)
             
             for (let i = state.page; i <= state.window; i++) {
+                console.log(`state.page i ${i}`)
                 let btn = PaginationButton(i)
+                
                 wrapper.appendChild(btn);
             } 
             
-           
+            setNextButton()
            
         }
-        const wrapper = document.getElementById('pagination')
-        const buttonBack = `<button value=${1}>&#171;</button>`
-        const buttonNext = `<button>&#187;</button>`
-        buttonNext.addEventListener('click', function () {
-
-            state.page = state.window + 1
-            setPaginationButton();
-            
-        });
+        
+        // const buttonBack = `<button value=${1}>&#171;</button>`
+        // const buttonNext = `<button>&#187;</button>`
+        
+        
         function setNextButton() {
-            
+            let nextButton = document.createElement('button');
+            nextButton.innerText = `>>`  
+            nextButton.value = state.window + 5
+            nextButton.addEventListener('click', function () {
+                console.log('next')
+                
+                state.page = state.window + 1
+                console.log(`state.page next ${state.page}`)
+                state.window = state.window + 5
+                wrapper.innerText = ''
+                buildTable(state.querySet, state.rows, state.page)
 
+                setPaginationButton();
+            });
            
-            wrapper.insertAdjacentHTML('beforeend', buttonNext)
-            
 
-
+            wrapper.appendChild(nextButton);
         }
         
         function PaginationButton(page) {
@@ -249,7 +259,7 @@
 
                 buildTable(state.querySet, state.rows, state.page)
                 setPaginationButton(pages) 
-                setNextButton()
+                
 
             })
             .catch(err => console.log('then error : ', err))
