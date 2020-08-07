@@ -195,8 +195,8 @@
 
         function setPaginationButton() {
             
-            console.log(`state.page set ${state.page}`)
-            
+            console.log(`state.page set ${state.page-5}`)
+            console.log(`state.window set ${state.window-5}`)
             for (let i = state.page; i <= state.window; i++) {
                 console.log(`state.page i ${i}`)
                 let btn = PaginationButton(i)
@@ -242,7 +242,7 @@
                      console.log(`state.page prev ${state.page}`)
                       console.log(`state.window prev ${state.window}`)
 
-                    state.page = state.window - 5
+                    state.page = state.page - 5
                     console.log(`state.page prev ${state.page}`)
                     state.window = state.window - 5
                     wrapper.innerText = ''
