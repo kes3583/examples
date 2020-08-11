@@ -160,9 +160,10 @@
         function buildTable(items, rows, page) {
             
             
-            let trimStart = (page - 1) * rows //0부터시작, 5개씩 자름
+            let trimStart = (page - 1) * rows //0부터시작, 10개씩 자름
             let trimEnd = trimStart + rows
-            
+            console.log(`trimStart ${trimStart}`)
+            console.log(`trimEnd ${trimEnd}`)
             
             let trimmedData = Object.fromEntries(
                 Object.entries(items).slice(trimStart, trimEnd)
@@ -200,12 +201,14 @@
             for (let i = state.page; i <= state.window; i++) {
                 console.log(`state.page i ${i}`)
                 let btn = PaginationButton(i)
-                
+                var total = i
                 wrapper.appendChild(btn);
             } 
-            
-            setNextButton()
-            if(state.page>1)setPrevButton() 
+            console.log('total',total)
+            console.log('pages', pages)
+            console.log('state.page', state.page)
+            if(total< pages) setNextButton()
+            if(state.page > 1) setPrevButton() 
            
         }
         
