@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        /* Style the tab */
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+
+        .tab a {
+            background-color: inherit;
+            float: left;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+
+        .tab a:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+
+        .tab a.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .pagenumbers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pagenumbers button {
+            width: 50px;
+            height: 50px;
+
+            appearance: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            background-color: #44AAEE;
+
+            margin: 5px;
+            transition: 0.4s;
+
+            color: #FFF;
+            font-size: 18px;
+            text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .pagenumbers button:hover {
+            background-color: #44EEAA;
+        }
+
+        .pagenumbers button.active {
+            background-color: #44EEAA;
+            box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table1">
+        <table>
+            <thead>
+                <tr>
+                    <th>코드</th>
+                    <th>코드명</th>
+                    <th>xxxx</th>
+                </tr>
+
+            </thead>
+        </table>
+        
+    </div>
+    
+    <script type="module">   
+        
+        
+        import request from './request.js';
+        import Library from './library.js';
+        const tableEl2 = document.querySelector('.table1');
+        
+        request({
+                url: "data2.json"
+            })
+            .then(result => {
+                //console.log(result);
+                var data = result.scores
+                var library2 = new Library(tableEl2, data);
+
+            })
+            .catch(err => console.log('then error : ', err))
+
+        
+    </script>
+   
+</body>
+
+</html>
