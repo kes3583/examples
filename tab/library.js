@@ -38,46 +38,35 @@ var myWindowGlobalLibraryName = (function () {
     
      //object for-loop
     for (const prop in data) {
-      let item = data[prop];
-      //console.log('item :>> ', item);
       let childItems = Object.values(data[prop])[0];
-      let arrayItems = childItems.split(','); //turn into Array
+      let arrayItems = childItems.split(','); //turn into Array - 두번째 array
       var tr = document.createElement('tr');
-      //console.log('arrayItems :>> ', arrayItems);
-      
+      var td = document.createElement('td');
+      td.innerHTML = `${prop}`
+      tr.appendChild(td)
       //array for-loop
-      for (var e = 0, f = arrayItems.length; e < f; e++) {        
+      for (var e = 0, f = arrayItems.length; e < f; e++) {         
         if( e <= 1){
           var td = document.createElement('td');
-          //console.log('e1 :>> ', e);
           td.innerHTML = `${arrayItems[e]}`
-          //console.log('td :>> ', td);
         }else if(e == 2){
           var td = document.createElement('td');
-          //console.log('e2 :>> ', e)
           td.innerHTML = `${arrayItems[e]}`
         }else{
           td.innerHTML += `${arrayItems[e]}`
-          //console.log('td :>> ', td);
-        }  
-        
+        }         
         tr.appendChild(td)
       }
-              
+     
       frag.appendChild(tr)
-    }
-    
-    
+    }    
     tbody.appendChild(frag);
-    console.log('tbody', tbody)
 
     return tbody;
   };
 
   // We will add functions to our library here !
   function Plugin(el, data, options) {
-    // console.log(data)
-    // console.log(el)
     this.el = el;
     var defaults = {
       'perPage': 10,
@@ -85,7 +74,6 @@ var myWindowGlobalLibraryName = (function () {
     }
 
     this.options = extend(defaults, options);
-
     var nodeName = this.el.children[0].nodeName.toLowerCase();
     if (nodeName != "table") throw new Error('The selected element (' + nodeName + ') is not a table!');
 
@@ -96,10 +84,11 @@ var myWindowGlobalLibraryName = (function () {
     }
 
     this.tbody = this.table.tBodies[0];
-    this.rows = Array.prototype.slice.call(this.tbody.rows);
+    this.rows = Array.prototype.slice.call(this.tbody.rows)
     console.log('this.rows :>> ', this.rows);
 
-    this.currentPage = 1;
+    this.currentPage = 1
+    this.paginations = this.options.paginations
     console.log('this', this)
     this.init();
   }
@@ -112,111 +101,118 @@ var myWindowGlobalLibraryName = (function () {
       this.pagination = document.createElement('div');
       this.pagination.setAttribute('class', 'pagination')
       _this.el.appendChild(this.pagination)
-
-      console.log('settings', settings)  
+      this.paginate();
+      this.showPage();
+      this.setPaginationButton(); 
     },
     /**
      * Set up the initial button 
      */
     paginate: function () {
-       var perPage = this.options.perPage, rows = this.rows;
+      var perPage = this.options.perPage, rows = this.rows;
       this.pages = rows.map(function (tr, i) {
         return i % perPage == 0 ? rows.slice(i, i + perPage) : null;
       }).filter(function (pages) {
         return pages;
       });
-      console.log('pages', this.pages.length)
-      console.log('this.pages', this.pages)
-      this.lastPage = this.pages.length;
+      console.log('pages', this.pages.length)     
     },
     showPage: function (index) {
+      console.log('showPage index :> ', index);
       index = index || 0;
-
-      var _this = this,
-        pages = this.pages;
-
-      if (pages.length) {
-
-        // Use a fragment to limit touching the DOM
-        var frag = _newFragment();
-        console.log('index :>> ', index);
-        _each(pages[index], function (i, row) {
-          console.log('row :>> ', row);
-          frag.appendChild(row);
-        });
-
-        _this.clear();
-        _this.tbody.appendChild(frag);
-
-        _this.onFirstPage = false;
-        _this.onLastPage = false;
-
-        switch (_this.currentPage) {
-          case 1:
-            _this.onFirstPage = true;
-            break;
-          case _this.lastPage:
-            _this.onLastPage = true
-            break;
-        }
-      }
-
-      // Update the info
-      if (_this.options.info) {
-        var current = 0,
-          f = 0,
-          t = 0,
-          items;
-
-        if (pages.length) {
-          current = _this.currentPage - 1;
-          f = current * _this.options.perPage;
-          t = f + pages[current].length;
-          f = f + 1;
-          items = !!this.searching ? this.searchRows.length : this.rows.length;
-        }
-
-        var template = ['Showing ', f, ' to ', t, ' of ', items, ' rows'];
-
-        this.label.innerHTML = template.join('');
-      }
-    },
-    setPaginationButton : function() {
-      var settings = this.options;
-      let len = obj.window >= obj.pages ? obj.pages : obj.window
-      for (let i = obj.page; i <= len; i++) {
-        let btn = this.paginationButton()
-        var total = i
-        pEl.appendChild(btn);
-      }
-
+      var _this = this, pages = this.pages;
       
-
+      
+      if (pages.length) {
+        var frag = document.createDocumentFragment();
+        
+        //tr element
+        for (let i = 0; i < pages[index].length; i++) {
+            //console.log('object :>> ', pages[index][i]);
+            frag.appendChild(pages[index][i]);
+        }
+        _this.clear();
+        //console.log('frag :>> ', frag);
+        _this.tbody.appendChild(frag);        
+      }      
     },
-    paginationButton: function() {
-      var page = this.page, tbody = this.body;
-      let button = document.createElement('button');
-      button.innerText = page;
-      button.value = page;
+    setPaginationButton : function(n) {
+      var settings = this.options, total, _this = this;
+      console.log('setPaginationButton');
+      console.log('setPaginationButton n :>> ', n);
+      _this.currentPage = n || this.currentPage
+      console.log('_this.currentPage :>> ', _this.currentPage);
+      //let len = settings.paginations >= this.pages ? this.pages : settings.paginations
+     console.log('this.currentPage :>> ', this.currentPage);
+     console.log('_this.paginations :>> ', _this.paginations);
+      for (let i = _this.currentPage; i <= _this.paginations; i++) {        
+        let btn = this.paginationButton(i)
+        total = i
+        this.pagination.appendChild(btn);
+      }
+      console.log('total :>> ', total);
+      console.log('this.pages.length :>> ', this.pages.length);
+      if (total < this.pages.length) this.switchPage('next');
+      //if (total > 1) setPrevButton()
+    },
+    paginationButton: function(n) {
+      let _this = this, button = document.createElement('button');
+      button.innerText = n;
+      button.value = n;
 
       button.addEventListener('click', function () {
-        tbody.innerHTML = ``;
-        
-        
+        _this.clear()  
+        this.currentPage = this.value
+        _this.showPage(this.currentPage - 1)
       });
 
       return button;
-    }
+    },
+    switchPage: function (page) {
+      console.log('switchPage :>> ');
+      console.log('page',page);
+      var _this = this, nextButton = document.createElement('button'), settings = this.options
+      
+      nextButton.innerText = `${page}`
+      nextButton.value = _this.paginations + settings.paginations
+
+      nextButton.addEventListener('click', function () {
+        console.log('next')
+        console.log('_this.currentPage', _this.currentPage)
+        _this.currentPage = _this.paginations + 1
+        console.log('this.paginations :>> ', _this.paginations)
+
+        _this.paginations = _this.pages.length < _this.paginations + settings.paginations ? _this.pages.length : _this.paginations + settings.paginations
+        console.log('_this.paginations :>> ', _this.paginations);
+        while (_this.pagination.hasChildNodes()) {
+          console.log('remove child');
+          _this.pagination.removeChild(_this.pagination.firstChild)
+        }
+        
+        console.log('_this.pagination :>> ', _this.pagination);
+        console.log('this.currentPage :>> ', _this.currentPage);
+        _this.showPage(_this.currentPage - 1)
+        _this.setPaginationButton(_this.currentPage);
+      });
+
+      _this.pagination.appendChild(nextButton);
+    },
+    clear: function () {
+      console.log('clear');
+      if (this.table.tBodies.length) {
+        // IE doesn't play nice with innerHTML on tBodies.
+        if (this.isIE) {
+          while (this.tbody.hasChildNodes()) {
+            this.tbody.removeChild(this.tbody.firstChild);
+          }
+        } else {
+          this.tbody.innerHTML = '';
+        }
+      }
+    },
   
   }
-
-
-
-
-  return Plugin;
-
-
-  
+  return Plugin;  
 })();
 
 export default myWindowGlobalLibraryName;

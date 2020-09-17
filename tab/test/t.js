@@ -80,6 +80,7 @@
   };
 
   var _each = function (a, b, c) {
+    console.log('1 :>> ');
     // console.log('object a', a)
     // console.log('object call', Object.prototype.toString.call(a)) // [object Array]
     // console.log('object b', b) //function
@@ -87,11 +88,14 @@
       //console.log('1') // object 이면 [object Object]
       for (var d in a) Object.prototype.hasOwnProperty.call(a, d) && b.call(c, d, a[d], a);
     }else{
-      // console.log('2') // object 가 아니면 [object Array]
-      // console.log('a',a)
-      // console.log('b',b)
-      // console.log('c',c)
-      for (var e = 0, f = a.length; e < f; e++) b.call(c, e, a[e], a)
+       console.log('2 :>>') // object 가 아니면 [object Array]
+       console.log('a',a)
+       console.log('b',b)
+       console.log('c',c)
+      for (var e = 0, f = a.length; e < f; e++) {
+        console.log('for c', c)
+        b.call(c, e, a[e], a)
+      }
     }
   }
 
@@ -335,7 +339,7 @@
       // }
 
       // console.log('update :>> ',);
-      // this.update();
+      this.update();
 
       
 
@@ -423,7 +427,7 @@
       this.lastPage = this.pages.length;
     },
 
-    /* Change the page. */
+    /* Change the page. 화면전환 */
     switchPage: function (page) {
       console.log('switchPage :>> ', page);
       var _this = this;
@@ -459,7 +463,7 @@
 
     /* Populate the table with the required page. */
     showPage: function (index) {
-      console.log('show Page index :>> ', index);
+      console.log('show Page :>> ');
       index = index || 0;
 
       var _this = this, pages = this.pages;
@@ -468,87 +472,91 @@
 
         // Use a fragment to limit touching the DOM
         var frag = _newFragment();
-        
+        console.log('index :>> ', index);
+        console.log('pages[index] :>> ', pages[index]);
+        console.log('pages[index].length :>> ', pages[index].length);
         _each(pages[index], function (i, row) {
           //console.log('row :>> ', row);
+          console.log('i :>> ', i);
+          console.log('row :>> ', row);
           frag.appendChild(row);
         });
 
         _this.clear();
         _this.tbody.appendChild(frag);
 
-        _this.onFirstPage = false;
-        _this.onLastPage = false;
+        // _this.onFirstPage = false;
+        // _this.onLastPage = false;
 
-        switch (_this.currentPage) {
-          case 1:
-            _this.onFirstPage = true;
-            break;
-          case _this.lastPage:
-            _this.onLastPage = true
-            break;
-        }
+        // switch (_this.currentPage) {
+        //   case 1:
+        //     _this.onFirstPage = true;
+        //     break;
+        //   case _this.lastPage:
+        //     _this.onLastPage = true
+        //     break;
+        // }
       }
 
       // Update the info
-      if (_this.options.info) {
-        var current = 0, f = 0, t = 0, items;
+      // if (_this.options.info) {
+      //   var current = 0, f = 0, t = 0, items;
 
-        if (pages.length) {
-          current = _this.currentPage - 1;
-          f = current * _this.options.perPage;
-          t = f + pages[current].length;
-          f = f + 1;
-          items = !!this.searching ? this.searchRows.length : this.rows.length;
-        }
+      //   if (pages.length) {
+      //     current = _this.currentPage - 1;
+      //     f = current * _this.options.perPage;
+      //     t = f + pages[current].length;
+      //     f = f + 1;
+      //     items = !!this.searching ? this.searchRows.length : this.rows.length;
+      //   }
 
-        var template = ['Showing ', f, ' to ', t, ' of ', items, ' rows'];
+      //   var template = ['Showing ', f, ' to ', t, ' of ', items, ' rows'];
 
-        this.label.innerHTML = template.join('');
-      }
+      //   this.label.innerHTML = template.join('');
+      // }
     },
 
-    search: function (event) {
-      var _this = this,
-        target = event ? event.target : this.searchInput,
-        val = target.value.toLowerCase();
+    // search: function (event) {
+    //   var _this = this,
+    //     target = event ? event.target : this.searchInput,
+    //     val = target.value.toLowerCase();
 
-      this.searching = true;
+    //   this.searching = true;
 
-      this.searchRows = [];
+    //   this.searchRows = [];
 
-      if (!val.length) {
-        this.searching = false;
-        this.update();
-        this.trigger("datatable.search");
-        return;
-      }
+    //   if (!val.length) {
+    //     this.searching = false;
+    //     this.update();
+    //     this.trigger("datatable.search");
+    //     return;
+    //   }
 
-      this.clear();
+    //   this.clear();
 
-      _each(this.rows, function (idx, tr) {
-        _each(tr.cells, function (i, cell) {
-          var text = cell.textContent.toLowerCase();
-          var inArray = _this.searchRows.indexOf(tr) > -1;
-          if (text.indexOf(val) > -1 && !inArray) {
-            _this.searchRows.push(tr);
-          }
-        });
-      });
+    //   _each(this.rows, function (idx, tr) {
+    //     _each(tr.cells, function (i, cell) {
+    //       var text = cell.textContent.toLowerCase();
+    //       var inArray = _this.searchRows.indexOf(tr) > -1;
+    //       if (text.indexOf(val) > -1 && !inArray) {
+    //         _this.searchRows.push(tr);
+    //       }
+    //     });
+    //   });
 
-      if (!_this.searchRows.length) {
-        _this.setMessage('No entries found.');
-      }
+    //   if (!_this.searchRows.length) {
+    //     _this.setMessage('No entries found.');
+    //   }
 
-      this.update();
+    //   this.update();
 
-      this.trigger("datatable.search");
-    },
+    //   this.trigger("datatable.search");
+    // },
 
-    setMessage: function (message) {
-      this.clear();
-      this.tbody.appendChild(_newElement('tr', { html: '<td class="dataTables-empty" colspan="' + this.colspan + '">' + message + '</td>' }));
-    },
+    // setMessage: function (message) {
+    //   this.clear();
+    //   this.tbody.appendChild(_newElement('tr', { html: '<td class="dataTables-empty" colspan="' + this.colspan + '">' + message + '</td>' }));
+    // },
 
     /* Update the table contents */
     update: function (e) {
