@@ -7,6 +7,25 @@ var myWindowGlobalLibraryName = (function () {
     return a
   };
 
+  var _newFragment = function () {
+    return document.createDocumentFragment()
+  }
+
+  var _newElement = function (a, b) {
+    var c = document,
+      d = c.createElement(a);
+    if (b && "object" == typeof b) {
+      var e;
+      for (e in b)
+        if ("html" === e) d.innerHTML = b[e];
+        else if ("text" === e) {
+        var f = c.createTextNode(b[e]);
+        d.appendChild(f)
+      } else d.setAttribute(e, b[e])
+    }
+    return d
+  };
+
   var createButton = function (obj, page, el) {
     let button = document.createElement('button');
     
@@ -65,7 +84,6 @@ var myWindowGlobalLibraryName = (function () {
     return tbody;
   };
 
-  // We will add functions to our library here !
   function Plugin(el, data, options) {
     this.el = el;
     var defaults = {
@@ -74,10 +92,13 @@ var myWindowGlobalLibraryName = (function () {
     }
 
     this.options = extend(defaults, options);
-    var nodeName = this.el.children[0].nodeName.toLowerCase();
-    if (nodeName != "table") throw new Error('The selected element (' + nodeName + ') is not a table!');
+    // var nodeName = this.el.children[0].nodeName.toLowerCase();
+    // if (nodeName != "table") throw new Error('The selected element (' + nodeName + ') is not a table!');
+    // if (table.tHead === null) throw new Error('The sortable option requires table headings!');
 
-    this.table = el.querySelector('table');
+    this.table = _newElement('table', { class: 'data-table'});
+    this.thead = this.table.tHead;
+
     if (data) {
       var tbody = jsonToTable(data);
       this.table.appendChild(tbody);
@@ -85,11 +106,8 @@ var myWindowGlobalLibraryName = (function () {
 
     this.tbody = this.table.tBodies[0];
     this.rows = Array.prototype.slice.call(this.tbody.rows)
-    console.log('this.rows :>> ', this.rows);
-
     this.currentPage = 1
     this.paginations = this.options.paginations
-    console.log('this', this)
     this.init();
   }
 
@@ -103,7 +121,7 @@ var myWindowGlobalLibraryName = (function () {
       _this.el.appendChild(this.pagination)
       this.paginate();
       this.showPage();
-      this.setPaginationButton(); 
+      this.setPaginationButton();
     },
     /**
      * Set up the initial button 
@@ -114,46 +132,38 @@ var myWindowGlobalLibraryName = (function () {
         return i % perPage == 0 ? rows.slice(i, i + perPage) : null;
       }).filter(function (pages) {
         return pages;
-      });
-      console.log('pages', this.pages.length)     
+      })    
     },
     showPage: function (index) {
-      console.log('showPage index :> ', index);
       index = index || 0;
-      var _this = this, pages = this.pages;
-      
+      var _this = this, pages = this.pages;      
       
       if (pages.length) {
         var frag = document.createDocumentFragment();
         
         //tr element
         for (let i = 0; i < pages[index].length; i++) {
-            //console.log('object :>> ', pages[index][i]);
             frag.appendChild(pages[index][i]);
         }
-        _this.clear();
-        //console.log('frag :>> ', frag);
+        _this.clear(this.table);
+        
         _this.tbody.appendChild(frag);        
       }      
     },
-    setPaginationButton : function(n) {
+    setPaginationButton : function() {
       var settings = this.options, total, _this = this;
-      console.log('setPaginationButton');
-      console.log('setPaginationButton n :>> ', n);
-      _this.currentPage = n || this.currentPage
-      console.log('_this.currentPage :>> ', _this.currentPage);
-      //let len = settings.paginations >= this.pages ? this.pages : settings.paginations
-     console.log('this.currentPage :>> ', this.currentPage);
-     console.log('_this.paginations :>> ', _this.paginations);
-      for (let i = _this.currentPage; i <= _this.paginations; i++) {        
+
+      //_this.paginations = _this.paginations >= this.pages.length ? this.pages.length : _this.paginations //_this.pagination는 반드시 15이어야한다.      
+      var len = _this.paginations >= this.pages.length ? this.pages.length : _this.paginations //12이어야한다. 
+    
+      for (let i = _this.currentPage; i <= len; i++) {
         let btn = this.paginationButton(i)
         total = i
         this.pagination.appendChild(btn);
       }
-      console.log('total :>> ', total);
-      console.log('this.pages.length :>> ', this.pages.length);
+     
       if (total < this.pages.length) this.switchPage('next');
-      //if (total > 1) setPrevButton()
+      if (_this.currentPage > 1) this.switchPage('prev');
     },
     paginationButton: function(n) {
       let _this = this, button = document.createElement('button');
@@ -161,7 +171,7 @@ var myWindowGlobalLibraryName = (function () {
       button.value = n;
 
       button.addEventListener('click', function () {
-        _this.clear()  
+        _this.clear(this.table)  
         this.currentPage = this.value
         _this.showPage(this.currentPage - 1)
       });
@@ -169,50 +179,61 @@ var myWindowGlobalLibraryName = (function () {
       return button;
     },
     switchPage: function (page) {
-      console.log('switchPage :>> ');
-      console.log('page',page);
-      var _this = this, nextButton = document.createElement('button'), settings = this.options
+      var _this = this, button = document.createElement('button'), settings = this.options      
+      button.innerText = `${page}`
       
-      nextButton.innerText = `${page}`
-      nextButton.value = _this.paginations + settings.paginations
+      if(page === 'next'){   
 
-      nextButton.addEventListener('click', function () {
-        console.log('next')
-        console.log('_this.currentPage', _this.currentPage)
-        _this.currentPage = _this.paginations + 1
-        console.log('this.paginations :>> ', _this.paginations)
+        button.value = _this.paginations + settings.paginations
 
-        _this.paginations = _this.pages.length < _this.paginations + settings.paginations ? _this.pages.length : _this.paginations + settings.paginations
-        console.log('_this.paginations :>> ', _this.paginations);
-        while (_this.pagination.hasChildNodes()) {
-          console.log('remove child');
-          _this.pagination.removeChild(_this.pagination.firstChild)
-        }
+        button.addEventListener('click', function () {        
+          _this.currentPage = _this.paginations + 1
+          _this.paginations = _this.paginations + settings.paginations
+                    
+          _this.clear(_this.pagination)
+          _this.showPage(_this.currentPage - 1)
+          _this.setPaginationButton(_this.paginations);
+        })
+        _this.pagination.appendChild(button)
+
+      }else if (page === 'prev') {
+
+        button.value = _this.paginations - settings.paginations
         
-        console.log('_this.pagination :>> ', _this.pagination);
-        console.log('this.currentPage :>> ', _this.currentPage);
-        _this.showPage(_this.currentPage - 1)
-        _this.setPaginationButton(_this.currentPage);
-      });
+        button.addEventListener('click', function () {          
+          _this.currentPage = _this.currentPage - settings.paginations
+          _this.paginations = _this.paginations - settings.paginations
 
-      _this.pagination.appendChild(nextButton);
+          _this.clear(_this.pagination)
+          _this.showPage(_this.currentPage - 1)
+          _this.setPaginationButton();
+        })
+        _this.pagination.prepend(button)
+
+      }      
     },
-    clear: function () {
-      console.log('clear');
-      if (this.table.tBodies.length) {
-        // IE doesn't play nice with innerHTML on tBodies.
-        if (this.isIE) {
-          while (this.tbody.hasChildNodes()) {
-            this.tbody.removeChild(this.tbody.firstChild);
+    clear: function (el) {      
+      if (el.nodeName === 'TABLE') {
+        if (this.table.tBodies.length) {
+          // IE doesn't play nice with innerHTML on tBodies.
+          if (this.isIE) {
+            while (this.tbody.hasChildNodes()) {
+              this.tbody.removeChild(this.tbody.firstChild);
+            }
+          } else {
+            this.tbody.innerHTML = '';
           }
-        } else {
-          this.tbody.innerHTML = '';
         }
-      }
-    },
-  
+      }else if(el.nodeName === 'DIV'){
+        while (this.pagination.hasChildNodes()) {
+          this.pagination.removeChild(this.pagination.firstChild)
+        }
+      }      
+    }  
   }
+
   return Plugin;  
+
 })();
 
 export default myWindowGlobalLibraryName;

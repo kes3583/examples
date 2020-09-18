@@ -62,6 +62,7 @@ function setPaginationButton(obj, el) {
   let pEl = el.querySelector('.pagenumbers')
   
   let len = obj.window >= obj.pages ? obj.pages : obj.window
+  console.log('page', obj.page)
   console.log('window', obj.window)
   console.log('pages', obj.pages)
   console.log('len', len)
