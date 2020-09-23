@@ -102,6 +102,7 @@ var myWindowGlobalLibraryName = (function () {
     if (data) {
       var tbody = jsonToTable(data);
       this.table.appendChild(tbody);
+      this.el.appendChild(this.table)
     }
 
     this.tbody = this.table.tBodies[0];
@@ -171,7 +172,7 @@ var myWindowGlobalLibraryName = (function () {
       button.value = n;
 
       button.addEventListener('click', function () {
-        _this.clear(this.table)  
+        _this.clear(_this.table)  
         this.currentPage = this.value
         _this.showPage(this.currentPage - 1)
       });
