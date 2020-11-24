@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class MultiTable extends React.Component {
+            constructor(props){
+                super(props);
+                this.state = {
+                    firstNum : Math.ceil(Math.random() * 9),
+                    secondNum : Math.ceil(Math.random() * 9),
+                    value : '',
+                    result : '',
+                };
+            }
+
+            //function 쓰면 this가 달라지기때문에 es6 화살표 함수 사용한다. 
+            handleChange = (e) => {
+                this.setState({ value: e.target.value });
+            }
+            handleSubmit = (e) => {
+                e.preventDefault();
+                if (parseInt(this.state.value) === this.state.firstNum * this.state.secondNum) {
+                    this.setState((prevState) => {
+                        return{
+                            result: prevState.value + ' correct' + this.state.value,
+                            firstNum: Math.ceil(Math.random() * 9),
+                            secondNum: Math.ceil(Math.random() * 9),
+                            value: '',      
+                        }                                        
+                    });
+                    this.input.focus();
+                } else {
+                    this.setState({
+                        result: ' wrong answer',
+                        value: '',
+                    });
+                    this.input.focus();
+                }
+            }
+            handleRefInput = (c) =>{this.input = c;};
+
+             // 빈 div 쓸 필요가 없다. 
+            render(){
+                return (
+                    <React.Fragment>
+                        <div>{this.state.firstNum}곱하기 {this.state.secondNum} 은?</div>
+                        <form action="" onSubmit={this.handleSubmit}>
+                            <input type="number" ref={this.handleRefInput} value={this.state.value} onChange={this.handleChange} /><button>입력!</button>
+                        </form>
+                        <div>{this.state.result}</div>
+                    </React.Fragment>
+                );
+            }
+        }
+    </script>
+    <script type="text/babel">
+        ReactDOM.render(<MultiTable />, document.querySelector('#root'))
+    </script>
+</body>
+</html>
