@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const MultiTable = () => {
+            const [firstNum, setFirstNum] = React.useState(Math.ceil(Math.random() * 9));
+            const [secondNum, setSecondNum] = React.useState(Math.ceil(Math.random () * 9));
+            const [value, setValue] = React.useState('');
+            const [result, setResult] = React.useState('')
+            //function 쓰면 this가 달라지기때문에 es6 화살표 함수 사용한다. 
+            const handleChange = (e) => {
+               setValue(e.target.value);
+            }
+            const inputRef = React.useRef(null);
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (parseInt(value) === firstNum * secondNum) {
+                    setResult((prevResult) => {
+                        return prevResult + '/' + value + ' correct'
+                    });
+                    setValue('');
+                    setFirstNum(Math.ceil(Math.random() * 9));
+                    setSecondNum(Math.ceil(Math.random() * 9)); 
+                    inputRef.current.focus();                  
+                } else {
+                    setResult('wrong answer');
+                    setValue('');
+                    inputRef.current.focus(); 
+                }
+            } 
+            console.log('rendering');
+            return (
+                <React.Fragment>
+                    <div>{firstNum}곱하기 {secondNum} 은?</div>
+                    <form action="" onSubmit={handleSubmit}>
+                        <input ref={inputRef} type="number" value={value} onChange={handleChange} /><button>입력!</button>
+                    </form>
+                    <div>{result}</div>
+                </React.Fragment>
+            );
+        }
+        
+    </script>
+    <script type="text/babel">
+        ReactDOM.render(<MultiTable />, document.querySelector('#root'))
+    </script>
+</body>
+</html>
