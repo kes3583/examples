@@ -2,6 +2,9 @@ import React from 'react';
 import Hello from './Hello_es6'
 import { Welcome } from './Welcome_func'
 import { Bye } from './Bye_fuc'
+import { WordRelay } from './WordRelayWithHooks'
+import { NumberBaseball } from './NumberBaseball'
+import { ResponseCheck } from './ResponseCheck'
 
 
 function App() {
@@ -13,7 +16,9 @@ function App() {
      <Hello />
      <Welcome />
      <Bye />
-
+     <WordRelay name='eunsim' />
+     <NumberBaseball />
+      <ResponseCheck />
     </>
   )
 }
