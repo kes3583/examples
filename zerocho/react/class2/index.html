@@ -3,6 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+        #screen{width:200px; height:200px; background:rgb(136, 134, 134)}
+        #screen.waiting{background:aqua}
+        #screen.ready{background:red}
+        #screen.now{background:greenyellow}
+    </style>
 </head>
 <body>
     <div id="root"></div>    
