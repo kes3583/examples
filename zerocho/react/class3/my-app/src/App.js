@@ -13,6 +13,7 @@ import BaseBall from './pages/BaseBall'
 import Lotto from './pages/Lotto'
 import User from './pages/User'
 import TicTacToe from './pages/TicTacToe';
+import MineSweeper from './pages/MineSweeper';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <li><Link to="/lotto">Lotto</Link></li>
               <li><Link to="/user/eunsim/kang">User</Link></li>
               <li><Link to="/tictactoe">TicTacToe</Link></li>
+              <li><Link to="/mineSweeper">MineSweeper</Link></li>
             </ul>
           </header>
           <Switch>
@@ -42,6 +44,7 @@ function App() {
             <Route exact path="/lotto" component={Lotto}/>
             <Route exact path="/user/:firstname/:lastname" component={User}/>
             <Route exact path="/tictactoe" component={TicTacToe}/>
+            <Route exact path="/mineSweeper" component={MineSweeper}/>
           </Switch>
             {/* <RockPaperScissor />    */}
             {/* <RockPaperScissorWithHooks />  */}
