@@ -29,7 +29,8 @@ const initialState = {
   timer: 0,
   result: '',
   halted: true,
-  openedCells : 0
+  openedCells : 0,
+  firstClick : false
 };
 
 //클릭시 테이블 , 지뢰 만들기
@@ -94,6 +95,7 @@ const reducer = (state, action) => {
         halted: false,
         result:'',
         timer: 0,
+        firstClick : false,
         tableData: plantMine(action.row, action.col, action.mine)
     }
     case OPEN_CELL: {
@@ -101,6 +103,7 @@ const reducer = (state, action) => {
       tableData[action.row] = [...state.tableData[action.row]]
       tableData[action.row][action.col] = CODE.OPENED //오픈 0 으로 바꿈 
       console.log('tableData :>> ', tableData[action.row][action.col]);
+      const firstTimer = 1
       
       //console.log('[...state.tableData[action.row][action.col]]:>> ', ...state.tableData[action.row][action.col]);
 
@@ -210,14 +213,18 @@ const reducer = (state, action) => {
       //console.log('tableData', tableData)
       checkAroundCells(action.row, action.col)
       console.log('state', state)
+      let firstClick = true
       let halted = false
       let result=''
+      
       console.log('state.data.row * state.data.col - state.data.mine', state.data.row * state.data.col - state.data.mine)
       console.log('state.openedCells', state.openedCells)
       console.log('countCells', countCells)
       console.log('state.openedCells + countCells', state.openedCells + countCells)
+      
       if(state.data.row * state.data.col - state.data.mine === state.openedCells + countCells){
         halted = true // stop the game
+        firstClick = false
         result='you WIN!'
 
       }
@@ -226,7 +233,8 @@ const reducer = (state, action) => {
         tableData,
         openedCells: state.openedCells + countCells,
         halted,
-        result
+        result,
+        firstClick
       }
     }
     case CLICK_MINE: {
@@ -236,7 +244,8 @@ const reducer = (state, action) => {
       return {
         ...state,
         tableData,
-        halted: true
+        halted: true,
+        firstClick: false
       }
     }
     case FLAG_CELL: {
@@ -293,24 +302,28 @@ const reducer = (state, action) => {
 
 function MineSweeper() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const {tableData, halted, timer, result} = state
+  const {tableData, halted, timer, result, firstClick} = state
   const value = useMemo(() => ({tableData, halted, dispatch}), [tableData, halted]);
 
+  
   useEffect(() => {
-    if(halted === false){
-      const timer = setInterval(()=>{
+    let timer
+    if(firstClick === true){
+      
+      timer = setInterval(()=>{
         dispatch({type: INCREMENT_TIMER})
       },1000)
       return () => {
         clearInterval(timer)
       }
     }
-  }, [halted])
+  }, [firstClick])
 
   return (
     <TableContext.Provider value={value}>
-      <Form  />
-      <div id="timer">{timer}초</div>
+      <Form  />     
+        {firstClick ?<div id="timer">{timer + 1}초</div> :  <div>{timer}초</div>}
+        {/* <div id="timer">{timer}초</div> */}
       <Table />
       <div class="result">{result}</div>
     </TableContext.Provider>
