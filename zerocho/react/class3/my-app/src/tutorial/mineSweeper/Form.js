@@ -1,9 +1,9 @@
-import React, {useState, useCallback, useContext} from 'react';
+import React, {useState, useCallback, useContext, memo} from 'react';
 import {TableContext} from "../../pages/MineSweeper";
-function Form() {
-  const [row, setRow] = useState(10);
-  const [col, setCol] = useState(10);
-  const [mine, setMine] = useState(20);
+const Form = memo( () => {
+  const [row, setRow] = useState(5);
+  const [col, setCol] = useState(5);
+  const [mine, setMine] = useState(5);
   const {dispatch} = useContext(TableContext);
 
   const onChangeRow = useCallback((e) => {
@@ -21,6 +21,7 @@ function Form() {
 
   const onClickExecution = useCallback(() =>{
     dispatch({type:'START_GAME', row, col, mine})
+  
   },[row, col, mine])
 
   return (
@@ -31,6 +32,7 @@ function Form() {
       <button type="button" id="exec" onClick={onClickExecution}>실행</button>      
     </div>
   );
-}
+})
+
 
 export default Form;
