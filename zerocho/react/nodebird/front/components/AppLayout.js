@@ -19,7 +19,7 @@ const AppLayout = ({children}) => {
 
   return (
     <div>
-      <Menu mode="horizontal" onClick={handleClick} selectedKeys={current}>
+      <Menu mode="horizontal" onClick={handleClick} defaultSelectedKeys={[current]}>
         <Menu.Item key="main" icon={<MailOutlined />}>
           <Link href="/"><a>Main</a></Link>
         </Menu.Item>
@@ -34,11 +34,11 @@ const AppLayout = ({children}) => {
            <Link href="/signup"><a>Signup</a></Link>        
         </Menu.Item>        
       </Menu>
-      <Row gutter={16}>
-        <Col xs={24} md={6}>
-          {isLoggedIn ? <UserProfile/> : <LoginForm/> }
+      <Row gutter={16} style={{ padding: '15px' }}>
+        <Col xs={24} md={6} >
+          {isLoggedIn ? <UserProfile setIsLoggedIn={setIsLoggedIn}/> : <LoginForm setIsLoggedIn={setIsLoggedIn} /> }
         </Col>
-        <Col xs={24} md={12}>{children}sign up page</Col>
+        <Col xs={24} md={12}>{children}</Col>
         <Col xs={24} md={6}><a href="" rel="noreferrer noopener">april</a> </Col>
       </Row>
                       
