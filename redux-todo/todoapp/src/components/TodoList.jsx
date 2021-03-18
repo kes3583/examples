@@ -3,7 +3,7 @@ import TodoItem from './TodoItem'
 import { useSelector } from 'react-redux';
 
 function TodoList() {
-  const todos = useSelector(state => state)
+  const todos = useSelector(state => state.todos)
   console.log('todos :>> ', todos);
   return (
     <div className="my-4">
