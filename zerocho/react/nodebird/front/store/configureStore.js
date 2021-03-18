@@ -2,7 +2,7 @@ import { createWrapper } from "next-redux-wrapper";
 import { createStore } from "redux";
 
 const configureStore = () => {
-  const store = createSotre(reducer);
+  const store = createStore(reducer);
   store.dispatch({
     type:'CHANGE_NAME',
     name: 'lovelycherry'

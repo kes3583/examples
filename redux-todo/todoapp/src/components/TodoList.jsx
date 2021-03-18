@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 function TodoList() {
   const todos = useSelector(state => state.todos)
-  console.log('todos :>> ', todos);
   return (
     <div className="my-4">
       <h3>TodoList</h3>
