@@ -1,26 +1,21 @@
-const initialState = {
-  name: 'cherry',
-  age:2,
-  password:1234
-}
+import initialState from './states'
+import { CHANGE_NAME, LOG_IN } from './action'
 
-const changeName = (data) => {
-  return {
-    type:'CHANGE_NAME',
-    data
-  }
-}
-
-changeName('lovelycherry')
-
-//(이전상태, )
+//(이전상태, 액션) => 다음상태
 export default (state = initialState, action) => {
   switch (action.type) {
 
-  case 'CHANGE_NAME':
+  case CHANGE_NAME:
     return { 
       ...state, 
-      name:action.name
+      // name:action.payload.data
+      name:action.data
+    }
+  case LOG_IN:
+    return { 
+      ...state, 
+      // name:action.payload.data
+      name:action.data
     }
 
   default:

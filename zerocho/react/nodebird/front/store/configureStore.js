@@ -3,10 +3,6 @@ import { createStore } from "redux";
 
 const configureStore = () => {
   const store = createStore(reducer);
-  store.dispatch({
-    type:'CHANGE_NAME',
-    name: 'lovelycherry'
-  })
   return store;  
 }
 const wrapper = createWrapper(configureStore, {
