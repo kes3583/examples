@@ -4,7 +4,7 @@ import styles from '../styles/LoginForm.module.scss'
 import useInput from '../hooks/useInput'
 import Link from 'next/link';
 import {useDispatch} from 'react-redux';
-import {loginAction} from '../reducers/action';
+import {loginAction} from '../reducers/user';
 
 const LoginForm = () => {
   const [id, onChangeId] = useInput('');

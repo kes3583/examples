@@ -6,18 +6,3 @@ export function changeName (data) {
     data
   }
 }
-
-export const IS_LOGIN = 'IS_LOGIN';
-export function loginAction (data) {
-  return {
-    type: IS_LOGIN,
-    data
-  }
-}
-
-// export const LOG_OUT = 'LOG_OUT';
-// export function logoutAction () {
-//   return {
-//     type: LOG_OUT
-//   }
-// }
