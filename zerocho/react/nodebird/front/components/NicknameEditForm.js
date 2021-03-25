@@ -11,7 +11,7 @@ const NicknameEditForm = () => {
   const onSubmitForm = useCallback((e) => {
     console.log(`name`, name)
     e.preventDefault();
-    dispatch(changeName(name))
+    //dispatch(changeName(name))
   }, [name])
 
   const styles = useMemo(() => ({marginBottom:'20px', border:'1px solid #d9d9d9', padding: '20px'}), []);

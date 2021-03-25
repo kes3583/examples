@@ -7,10 +7,3 @@ export function changeName (data) {
   }
 }
 
-export const LOG_IN = 'LOG_IN';
-export function login () {
-  return {
-    type: LOG_IN,
-    data
-  }
-}
