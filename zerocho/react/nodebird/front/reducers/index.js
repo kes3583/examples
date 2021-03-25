@@ -21,6 +21,7 @@ const rootReducer = (state = initialState, action) => {
           ...state.user, // initialState > user copy
           isLoggedIn: !state.user.isLoggedIn, // 바꿀 데이터만 적기 
           user: action.data || null
+        }
       }
     // case LOG_OUT:
     //   return { 
