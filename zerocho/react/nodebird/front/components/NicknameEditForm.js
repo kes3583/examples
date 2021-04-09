@@ -14,7 +14,7 @@ const NicknameEditForm = () => {
     //dispatch(changeName(name))
   }, [name])
 
-  const styles = useMemo(() => ({marginBottom:'20px', border:'1px solid #d9d9d9', padding: '20px'}), []);
+  const styles = useMemo(() => ({marginBottom:'20px', border:'1px solid #d9d9d9', padding: '20px'}), []); //리렌더링 방지 급할때만 쓰도록하자 
   return (
     <Form onFinish={onSubmitForm}>
       <Input.Search addonBefore="nickname" enterButton="수정"  value={name} onChange={onChangeName} />

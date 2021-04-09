@@ -58,7 +58,6 @@ function TicTacToe() {
   // const [tableData, setTableData] = useState([['','',''],['','',''],['','','']]);
   
    useEffect(() => {
-     let bingo = false;
      const [targetRow, targetCell] = targetTd;
       console.log('click render');
      if(targetRow < 0) {

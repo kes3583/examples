@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "lib": [
+      "ES2015",
+      "ES5",
+      "ES2016",
+      "ES2020",
+      "DOM"
+    ],
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"]
+}
