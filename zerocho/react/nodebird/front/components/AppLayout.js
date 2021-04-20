@@ -60,7 +60,7 @@ const AppLayout = ({ children }) => {
         <Col xs={24} md={6}>
           <a href="" rel="noreferrer noopener">
             april
-          </a>{' '}
+          </a>
         </Col>
       </Row>
     </div>

@@ -1,45 +1,96 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { Card, Popover, Button } from 'antd';
+import { Card, Popover, Button, List, Avatar, Comment } from 'antd';
 import {
   RetweetOutlined,
   HeartOutlined,
   EllipsisOutlined,
   MessageOutlined,
+  HeartTwoTone,
 } from '@ant-design/icons';
 import PostImages from '../components/PostImages';
+import CommentForm from '../components/CommentForm';
 
 const PostCard = ({ post }) => {
-  const { id } = useSelector(state => state.user.me?.id);
+  const [liked, setLiked] = useState(false);
+  const [commentFormOpend, setCommentFormOpend] = useState(false);
+  const id = useSelector(state => state.user.me?.id);
 
-  const content = (
-    <div>
-      <Button type="primary"> 수정 </Button>
-      <Button type="danger"> 삭제 </Button>
-    </div>
-  );
+  const onToggleLike = useCallback(() => {
+    console.log('click');
+    setLiked(prev => !prev); //이전상태와 비교
+  }, [liked]);
+
+  const onToggleComment = useCallback(() => {
+    setCommentFormOpend(prev => !prev); //이전상태와 비교
+  }, [commentFormOpend]);
 
   return (
-    <Card
-      cover={post.Images[0] && <PostImages images={post.Images} />}
-      title={post.User.nickname}
-      extra={<a href="#">More</a>}
-      style={{ width: 300 }}
-      actions={[
-        <RetweetOutlined key="retweet" />,
-        <HeartOutlined key="heart" />,
-        <MessageOutlined key="message" />,
-        <Popover key="popover" content={content}>
-          <EllipsisOutlined key="ellipsis" />
-        </Popover>,
-      ]}
-    >
-      {/* <Image />
-      <Content /> */}
-      {/* <CommentForm />
-      <Comments /> */}
-    </Card>
+    <div>
+      <Card
+        cover={
+          post.Images[0] &&
+          post.Images.map((v, i) => <PostImages key={i} image={v} />)
+        }
+        style={{ width: 300 }}
+        actions={[
+          <RetweetOutlined key="retweet" />,
+          liked ? (
+            <HeartTwoTone
+              twoToneColor="#2b2f96"
+              onClick={onToggleLike}
+              key="heart"
+            />
+          ) : (
+            <HeartOutlined key="heart" onClick={onToggleLike} />
+          ),
+          <MessageOutlined key="message" onClick={onToggleComment} />,
+          <Popover
+            key="popover"
+            content={
+              <Button.Group>
+                {id && post.User.id === id ? (
+                  <>
+                    <Button type="primary"> 수정 </Button>
+                    <Button type="danger"> 삭제 </Button>
+                  </>
+                ) : (
+                  <Button type="danger"> 신고 </Button>
+                )}
+              </Button.Group>
+            }
+          >
+            <EllipsisOutlined key="ellipsis" />
+          </Popover>,
+        ]}
+      >
+        <Card.Meta
+          avatar={<Avatar> {post.User.nickname[0]} </Avatar>}
+          title={post.User.nickname}
+          description={post.content}
+        />
+      </Card>
+      {commentFormOpend && (
+        <div>
+          <CommentForm post={post} />
+          <List
+            header={`${post.Comments.length}개의 댓글`}
+            itemLayout="horizontal"
+            dataSource={post.Comments}
+            renderItem={item => (
+              <List.Item>
+                <Comment
+                  author={item.User.nickname}
+                  avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
+                  content={item.body}
+                />
+              </List.Item>
+            )}
+          />
+        </div>
+      )}
+    </div>
   );
 };
 

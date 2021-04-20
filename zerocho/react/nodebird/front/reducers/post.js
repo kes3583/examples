@@ -4,14 +4,14 @@ export const initialState = {
     {
       id: 1,
       User: {
-        id: 1,
+        id: 'kes3583@naver.com',
         nickname: 'cherry',
       },
       content:
         'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
       Images: [
         {
-          //첫번째 레터가 대문자인 경우는 쿼리문 조합해서 만든?
+          //보통 첫번째 레터가 대문자인 경우는 쿼리문 조합해서 만든?
           url: 'https://via.placeholder.com/600/92c952',
           thumbnailUrl: 'https://via.placeholder.com/150/92c952',
         },

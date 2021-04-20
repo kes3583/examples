@@ -1,12 +1,12 @@
 import React from 'react';
-import {List, Button} from 'antd'
+import { List, Button } from 'antd';
 import PropTypes from 'prop-types';
 
-const FollowList = ({header, data}) => {
-  const onLoadMore = () =>{
-    return
-  }
-  
+const FollowList = ({ header, data }) => {
+  const onLoadMore = () => {
+    return;
+  };
+
   return (
     <List
       header={<div>{header}</div>}
@@ -15,29 +15,30 @@ const FollowList = ({header, data}) => {
       itemLayout="horizontal"
       dataSource={data}
       bordered
-      loadMore={<div
+      loadMore={
+        <div
           style={{
-          textAlign: 'center',
-          marginTop: 12,
-          height: 32,
-          lineHeight: '32px',
+            textAlign: 'center',
+            marginTop: 12,
+            height: 32,
+            lineHeight: '32px',
           }}
-        ><Button onClick={onLoadMore}>loading more</Button>
-        </div>}
+        >
+          <Button onClick={onLoadMore}>loading more</Button>
+        </div>
+      }
       renderItem={item => (
         <List.Item>
-          <List.Item.Meta
-            title={item.nickname}
-          />
+          <List.Item.Meta title={item.nickname} />
         </List.Item>
       )}
     />
-  )
-}
+  );
+};
 
 FollowList.propTypes = {
   header: PropTypes.string.isRequired,
   data: PropTypes.array.isRequired,
-}
+};
 
 export default FollowList;
