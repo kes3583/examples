@@ -1,4 +1,11 @@
-import {createStore} from 'redux';
-import reducer from './reducer';
+import { configureStore } from "@reduxjs/toolkit";
+import todoReducer from "./todoSlice";
 
-export const store = createStore(reducer)
+// import {createLogger} from "redux-logger";
+// const logger = createLogger();
+
+export default configureStore({
+    reducer: {
+        todos: todoReducer,
+    }
+});
