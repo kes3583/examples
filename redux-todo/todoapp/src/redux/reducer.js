@@ -23,6 +23,8 @@ const rootReducer = (state = initialState, action) => {
           // console.log('todo.id !== action.payload', todo.id !== action.payload),
           todo.id !== action.payload //id가 같지 않은건 false값이 되는건 
           // 4와 같지 않은 나머지 true 된 값 3개의 오브젝트를 반환 
+          //filter는 boolean의 true값만 되는것만 반환한다. 
+          //여기서는 내가 선택한 값 아이디와 state의 값 id가 같지 않는 값만을 찾아 반환하지 않는다. 
         )
       )
     }
