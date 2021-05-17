@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {nanoid} from 'nanoid';
 
-const todoSlice = createSlice({
+export const todoSlice = createSlice({
     name:'todos',
     initialState:[
         {
