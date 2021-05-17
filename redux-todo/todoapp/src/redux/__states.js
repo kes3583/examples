@@ -18,8 +18,7 @@ export const initialState = {
       {
         id:4,
         text:'four',
-        iscompleted:true 
+        isCompleted:true
       }
-    ],
-  isLoggedIn: false,
+    ]
 }

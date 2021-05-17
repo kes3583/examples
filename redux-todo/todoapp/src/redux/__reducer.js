@@ -1,6 +1,6 @@
 
-import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from './actions';
-import { initialState } from './states';
+import { ADD_TODO, DELETE_TODO, UPDATE_TODO } from './__actions';
+import { initialState } from './__states';
 
 const rootReducer = (state = initialState, action) => {
 

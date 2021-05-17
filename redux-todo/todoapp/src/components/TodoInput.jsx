@@ -1,7 +1,6 @@
 import React, {useState, useCallback} from 'react'
-import { addTodo } from '../redux/actions';
+import { addTodo } from '../redux/todoSlice';
 import { useDispatch } from 'react-redux';
-import { v1 as uuid } from 'uuid';
 
 function TodoInput() {
   const [todoText, setTodoText] = useState('')
@@ -18,10 +17,7 @@ function TodoInput() {
     if (!todoText) {
       return setWarningText(true) // 경고메세지 표출하고 함수 빠져나가기 
     }
-    dispatch(addTodo({
-      id:uuid(),
-      text:todoText
-    }));
+    dispatch(addTodo({text: todoText}));
     setTodoText('');
   }, [todoText])
 

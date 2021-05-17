@@ -25,3 +25,12 @@ export function updateTodo(todo) {
     payload: todo
   }
 }
+
+export const TOGGLE_COMPLETE = "TOGGLE_COMPLETE";
+
+export function toggleComplete(todo) {
+  return {
+    type: TOGGLE_COMPLETE,
+    payload: todo
+  }
+}

@@ -3,13 +3,14 @@ import TodoItem from './TodoItem'
 import { useSelector } from 'react-redux';
 
 function TodoList() {
-  const todos = useSelector(state => state.todos)
+  const todos = useSelector((state) => state.todos);
   return (
     <div className="my-4">
       <h3>TodoList</h3>
-      {todos && todos.map( (todo, i) => {
-        return <TodoItem key={todo.id} todo={todo} />
-      })}
+      {todos.map( (todo) => (
+          <TodoItem key={todo.id} todo={todo} />
+        )
+      )}
     </div>
   )
 }
