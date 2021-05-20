@@ -11,6 +11,7 @@ import {
 } from '@ant-design/icons';
 import PostImages from '../components/PostImages';
 import CommentForm from '../components/CommentForm';
+import PostCardContent from '../components/PostCardContent';
 
 const PostCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
@@ -68,7 +69,7 @@ const PostCard = ({ post }) => {
         <Card.Meta
           avatar={<Avatar> {post.User.nickname[0]} </Avatar>}
           title={post.User.nickname}
-          description={post.content}
+          description={<PostCardContent postContent={post.content} />}
         />
       </Card>
       {commentFormOpend && (

@@ -8,7 +8,7 @@ export const initialState = {
         nickname: 'cherry',
       },
       content:
-        'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
+        '#cat #반려동물 ###quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
       Images: [
         {
           //보통 첫번째 레터가 대문자인 경우는 쿼리문 조합해서 만든?
