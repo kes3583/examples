@@ -2,6 +2,7 @@
   "name": "todoapp",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5001",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.11.9",
@@ -19,8 +20,8 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "server": "json-server --watch ./fake-server/db.json --port 5000",
-    "start": "PORT=3006 react-scripts start",
+    "server": "json-server --watch ./fake-server/db.json --port 5001",
+    "start": "PORT=3008 react-scripts start",
     "dev": "concurrently \"npm run server\" \"yarn start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
