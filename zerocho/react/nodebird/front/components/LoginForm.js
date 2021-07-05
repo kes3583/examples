@@ -3,27 +3,28 @@ import { Form, Input, Button } from 'antd';
 import styles from '../styles/LoginForm.module.scss';
 import useInput from '../hooks/useInput';
 import Link from 'next/link';
-import { useDispatch } from 'react-redux';
-import { loginAction } from '../reducers/user';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginRequestAction } from '../reducers/user';
 
 const LoginForm = () => {
-  const [id, onChangeId] = useInput('');
-  const [password, onChangePassword] = useInput('');
   const dispatch = useDispatch();
+  const loginLoading = useSelector((state) => state.user);
+  const [email, onChangeEmail] = useInput('');
+  const [password, onChangePassword] = useInput('');
 
   const onSubmitForm = useCallback(() => {
-    console.log('id,password :>> ', id, password);
-    dispatch(loginAction({ id, password }));
-  }, [id, password]);
+    console.log('email, password :>> ', email, password);
+    dispatch(loginRequestAction({ email, password }));
+  }, [email, password]);
 
   return (
     <Form onFinish={onSubmitForm}>
-      <label htmlFor="user-id">ID</label>
+      <label htmlFor="user-email">email</label>
       <Input
-        name="user-id"
-        type="text"
-        value={id}
-        onChange={onChangeId}
+        name="user-email"
+        type="email"
+        value={email}
+        onChange={onChangeEmail}
         required
       />
       <label htmlFor="user-password">Password</label>
@@ -35,7 +36,11 @@ const LoginForm = () => {
         required
       />
       <div className={styles.buttonWrapper}>
-        <Button type="primary" htmlType="submit" loading={false}>
+        <Button
+          type="primary"
+          htmlType="submit"
+          loading={loginLoading}
+        >
           Login
         </Button>
         <Link href="/signup">

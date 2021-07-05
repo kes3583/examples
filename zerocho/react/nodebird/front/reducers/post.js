@@ -43,7 +43,12 @@ export const initialState = {
     },
   ],
   imagePaths: [], //업로드 이미지경로
-  postAdded: false, // 포스트 업로드 여부
+  addPostLoading: false, // 포스트 로딩창
+  addPostDone: false,
+  addPostError: null,
+  addCommentLoading: false, // 코멘트 로딩창
+  addCommentDone: false,
+  addCommentError: null,
 };
 
 const dummyPost = {
@@ -57,10 +62,26 @@ const dummyPost = {
   Comments: [],
 };
 
-const ADD_POST = 'ADD_POST';
+//비동기 형식은 세개 한 묶음 Request, success, failed or rejected
+// 동적 액션 크리에이터 : 액션을 그때그때 생성해주는 것.
+export const ADD_POST_REQUEST = 'ADD_POST_REQUEST';
+export const ADD_POST_FAILURE = 'ADD_POST_FAILURE';
+export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
+
+export const ADD_COMMENT_REQUEST = 'ADD_COMMENT_REQUEST';
+export const ADD_COMMENT_FAILURE = 'ADD_COMMENT_FAILURE';
+export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
+
 export function addPost(data) {
   return {
-    type: ADD_POST,
+    type: ADD_POST_REQUEST,
+    data,
+  };
+}
+
+export function addComment(data) {
+  return {
+    type: ADD_COMMENT_REQUEST,
     data,
   };
 }
@@ -68,13 +89,46 @@ export function addPost(data) {
 //reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST: {
+    case ADD_POST_REQUEST:
+      return {
+        ...state,
+        addPostLoading: true,
+        addPostError: null,
+      };
+    case ADD_POST_SUCCESS: {
       return {
         ...state,
         mainPosts: [dummyPost, ...state.mainPosts],
-        postAdded: true,
+        addPostLoading: false,
+        addPostDone: true,
       };
     }
+    case ADD_POST_FAILURE:
+      return {
+        ...state,
+        addPostLoading: false,
+        addPostError: action.error,
+      };
+    case ADD_COMMENT_REQUEST:
+      return {
+        ...state,
+        addCommentLoading: true,
+        addCommentError: null, // false라고 해도 된다. falsy이기 때문
+      };
+    case ADD_COMMENT_SUCCESS: {
+      return {
+        ...state,
+        // mainPosts: [...state.mainPosts, Comments: [...state.mainPosts.Comments, dummyComment]],
+        addCommentLoading: false,
+        addCommentDone: true,
+      };
+    }
+    case ADD_COMMENT_FAILURE:
+      return {
+        ...state,
+        addCommentLoading: false,
+        addCommentError: action.error,
+      };
     default:
       return state;
   }
