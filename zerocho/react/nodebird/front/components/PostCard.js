@@ -9,30 +9,36 @@ import {
   MessageOutlined,
   HeartTwoTone,
 } from '@ant-design/icons';
-import PostImages from '../components/PostImages';
-import CommentForm from '../components/CommentForm';
-import PostCardContent from '../components/PostCardContent';
+import PostImages from './PostImages';
+import CommentForm from './CommentForm';
+import PostCardContent from './PostCardContent';
 
 const PostCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
   const [commentFormOpend, setCommentFormOpend] = useState(false);
-  const id = useSelector(state => state.user.me?.id);
+  const id = useSelector((state) => state.user.me?.id);
 
   const onToggleLike = useCallback(() => {
     console.log('click');
-    setLiked(prev => !prev); //이전상태와 비교
+    setLiked((prev) => !prev); // 이전상태와 비교
   }, [liked]);
 
   const onToggleComment = useCallback(() => {
-    setCommentFormOpend(prev => !prev); //이전상태와 비교
+    setCommentFormOpend((prev) => !prev); // 이전상태와 비교
   }, [commentFormOpend]);
 
   return (
     <div>
       <Card
         cover={
-          post.Images[0] &&
-          post.Images.map((v, i) => <PostImages key={i} image={v} />)
+          post.Images[0]
+          && post.Images.map((v, i) => (
+            <PostImages
+              // eslint-disable-next-line react/no-array-index-key
+              key={i}
+              image={v}
+            />
+          ))
         }
         style={{ width: 300 }}
         actions={[
@@ -44,12 +50,18 @@ const PostCard = ({ post }) => {
               key="heart"
             />
           ) : (
-            <HeartOutlined key="heart" onClick={onToggleLike} />
+            <HeartOutlined
+              key="heart"
+              onClick={onToggleLike}
+            />
           ),
-          <MessageOutlined key="message" onClick={onToggleComment} />,
+          <MessageOutlined
+            key="message"
+            onClick={onToggleComment}
+          />,
           <Popover
             key="popover"
-            content={
+            content={(
               <Button.Group>
                 {id && post.User.id === id ? (
                   <>
@@ -60,7 +72,7 @@ const PostCard = ({ post }) => {
                   <Button type="danger"> 신고 </Button>
                 )}
               </Button.Group>
-            }
+            )}
           >
             <EllipsisOutlined key="ellipsis" />
           </Popover>,
@@ -79,7 +91,7 @@ const PostCard = ({ post }) => {
             header={`${post.Comments.length}개의 댓글`}
             itemLayout="horizontal"
             dataSource={post.Comments}
-            renderItem={item => (
+            renderItem={(item) => (
               <List.Item>
                 <Comment
                   author={item.User.nickname}
@@ -98,7 +110,7 @@ const PostCard = ({ post }) => {
 PostCard.propTypes = {
   post: PropTypes.shape({
     id: PropTypes.number,
-    User: PropTypes.object, //post처럼 shape로 풀어줄수있다.
+    User: PropTypes.object, // post처럼 shape로 풀어줄수있다.
     content: PropTypes.string,
     createdAt: PropTypes.object,
     Comments: PropTypes.arrayOf(PropTypes.object),

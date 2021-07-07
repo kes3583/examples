@@ -1,11 +1,15 @@
 import React, { useState, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import AppLayout from '../components/AppLayout';
 import Head from 'next/head';
 import { Form, Input, Button, Checkbox } from 'antd';
 import useInput from '../hooks/useInput';
 import styles from '../styles/LoginForm.module.scss';
+import { SIGN_UP_REQUEST } from '../reducers/user';
 
 const Signup = () => {
+  const dispatch = useDispatch();
+  const { signUpLoading } = useSelector(state => state.user);
   const [email, onChangeEmail] = useInput('');
   const [nickname, onChangeNickname] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -35,6 +39,10 @@ const Signup = () => {
       return setTermError(true);
     }
     console.log('email,password,nickname', email, password, nickname);
+    dispatch({
+      type: SIGN_UP_REQUEST,
+      data: {email, password, nickname}
+    })
   }, [password, confirmPassword, term]);
 
   return (
@@ -46,7 +54,7 @@ const Signup = () => {
         <label htmlFor="user-email">email</label>
         <Input
           name="user-email"
-          type="text"
+          type="email"
           value={email}
           onChange={onChangeEmail}
           required
@@ -89,7 +97,7 @@ const Signup = () => {
             Conditions and Privacy Policy
           </div>
         )}
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" loading={signUpLoading}>
           Sign Up{' '}
         </Button>
       </Form>

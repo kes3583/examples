@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const FollowList = ({ header, data }) => {
   const onLoadMore = () => {
-    return;
+
   };
 
   return (
@@ -15,7 +15,7 @@ const FollowList = ({ header, data }) => {
       itemLayout="horizontal"
       dataSource={data}
       bordered
-      loadMore={
+      loadMore={(
         <div
           style={{
             textAlign: 'center',
@@ -26,8 +26,8 @@ const FollowList = ({ header, data }) => {
         >
           <Button onClick={onLoadMore}>loading more</Button>
         </div>
-      }
-      renderItem={item => (
+      )}
+      renderItem={(item) => (
         <List.Item>
           <List.Item.Meta title={item.nickname} />
         </List.Item>

@@ -1,27 +1,45 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
-import useInput from '../hooks/useInput';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import useInput from '../hooks/useInput';
+import { ADD_COMMENT_REQUEST } from '../reducers/post';
 
 const CommentForm = ({ post }) => {
-  const id = useSelector(state => state.user.me?.id);
-  const [text, onChangeCommentHandler] = useInput();
+  const dispatch = useDispatch();
+  const id = useSelector((state) => state.user.me?.id);
+  const { addCommentDone } = useSelector((state) => state.post);
+  const { addCommentLoading } = useSelector((state) => state.post);
+  const [commentText, onChangeCommentText, setCommentText] = useInput('');
   const onSubmitComment = useCallback(() => {
-    console.log(`submit`, post.id, text, id);
+    console.log('submit', post.id, commentText, id);
     // if (post.id === id) {
     //   console.log(`submit`, post.id, text);
     // }
-  }, [text]);
+    useEffect(() => {
+      if (addCommentDone) {
+        setCommentText('');
+      }
+    }, [commentText]);
+
+    dispatch({
+      type: ADD_COMMENT_REQUEST,
+      data: { content: commentText, postId: post.id, userId: id },
+    });
+  }, [commentText, id]);
   return (
     <Form onFinish={onSubmitComment}>
       <Form.Item>
         <Input.TextArea
-          value={text}
-          onChange={onChangeCommentHandler}
+          value={commentText}
+          onChange={onChangeCommentText}
           row={4}
         />
-        <Button type="primary" htmlType="submit">
+        <Button
+          type="primary"
+          htmlType="submit"
+          loading={addCommentLoading}
+        >
           댓글달기
         </Button>
       </Form.Item>

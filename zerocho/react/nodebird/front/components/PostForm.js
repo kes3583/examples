@@ -1,17 +1,22 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import useInput from '../hooks/useInput';
 import { addPost } from '../reducers/post';
 
 const PostForm = () => {
-  const { imagePaths } = useSelector(state => state.post);
+  const dispatch = useDispatch();
+  const { imagePaths, addPostDone } = useSelector((state) => state.post);
   const [text, onChangeText, setText] = useInput('');
   const [image, setImage] = useState({ preview: '', raw: '' });
-  const dispatch = useDispatch();
-  const hiddenFileInput = useRef(null);
 
-  const onChangeHandler = e => {
+  useEffect(() => {
+    if (addPostDone) {
+      setText('');
+    }
+  }, [addPostDone]);
+
+  const onChangeHandler = (e) => {
     if (e.target.files.length) {
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
@@ -19,18 +24,23 @@ const PostForm = () => {
       });
     }
   };
+
+  const hiddenFileInput = useRef(null);
   const handleClick = useCallback(() => {
     hiddenFileInput.current.click();
   }, [hiddenFileInput.current]);
 
   const onSubmit = useCallback(() => {
-    console.log(`onsubmit`, onsubmit);
-    dispatch(addPost({ Cotent: text, image: image.raw }));
+    console.log('onsubmit', onsubmit);
+    dispatch(addPost({ Content: text, image: image.raw }));
     setText('');
   }, [text, image]);
 
   return (
-    <Form onFinish={onSubmit} encType="multipart/form-data">
+    <Form
+      onFinish={onSubmit}
+      encType="multipart/form-data"
+    >
       <Form.Item>
         <Input.TextArea
           onChange={onChangeText}
@@ -47,20 +57,30 @@ const PostForm = () => {
           ref={hiddenFileInput}
           onChange={onChangeHandler}
         />
-        <Button style={{ float: 'left' }} onClick={handleClick}>
+        <Button
+          style={{ float: 'left' }}
+          onClick={handleClick}
+        >
           Upload images
         </Button>
-        {image.raw ? <span>{image.raw.name}</span> : <span></span>}
-        <Button type="primary" htmlType="submit" style={{ float: 'right' }}>
+        {image.raw ? <span>{image.raw.name}</span> : <span />}
+        <Button
+          type="primary"
+          htmlType="submit"
+          style={{ float: 'right' }}
+        >
           Submit
         </Button>
       </Form.Item>
       <div>
-        {imagePaths &&
-          imagePaths.map(v => (
+        {imagePaths
+          && imagePaths.map((v) => (
             <div>
               <div key={v}>
-                <img src={v} alt={v} />
+                <img
+                  src={v}
+                  alt={v}
+                />
               </div>
               <Button>remove</Button>
             </div>

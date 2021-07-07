@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -6,19 +7,40 @@
       "jsx": true
     }
   },
-  "extends": ["eslint:recommended","plugin:prettier/recommended"],
-  "plugins": ["react","prettier"],
+  "extends": ["airbnb"],
+  "plugins": ["import","react-hooks"],
   "env": {
     "browser": true,
     "node": true,
     "es6": true
-  },
-  "ignorePatterns": ["node_modules/"],
-  "rules": {
-    "prettier/prettier": "error",
+  },  
+  "rules": {    
     "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-     "react/jsx-uses-react": "error",   
-     "react/jsx-uses-vars": "error" 
-    
+    "react/jsx-uses-react": "error",   
+    "react/jsx-uses-vars": "error",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "class-methods-use-this": "off",
+    "comma-dangle": "off",
+    "import/no-cycle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "max-len": "off",
+    "no-console": "off",
+    "no-underscore-dangle":"off",
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "no-return-assign": "off",
+    "object-curly-newline": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "linebreak-style": "off",
+    "no-use-before-define": "off"
+       
   }
 }
