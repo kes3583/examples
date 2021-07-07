@@ -97,6 +97,7 @@ const todoSlice = createSlice({
             console.log('fetching data...')
         },
         [getTodosAsync.fulfilled]: (state, action) => {
+            console.log(`action.payload.todos`, action.payload.todos)
             return action.payload.todos
         },
         [addTodoAsync.fulfilled]: (state, action) => {
@@ -129,6 +130,6 @@ const todoSlice = createSlice({
     }
 });
 
-export const {addTodo, toggleComplete, deleteTodo, updateTodo} = todoSlice.actions;
+//export const {addTodo, toggleComplete, deleteTodo, updateTodo} = todoSlice.actions;
 export default todoSlice.reducer;
 

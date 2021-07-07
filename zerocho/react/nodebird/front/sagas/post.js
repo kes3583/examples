@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import {
   all, fork, takeLatest, put, delay,
 } from 'redux-saga/effects';
@@ -34,10 +34,11 @@ function* addPost(action) {
 }
 
 // 코멘트 등록
-function addCommentAPI(data) {
-  return axios.post(`/api/post/${data.postId}/comment`, data);
-}
+// function addCommentAPI(data) {
+//   return axios.post(`/api/post/${data.postId}/comment`, data);
+// }
 
+// eslint-disable-next-line no-unused-vars
 function* addComment(action) {
   // const result = yield call(addCommentAPI, action.data);
   yield delay(1000);

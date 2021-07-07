@@ -1,6 +1,6 @@
-//state
+// state
 export const initialState = {
-  loginLoading: false, //로그인 시도중 로딩창 띄우기
+  loginLoading: false, // 로그인 시도중 로딩창 띄우기
   loginDone: false, // 로그인 여부
   loginError: null,
   logoutLoading: false, // 로그아웃 로딩창
@@ -9,11 +9,14 @@ export const initialState = {
   signUpLoading: false, // 가입 로딩창
   signUpDone: false,
   signUpError: null,
+  changeNickLoading: false, // 가입 로딩창
+  changeNickDone: false,
+  changeNickError: null,
   me: null,
   signUpData: {},
   loginData: {},
 };
-//action
+// action
 export const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
@@ -22,17 +25,21 @@ export const LOG_OUT_REQUEST = 'LOG_OUT_REQUEST';
 export const LOG_OUT_SUCCESS = 'LOG_OUT_SUCCESS';
 export const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 
-export const SIGN_UP_REQUEST = 'LOG_OUT_REQUEST';
-export const SIGN_UP_SUCCESS = 'LOG_OUT_SUCCESS';
-export const SIGN_UP_FAILURE = 'LOG_OUT_FAILURE';
+export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
+export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
 
-export const FOLLOW_REQUEST = 'LOG_OUT_REQUEST';
-export const FOLLOW_SUCCESS = 'LOG_OUT_SUCCESS';
-export const FOLLOW_FAILURE = 'LOG_OUT_FAILURE';
+export const CHANGE_NICKNAME_REQUEST = 'CHANGE_NICKNAME_REQUEST';
+export const CHANGE_NICKNAME_SUCCESS = 'CHANGE_NICKNAME_SUCCESS';
+export const CHANGE_NICKNAME_FAILURE = 'CHANGE_NICKNAME_FAILURE';
 
-export const UNFOLLOW_REQUEST = 'LOG_OUT_REQUEST';
-export const UNFOLLOW_SUCCESS = 'LOG_OUT_SUCCESS';
-export const UNFOLLOW_FAILURE = 'LOG_OUT_FAILURE';
+export const FOLLOW_REQUEST = 'FOLLOW_REQUEST';
+export const FOLLOW_SUCCESS = 'FOLLOW_SUCCESS';
+export const FOLLOW_FAILURE = 'FOLLOW_FAILURE';
+
+export const UNFOLLOW_REQUEST = 'UNFOLLOW_REQUEST';
+export const UNFOLLOW_SUCCESS = 'UNFOLLOW_SUCCESS';
+export const UNFOLLOW_FAILURE = 'UNFOLLOW_FAILURE';
 
 export function loginRequestAction(data) {
   return {
@@ -46,7 +53,7 @@ export function logoutRequestAction() {
   };
 }
 
-const dummyUser = data => ({
+const dummyUser = (data) => ({
   ...data,
   nickname: 'bella',
   id: 1,
@@ -55,13 +62,13 @@ const dummyUser = data => ({
   Followers: [],
 });
 
-//reducer
+// reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOG_IN_REQUEST:
       console.log('reducer login :>> ');
       return {
-        ...state, //copy initialState
+        ...state, // copy initialState
         loginLoading: true, // 바꿀 데이터만 적기
         loginError: null,
         loginDone: false,
@@ -118,6 +125,25 @@ const reducer = (state = initialState, action) => {
         ...state,
         signUpLoading: false,
         signUpError: action.error,
+      };
+    case CHANGE_NICKNAME_REQUEST:
+      return {
+        ...state,
+        changeNickLoading: true,
+        changeNickDone: false,
+        changeNickError: null,
+      };
+    case CHANGE_NICKNAME_SUCCESS:
+      return {
+        ...state,
+        changeNickLoading: false,
+        changeNickDone: true,
+      };
+    case CHANGE_NICKNAME_FAILURE:
+      return {
+        ...state,
+        changeNickLoading: false,
+        changeNickError: action.error,
       };
     default:
       return state;

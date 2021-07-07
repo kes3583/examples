@@ -1,4 +1,4 @@
-//state
+// state
 export const initialState = {
   mainPosts: [
     {
@@ -11,7 +11,7 @@ export const initialState = {
         '#cat #반려동물 ###quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
       Images: [
         {
-          //보통 첫번째 레터가 대문자인 경우는 쿼리문 조합해서 만든?
+          // 보통 첫번째 레터가 대문자인 경우는 쿼리문 조합해서 만든?
           url: 'https://via.placeholder.com/600/92c952',
           thumbnailUrl: 'https://via.placeholder.com/150/92c952',
         },
@@ -42,7 +42,7 @@ export const initialState = {
       ],
     },
   ],
-  imagePaths: [], //업로드 이미지경로
+  imagePaths: [], // 업로드 이미지경로
   addPostLoading: false, // 포스트 로딩창
   addPostDone: false,
   addPostError: null,
@@ -62,7 +62,7 @@ const dummyPost = {
   Comments: [],
 };
 
-//비동기 형식은 세개 한 묶음 Request, success, failed or rejected
+// 비동기 형식은 세개 한 묶음 Request, success, failed or rejected
 // 동적 액션 크리에이터 : 액션을 그때그때 생성해주는 것.
 export const ADD_POST_REQUEST = 'ADD_POST_REQUEST';
 export const ADD_POST_FAILURE = 'ADD_POST_FAILURE';
@@ -86,7 +86,7 @@ export function addComment(data) {
   };
 }
 
-//reducer
+// reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST_REQUEST:

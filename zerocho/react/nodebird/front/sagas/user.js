@@ -2,7 +2,7 @@
 import {
   all,
   fork,
-  take,
+  takeLatest,
   takeEvery,
   put,
   delay,
@@ -38,10 +38,10 @@ import {
 // }
 
 function* logIn(action) {
+  console.log('saga login :>> ', action.type);
   try {
-    console.log('saga login :>> ', action);
     // const result = yield call(logInAPI, action.data);
-    yield delay(1000);
+    yield delay(2000);
     // fork는 비동기로서, api요청보내고 바로 다음 라인 실행, axkos.post(url) yield...
     // call은 동기함수로 요청 기다리고 리턴하는 데이터를 받은 다음, 다음 라인 실행, axios.post(url).then(()=>{response.data})
     // 여기에서 yield가 await가 같은 역할을 한다.
@@ -103,9 +103,7 @@ function* signUp() {
 }
 
 function* watchLogIn() {
-  while (true) {
-    yield take(LOG_IN_REQUEST, logIn);
-  }
+  yield takeLatest(LOG_IN_REQUEST, logIn);
 }
 
 function* watchLogOut() {

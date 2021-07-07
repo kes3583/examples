@@ -21,7 +21,7 @@
   },
   "scripts": {
     "server": "json-server --watch ./fake-server/db.json --port 5001",
-    "start": "PORT=3008 react-scripts start",
+    "start": "cross-env NODE_PATH=src PORT=3008 react-scripts start",
     "dev": "concurrently \"npm run server\" \"yarn start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",

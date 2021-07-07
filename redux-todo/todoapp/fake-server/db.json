@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": 2,
-      "text": "two1234156",
+      "text": "two1234156fdfdf",
       "isCompleted": false
     },
     {
@@ -29,6 +29,11 @@
       "text": "thursday.",
       "isCompleted": false,
       "id": 8
+    },
+    {
+      "text": "12121dffFddd",
+      "isCompleted": true,
+      "id": 9
     }
   ]
 }
