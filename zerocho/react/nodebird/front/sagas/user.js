@@ -89,7 +89,7 @@ function* signUp() {
   try {
     // const result = yield call(signUpAPI);
     yield delay(1000);
-    // throw new Error('') 이렇게 처리하면 바로 catch 문구로 간다. 
+    // throw new Error('') 이렇게 처리하면 바로 catch 문구로 간다.
     yield put({
       type: SIGN_UP_SUCCESS,
       // data: result.data,
